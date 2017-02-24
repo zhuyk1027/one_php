@@ -1,0 +1,884 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="175681e1-1412-4e8b-9159-8b0db6a11767" name="默认的" comment="" />
+    <ignored path="one_php.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="one_php" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="constants.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/config/constants.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="19" column="14" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Homepage.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/Homepage.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+              <folding>
+                <marker date="1487839532942" expanded="true" signature="656:713" placeholder="select fs_ti..blog_friendship..." />
+                <marker date="1487839532942" expanded="true" signature="788:915" placeholder="select blog_..blog_group..." />
+                <marker date="1487839532942" expanded="true" signature="821:875" placeholder="select count..blog..." />
+                <marker date="1487839532942" expanded="true" signature="1003:1108" placeholder="select tag_i..blog_tag..." />
+                <marker date="1487839532942" expanded="true" signature="1027:1070" placeholder="select count..blog..." />
+                <marker date="1487839532942" expanded="true" signature="1199:1258" placeholder="select blog_..blog..." />
+                <marker date="1487839532942" expanded="true" signature="1362:1448" placeholder="select * fro..blog..." />
+                <marker date="1487839532942" expanded="true" signature="1939:2011" placeholder="select * fro..blog..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Blog.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/Blog.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+              <folding>
+                <element signature="e#1266#1292#0#PHP" expanded="false" />
+                <element signature="e#3593#3657#0#PHP" expanded="false" />
+                <element signature="e#4785#4809#0#PHP" expanded="false" />
+                <marker date="1487839714829" expanded="true" signature="649:706" placeholder="select fs_ti..blog_friendship..." />
+                <marker date="1487839714829" expanded="true" signature="781:908" placeholder="select blog_..blog_group..." />
+                <marker date="1487839714829" expanded="true" signature="814:868" placeholder="select count..blog..." />
+                <marker date="1487839714829" expanded="true" signature="996:1101" placeholder="select tag_i..blog_tag..." />
+                <marker date="1487839714829" expanded="true" signature="1020:1063" placeholder="select count..blog..." />
+                <marker date="1487839714829" expanded="true" signature="1192:1251" placeholder="select blog_..blog..." />
+                <marker date="1487839714829" expanded="true" signature="1565:1619" placeholder="select group..blog_group..." />
+                <marker date="1487839714829" expanded="true" signature="2020:2063" placeholder="select tag_n..blog_tag..." />
+                <marker date="1487839714829" expanded="true" signature="2448:2524" placeholder="SELECT COUNT..." />
+                <marker date="1487839714829" expanded="true" signature="2793:2893" placeholder="SELECT * FRO..." />
+                <marker date="1487839714829" expanded="true" signature="4937:4970" placeholder="select * fro..blog..." />
+                <marker date="1487839714829" expanded="true" signature="5038:5083" placeholder="select * fro..blog_group..." />
+                <marker date="1487839714829" expanded="true" signature="5229:5315" placeholder="select * fro..blog..." />
+                <marker date="1487839714829" expanded="true" signature="5394:5497" placeholder="select * fro..blog..." />
+                <marker date="1487839714829" expanded="true" signature="5550:5594" placeholder="update blog ..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tpl/blog/header.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.78125">
+              <caret line="69" column="21" selection-start-line="69" selection-start-column="21" selection-end-line="69" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="blog_list.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tpl/smg/blog_list.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.1875">
+              <caret line="43" column="85" selection-start-line="43" selection-start-column="85" selection-end-line="43" selection-end-column="85" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="blog_update.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tpl/smg/blog_update.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Blog.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/controllers/smg/Blog.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.30221704">
+              <caret line="130" column="26" selection-start-line="130" selection-start-column="26" selection-end-line="130" selection-end-column="26" />
+              <folding>
+                <element signature="e#154#236#0#PHP" expanded="false" />
+                <element signature="n#__construct#0;n#Blog#0;n#!!top" expanded="false" />
+                <element signature="n#index#0;n#Blog#0;n#!!top" expanded="false" />
+                <element signature="e#793#846#0#PHP" expanded="false" />
+                <element signature="n#del_blog#0;n#Blog#0;n#!!top" expanded="false" />
+                <element signature="e#1385#1509#0#PHP" expanded="false" />
+                <element signature="e#1461#1509#0#PHP" expanded="false" />
+                <element signature="n#write_blog#0;n#Blog#0;n#!!top" expanded="false" />
+                <element signature="e#1848#1920#0#PHP" expanded="false" />
+                <element signature="n#blog_add#0;n#Blog#0;n#!!top" expanded="false" />
+                <element signature="e#2391#2508#0#PHP" expanded="false" />
+                <element signature="e#2526#2770#0#PHP" expanded="false" />
+                <element signature="e#2828#3030#0#PHP" expanded="false" />
+                <element signature="e#2923#3030#0#PHP" expanded="false" />
+                <element signature="n#up_blog#0;n#Blog#0;n#!!top" expanded="false" />
+                <element signature="e#3092#3193#0#PHP" expanded="false" />
+                <element signature="e#3551#3650#0#PHP" expanded="false" />
+                <element signature="n#add_group#0;n#Blog#0;n#!!top" expanded="false" />
+                <element signature="e#5154#5299#0#PHP" expanded="false" />
+                <element signature="e#5251#5299#0#PHP" expanded="false" />
+                <element signature="n#blog_type#0;n#Blog#0;n#!!top" expanded="false" />
+                <element signature="e#5512#5562#0#PHP" expanded="false" />
+                <element signature="n#del_blog_type#0;n#Blog#0;n#!!top" expanded="false" />
+                <element signature="e#6141#6265#0#PHP" expanded="false" />
+                <element signature="e#6217#6265#0#PHP" expanded="false" />
+                <element signature="n#up_blog_type#0;n#Blog#0;n#!!top" expanded="false" />
+                <element signature="e#6431#6509#0#PHP" expanded="false" />
+                <element signature="e#6527#6582#0#PHP" expanded="false" />
+                <element signature="e#6707#6807#0#PHP" expanded="false" />
+                <element signature="e#6759#6807#0#PHP" expanded="false" />
+                <element signature="n#blog_tag#0;n#Blog#0;n#!!top" expanded="false" />
+                <element signature="e#6995#7041#0#PHP" expanded="false" />
+                <element signature="n#del_blog_tag#0;n#Blog#0;n#!!top" expanded="false" />
+                <element signature="e#7600#7724#0#PHP" expanded="false" />
+                <element signature="e#7676#7724#0#PHP" expanded="false" />
+                <element signature="n#add_tag#0;n#Blog#0;n#!!top" expanded="false" />
+                <element signature="e#7996#8141#0#PHP" expanded="false" />
+                <element signature="e#8093#8141#0#PHP" expanded="false" />
+                <element signature="n#up_blog_tag#0;n#Blog#0;n#!!top" expanded="false" />
+                <element signature="e#8298#8372#0#PHP" expanded="false" />
+                <element signature="e#8390#8441#0#PHP" expanded="false" />
+                <element signature="e#8555#8655#0#PHP" expanded="false" />
+                <element signature="e#8607#8655#0#PHP" expanded="false" />
+                <marker date="1487908408069" expanded="false" signature="567:633" placeholder="select title..blog..." />
+                <marker date="1487908408069" expanded="false" signature="702:764" placeholder="select blog_..blog_group..." />
+                <marker date="1487908408069" expanded="false" signature="1173:1226" placeholder="select * fro..blog..." />
+                <marker date="1487908408069" expanded="false" signature="1315:1369" placeholder="delete from ..." />
+                <marker date="1487908408069" expanded="false" signature="1607:1646" placeholder="select * fro..blog_group..." />
+                <marker date="1487908408069" expanded="false" signature="1715:1752" placeholder="select * fro..blog_tag..." />
+                <marker date="1487908408069" expanded="false" signature="3245:3284" placeholder="select * fro..blog_group..." />
+                <marker date="1487908408069" expanded="false" signature="3352:3410" placeholder="select * fro..blog..." />
+                <marker date="1487908408069" expanded="false" signature="3479:3516" placeholder="select * fro..blog_tag..." />
+                <marker date="1487908408069" expanded="false" signature="5035:5142" placeholder="insert into ..." />
+                <marker date="1487908408069" expanded="false" signature="5415:5477" placeholder="select blog_..blog_group..." />
+                <marker date="1487908408069" expanded="false" signature="5905:5970" placeholder="select * fro..blog_group..." />
+                <marker date="1487908408069" expanded="false" signature="6059:6125" placeholder="delete from ..." />
+                <marker date="1487908408069" expanded="false" signature="6923:6960" placeholder="select * fro..blog_tag..." />
+                <marker date="1487908408069" expanded="false" signature="7382:7438" placeholder="select * fro..blog_tag..." />
+                <marker date="1487908408069" expanded="false" signature="7527:7584" placeholder="delete from ..." />
+                <marker date="1487908408069" expanded="false" signature="7881:7984" placeholder="insert into ..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/application/config/database.php" />
+        <option value="$PROJECT_DIR$/system/core/Controller.php" />
+        <option value="E:/xampp7/apache/conf/httpd.conf" />
+        <option value="$PROJECT_DIR$/tpl/blog/css/style.css" />
+        <option value="$PROJECT_DIR$/application/config/routes.php" />
+        <option value="$PROJECT_DIR$/tpl/tool/index.php" />
+        <option value="$PROJECT_DIR$/tpl/tool/qrcode.php" />
+        <option value="$PROJECT_DIR$/tpl/tool/email.php" />
+        <option value="$PROJECT_DIR$/tpl/tool/test.php" />
+        <option value="$PROJECT_DIR$/tpl/tool/julaibao.php" />
+        <option value="$PROJECT_DIR$/application/controllers/tool/Send_email.php" />
+        <option value="$USER_HOME$/Desktop/网站正式更名为——静夜思 – 静夜思.html" />
+        <option value="$PROJECT_DIR$/tpl/blog/homepage.php" />
+        <option value="$PROJECT_DIR$/tpl/blog/blog_list.php" />
+        <option value="$PROJECT_DIR$/tpl/blog/blog_detail.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Homepage.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Blog.php" />
+        <option value="$PROJECT_DIR$/tpl/blog/right.php" />
+        <option value="$PROJECT_DIR$/application/config/constants.php" />
+        <option value="$PROJECT_DIR$/tpl/blog/footer.php" />
+        <option value="$PROJECT_DIR$/tpl/blog/header.php" />
+        <option value="$PROJECT_DIR$/tpl/smg/blog_list.php" />
+        <option value="$PROJECT_DIR$/application/controllers/smg/Blog.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="NamedScopeManager">
+    <order />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1696" />
+    <option name="height" value="1026" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="添加" />
+    <OptionsSetting value="true" id="移除" />
+    <OptionsSetting value="true" id="签出" />
+    <OptionsSetting value="true" id="更新" />
+    <OptionsSetting value="true" id="状态" />
+    <OptionsSetting value="true" id="编辑" />
+    <ConfirmationsSetting value="0" id="添加" />
+    <ConfirmationsSetting value="0" id="移除" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="one_php" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="one_php" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="one_php" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="one_php" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="one_php" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="one_php" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="one_php" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="smg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="one_php" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="one_php" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="one_php" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="one_php" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="one_php" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="one_php" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="smg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <pass-parent-envs>true</pass-parent-envs>
+      <envs />
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="175681e1-1412-4e8b-9159-8b0db6a11767" name="默认的" comment="" />
+      <created>1487644499358</created>
+      <option name="number" value="Default" />
+      <updated>1487644499358</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19583334" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="版本控制" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="找到" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32897604" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/application/config/constants.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="14" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Homepage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+          <folding>
+            <marker date="1487839532942" expanded="true" signature="656:713" placeholder="select fs_ti..blog_friendship..." />
+            <marker date="1487839532942" expanded="true" signature="788:915" placeholder="select blog_..blog_group..." />
+            <marker date="1487839532942" expanded="true" signature="821:875" placeholder="select count..blog..." />
+            <marker date="1487839532942" expanded="true" signature="1003:1108" placeholder="select tag_i..blog_tag..." />
+            <marker date="1487839532942" expanded="true" signature="1027:1070" placeholder="select count..blog..." />
+            <marker date="1487839532942" expanded="true" signature="1199:1258" placeholder="select blog_..blog..." />
+            <marker date="1487839532942" expanded="true" signature="1362:1448" placeholder="select * fro..blog..." />
+            <marker date="1487839532942" expanded="true" signature="1939:2011" placeholder="select * fro..blog..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Blog.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+          <folding>
+            <element signature="e#1266#1292#0#PHP" expanded="false" />
+            <element signature="e#3593#3657#0#PHP" expanded="false" />
+            <element signature="e#4785#4809#0#PHP" expanded="false" />
+            <marker date="1487839714829" expanded="true" signature="649:706" placeholder="select fs_ti..blog_friendship..." />
+            <marker date="1487839714829" expanded="true" signature="781:908" placeholder="select blog_..blog_group..." />
+            <marker date="1487839714829" expanded="true" signature="814:868" placeholder="select count..blog..." />
+            <marker date="1487839714829" expanded="true" signature="996:1101" placeholder="select tag_i..blog_tag..." />
+            <marker date="1487839714829" expanded="true" signature="1020:1063" placeholder="select count..blog..." />
+            <marker date="1487839714829" expanded="true" signature="1192:1251" placeholder="select blog_..blog..." />
+            <marker date="1487839714829" expanded="true" signature="1565:1619" placeholder="select group..blog_group..." />
+            <marker date="1487839714829" expanded="true" signature="2020:2063" placeholder="select tag_n..blog_tag..." />
+            <marker date="1487839714829" expanded="true" signature="2448:2524" placeholder="SELECT COUNT..." />
+            <marker date="1487839714829" expanded="true" signature="2793:2893" placeholder="SELECT * FRO..." />
+            <marker date="1487839714829" expanded="true" signature="4937:4970" placeholder="select * fro..blog..." />
+            <marker date="1487839714829" expanded="true" signature="5038:5083" placeholder="select * fro..blog_group..." />
+            <marker date="1487839714829" expanded="true" signature="5229:5315" placeholder="select * fro..blog..." />
+            <marker date="1487839714829" expanded="true" signature="5394:5497" placeholder="select * fro..blog..." />
+            <marker date="1487839714829" expanded="true" signature="5550:5594" placeholder="update blog ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/blog/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/blog/right.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="22" selection-start-line="2" selection-start-column="12" selection-end-line="6" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/constants.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="56" selection-start-line="20" selection-start-column="56" selection-end-line="20" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Homepage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+          <folding>
+            <marker date="1487839532942" expanded="true" signature="656:713" placeholder="select fs_ti..blog_friendship..." />
+            <marker date="1487839532942" expanded="true" signature="788:915" placeholder="select blog_..blog_group..." />
+            <marker date="1487839532942" expanded="true" signature="821:875" placeholder="select count..blog..." />
+            <marker date="1487839532942" expanded="true" signature="1003:1108" placeholder="select tag_i..blog_tag..." />
+            <marker date="1487839532942" expanded="true" signature="1027:1070" placeholder="select count..blog..." />
+            <marker date="1487839532942" expanded="true" signature="1199:1258" placeholder="select blog_..blog..." />
+            <marker date="1487839532942" expanded="true" signature="1362:1448" placeholder="select * fro..blog..." />
+            <marker date="1487839532942" expanded="true" signature="1939:2011" placeholder="select * fro..blog..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/blog/homepage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="140" selection-start-line="30" selection-start-column="140" selection-end-line="30" selection-end-column="140" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/blog/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="52" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/blog/right.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/blog/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/xampp/apache/conf/httpd.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8447694">
+          <caret line="596" column="14" selection-start-line="596" selection-start-column="14" selection-end-line="596" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.1995335">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/autoload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.7841306">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.64410734">
+          <caret line="131" column="23" selection-start-line="131" selection-start-column="23" selection-end-line="131" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.6875">
+          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/core/Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49008167">
+          <caret line="83" column="43" selection-start-line="83" selection-start-column="43" selection-end-line="83" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/静夜思-- 分享生活的那些趣事儿.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.3125">
+          <caret line="6" column="31" selection-start-line="0" selection-start-column="0" selection-end-line="178" selection-end-column="2620" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/xampp7/apache/conf/httpd.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9482565">
+          <caret line="595" column="34" selection-start-line="595" selection-start-column="34" selection-end-line="595" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Common_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.629032">
+          <caret line="161" column="30" selection-start-line="161" selection-start-column="26" selection-end-line="161" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/blog/css/shCoreDefault.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="74" selection-start-line="0" selection-start-column="74" selection-end-line="0" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.81213534">
+          <caret line="61" column="35" selection-start-line="61" selection-start-column="35" selection-end-line="61" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/tool/qrcode.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.75845975">
+          <caret line="67" column="6" selection-start-line="67" selection-start-column="6" selection-end-line="67" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/tool/Tool.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/tool/test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4830805">
+          <caret line="45" column="5" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/tool/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.55425906">
+          <caret line="57" column="55" selection-start-line="57" selection-start-column="55" selection-end-line="57" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/tool/julaibao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24154025">
+          <caret line="39" column="35" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/email.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16102684">
+          <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/tool/Send_email.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40956825">
+          <caret line="22" column="54" selection-start-line="22" selection-start-column="54" selection-end-line="22" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/tool/email.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7316219">
+          <caret line="54" column="47" selection-start-line="54" selection-start-column="47" selection-end-line="54" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/blog/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3329453">
+          <caret line="632" column="13" selection-start-line="632" selection-start-column="9" selection-end-line="632" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/blog/homepage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5550181">
+          <caret line="26" column="78" selection-start-line="26" selection-start-column="78" selection-end-line="26" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/blog/blog_detail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9031505">
+          <caret line="57" column="47" selection-start-line="57" selection-start-column="47" selection-end-line="57" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/blog/blog_list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6172695">
+          <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Blog.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+          <folding>
+            <element signature="e#1266#1292#0#PHP" expanded="false" />
+            <element signature="e#3593#3657#0#PHP" expanded="false" />
+            <element signature="e#4785#4809#0#PHP" expanded="false" />
+            <marker date="1487839714829" expanded="true" signature="649:706" placeholder="select fs_ti..blog_friendship..." />
+            <marker date="1487839714829" expanded="true" signature="781:908" placeholder="select blog_..blog_group..." />
+            <marker date="1487839714829" expanded="true" signature="814:868" placeholder="select count..blog..." />
+            <marker date="1487839714829" expanded="true" signature="996:1101" placeholder="select tag_i..blog_tag..." />
+            <marker date="1487839714829" expanded="true" signature="1020:1063" placeholder="select count..blog..." />
+            <marker date="1487839714829" expanded="true" signature="1192:1251" placeholder="select blog_..blog..." />
+            <marker date="1487839714829" expanded="true" signature="1565:1619" placeholder="select group..blog_group..." />
+            <marker date="1487839714829" expanded="true" signature="2020:2063" placeholder="select tag_n..blog_tag..." />
+            <marker date="1487839714829" expanded="true" signature="2448:2524" placeholder="SELECT COUNT..." />
+            <marker date="1487839714829" expanded="true" signature="2793:2893" placeholder="SELECT * FRO..." />
+            <marker date="1487839714829" expanded="true" signature="4937:4970" placeholder="select * fro..blog..." />
+            <marker date="1487839714829" expanded="true" signature="5038:5083" placeholder="select * fro..blog_group..." />
+            <marker date="1487839714829" expanded="true" signature="5229:5315" placeholder="select * fro..blog..." />
+            <marker date="1487839714829" expanded="true" signature="5394:5497" placeholder="select * fro..blog..." />
+            <marker date="1487839714829" expanded="true" signature="5550:5594" placeholder="update blog ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/constants.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="14" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/blog/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.50060457">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/blog/right.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="22" selection-start-line="2" selection-start-column="12" selection-end-line="6" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Homepage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+          <folding>
+            <marker date="1487839532942" expanded="true" signature="656:713" placeholder="select fs_ti..blog_friendship..." />
+            <marker date="1487839532942" expanded="true" signature="788:915" placeholder="select blog_..blog_group..." />
+            <marker date="1487839532942" expanded="true" signature="821:875" placeholder="select count..blog..." />
+            <marker date="1487839532942" expanded="true" signature="1003:1108" placeholder="select tag_i..blog_tag..." />
+            <marker date="1487839532942" expanded="true" signature="1027:1070" placeholder="select count..blog..." />
+            <marker date="1487839532942" expanded="true" signature="1199:1258" placeholder="select blog_..blog..." />
+            <marker date="1487839532942" expanded="true" signature="1362:1448" placeholder="select * fro..blog..." />
+            <marker date="1487839532942" expanded="true" signature="1939:2011" placeholder="select * fro..blog..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/blog/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.78125">
+          <caret line="69" column="21" selection-start-line="69" selection-start-column="21" selection-end-line="69" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/smg/blog_list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.1875">
+          <caret line="43" column="85" selection-start-line="43" selection-start-column="85" selection-end-line="43" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/smg/blog_update.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/smg/Blog.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30221704">
+          <caret line="130" column="26" selection-start-line="130" selection-start-column="26" selection-end-line="130" selection-end-column="26" />
+          <folding>
+            <element signature="e#154#236#0#PHP" expanded="false" />
+            <element signature="n#__construct#0;n#Blog#0;n#!!top" expanded="false" />
+            <element signature="n#index#0;n#Blog#0;n#!!top" expanded="false" />
+            <element signature="e#793#846#0#PHP" expanded="false" />
+            <element signature="n#del_blog#0;n#Blog#0;n#!!top" expanded="false" />
+            <element signature="e#1385#1509#0#PHP" expanded="false" />
+            <element signature="e#1461#1509#0#PHP" expanded="false" />
+            <element signature="n#write_blog#0;n#Blog#0;n#!!top" expanded="false" />
+            <element signature="e#1848#1920#0#PHP" expanded="false" />
+            <element signature="n#blog_add#0;n#Blog#0;n#!!top" expanded="false" />
+            <element signature="e#2391#2508#0#PHP" expanded="false" />
+            <element signature="e#2526#2770#0#PHP" expanded="false" />
+            <element signature="e#2828#3030#0#PHP" expanded="false" />
+            <element signature="e#2923#3030#0#PHP" expanded="false" />
+            <element signature="n#up_blog#0;n#Blog#0;n#!!top" expanded="false" />
+            <element signature="e#3092#3193#0#PHP" expanded="false" />
+            <element signature="e#3551#3650#0#PHP" expanded="false" />
+            <element signature="n#add_group#0;n#Blog#0;n#!!top" expanded="false" />
+            <element signature="e#5154#5299#0#PHP" expanded="false" />
+            <element signature="e#5251#5299#0#PHP" expanded="false" />
+            <element signature="n#blog_type#0;n#Blog#0;n#!!top" expanded="false" />
+            <element signature="e#5512#5562#0#PHP" expanded="false" />
+            <element signature="n#del_blog_type#0;n#Blog#0;n#!!top" expanded="false" />
+            <element signature="e#6141#6265#0#PHP" expanded="false" />
+            <element signature="e#6217#6265#0#PHP" expanded="false" />
+            <element signature="n#up_blog_type#0;n#Blog#0;n#!!top" expanded="false" />
+            <element signature="e#6431#6509#0#PHP" expanded="false" />
+            <element signature="e#6527#6582#0#PHP" expanded="false" />
+            <element signature="e#6707#6807#0#PHP" expanded="false" />
+            <element signature="e#6759#6807#0#PHP" expanded="false" />
+            <element signature="n#blog_tag#0;n#Blog#0;n#!!top" expanded="false" />
+            <element signature="e#6995#7041#0#PHP" expanded="false" />
+            <element signature="n#del_blog_tag#0;n#Blog#0;n#!!top" expanded="false" />
+            <element signature="e#7600#7724#0#PHP" expanded="false" />
+            <element signature="e#7676#7724#0#PHP" expanded="false" />
+            <element signature="n#add_tag#0;n#Blog#0;n#!!top" expanded="false" />
+            <element signature="e#7996#8141#0#PHP" expanded="false" />
+            <element signature="e#8093#8141#0#PHP" expanded="false" />
+            <element signature="n#up_blog_tag#0;n#Blog#0;n#!!top" expanded="false" />
+            <element signature="e#8298#8372#0#PHP" expanded="false" />
+            <element signature="e#8390#8441#0#PHP" expanded="false" />
+            <element signature="e#8555#8655#0#PHP" expanded="false" />
+            <element signature="e#8607#8655#0#PHP" expanded="false" />
+            <marker date="1487908408069" expanded="false" signature="567:633" placeholder="select title..blog..." />
+            <marker date="1487908408069" expanded="false" signature="702:764" placeholder="select blog_..blog_group..." />
+            <marker date="1487908408069" expanded="false" signature="1173:1226" placeholder="select * fro..blog..." />
+            <marker date="1487908408069" expanded="false" signature="1315:1369" placeholder="delete from ..." />
+            <marker date="1487908408069" expanded="false" signature="1607:1646" placeholder="select * fro..blog_group..." />
+            <marker date="1487908408069" expanded="false" signature="1715:1752" placeholder="select * fro..blog_tag..." />
+            <marker date="1487908408069" expanded="false" signature="3245:3284" placeholder="select * fro..blog_group..." />
+            <marker date="1487908408069" expanded="false" signature="3352:3410" placeholder="select * fro..blog..." />
+            <marker date="1487908408069" expanded="false" signature="3479:3516" placeholder="select * fro..blog_tag..." />
+            <marker date="1487908408069" expanded="false" signature="5035:5142" placeholder="insert into ..." />
+            <marker date="1487908408069" expanded="false" signature="5415:5477" placeholder="select blog_..blog_group..." />
+            <marker date="1487908408069" expanded="false" signature="5905:5970" placeholder="select * fro..blog_group..." />
+            <marker date="1487908408069" expanded="false" signature="6059:6125" placeholder="delete from ..." />
+            <marker date="1487908408069" expanded="false" signature="6923:6960" placeholder="select * fro..blog_tag..." />
+            <marker date="1487908408069" expanded="false" signature="7382:7438" placeholder="select * fro..blog_tag..." />
+            <marker date="1487908408069" expanded="false" signature="7527:7584" placeholder="delete from ..." />
+            <marker date="1487908408069" expanded="false" signature="7881:7984" placeholder="insert into ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
