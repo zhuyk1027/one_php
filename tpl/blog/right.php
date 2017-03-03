@@ -1,4 +1,6 @@
 <aside class="sidebar">
+
+    <?php  $this->load->view(BLOG.'banner'); ?>
     <div class="widget widget_categories"><h3 class="widget_tit">分类目录</h3>		<ul>
             <?php foreach($groups as $key=>$row){ ?>
                 <li class="cat-item cat-item-19">
@@ -7,6 +9,7 @@
             <?php  }?>
         </ul>
     </div>
+
     <div class="widget d_tag">
         <h3 class="widget_tit">标签云</h3>
         <div class="d_tags">
@@ -15,6 +18,7 @@
             <?php  }?>
         </div>
     </div>
+
     <div class="widget widget_recent_entries">
         <h3 class="widget_tit">最热文章</h3>
         <ul>

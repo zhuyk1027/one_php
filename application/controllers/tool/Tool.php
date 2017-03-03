@@ -20,4 +20,9 @@ class tool extends CI_Controller {
         $_sjc = $_POST['shijianchuo'];
         echo json_encode(date('Y-m-d H:i:s',$_sjc));
 	}
+	public function to_time_change1()
+	{
+        $_sjc = $_POST['dates'];
+        echo json_encode(strtotime($_sjc));
+	}
 }

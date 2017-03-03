@@ -10,6 +10,7 @@ class Blog extends CI_Controller {
             'my_photo'=>MY_PHOTO,
             'pay_photo'=>PAY_PHOTO,
             'email'=>EMAIL,
+            'this_page'=>'0',
         ),
         'tags'=>'',
         'groups'=>'',
@@ -39,6 +40,7 @@ class Blog extends CI_Controller {
             $sql = ' and group_id='.$group_id.' ';
             $title = $this->common_model->get_record('select group_name from blog_group where blog_group_id='.$group_id);
             $this->site_info['website_title']  = @$title->group_name.' - 朱耀昆博客';
+            $this->site_info['head']['this_page']  = $group_id;
         }
         #标签查看
         $tag_id = @$_GET['tag'];
@@ -65,6 +67,7 @@ class Blog extends CI_Controller {
         $blog = $this->common_model->get_records('SELECT * FROM '.$this->db->dbprefix.'blog WHERE user_id = '.$this->user_id.$sql.' LIMIT '.$offset.','.$page_size);
         $blog_group = $this->site_info['groups'];
         foreach($blog as $key=>$row){
+            $row->group_name = '无分类';
             $row->cont = substr($row->cont,0,666);;
             $row->cont = $this->common_model->replace_tags($row->cont);
             foreach($blog_group as $line){
@@ -124,12 +127,21 @@ class Blog extends CI_Controller {
 
         $blog_info = $this->common_model->get_record('select * from blog where blog_id='.$blog_id);
         $blog_group = $this->common_model->get_record('select * from blog_group where blog_group_id='.$blog_info->group_id);
-        $blog_info->group_info = $blog_group;
+        if($blog_group){
+            $blog_info->group_info = $blog_group;
+        }else{
+            @$blog_info->group_info->blog_group_id = 0;
+            @$blog_info->group_info->group_name = '无分类';
+        }
+
 
         #PC 获取上一篇
         $before_blog = $this->common_model->get_record('select * from blog where blog_id<'.$blog_info->blog_id.' order by blog_id desc limit 1');
         #PC 获取相关文章
-        $about_blog = $this->common_model->get_records('select * from blog where group_id='.$blog_info->group_info->blog_group_id.' order by click desc limit 3');
+        $about_blog = array();
+        if(isset($blog_info->group_info->blog_group_id)){
+            $about_blog = $this->common_model->get_records('select * from blog where group_id='.$blog_info->group_info->blog_group_id.' order by click desc limit 3');
+        }
 
         #若文章存在，则增加阅读量
         $this->db->query("update blog set click=click+1 where blog_id=".$blog_id);

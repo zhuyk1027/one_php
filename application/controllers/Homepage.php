@@ -10,6 +10,7 @@ class Homepage extends CI_Controller {
             'my_photo'=>MY_PHOTO,
             'pay_photo'=>PAY_PHOTO,
             'email'=>EMAIL,
+            'this_page'=>'0',
             ),
         'tags'=>'',
         'groups'=>'',

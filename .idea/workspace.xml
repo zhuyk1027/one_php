@@ -22,160 +22,133 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="constants.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/config/constants.php">
+      <file leaf-file-name="widget.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tpl/blog/js/widget.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="19" column="14" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Homepage.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/Homepage.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+              <caret line="50" column="9" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
               <folding>
-                <marker date="1487839532942" expanded="true" signature="656:713" placeholder="select fs_ti..blog_friendship..." />
-                <marker date="1487839532942" expanded="true" signature="788:915" placeholder="select blog_..blog_group..." />
-                <marker date="1487839532942" expanded="true" signature="821:875" placeholder="select count..blog..." />
-                <marker date="1487839532942" expanded="true" signature="1003:1108" placeholder="select tag_i..blog_tag..." />
-                <marker date="1487839532942" expanded="true" signature="1027:1070" placeholder="select count..blog..." />
-                <marker date="1487839532942" expanded="true" signature="1199:1258" placeholder="select blog_..blog..." />
-                <marker date="1487839532942" expanded="true" signature="1362:1448" placeholder="select * fro..blog..." />
-                <marker date="1487839532942" expanded="true" signature="1939:2011" placeholder="select * fro..blog..." />
+                <element signature="n#!!block;n#show_message#0" expanded="false" />
+                <element signature="e#86#127#0" expanded="false" />
+                <element signature="e#209#266#0" expanded="false" />
+                <element signature="e#299#345#0" expanded="false" />
+                <element signature="e#537#628#0" expanded="false" />
+                <element signature="e#642#766#0" expanded="false" />
+                <element signature="e#787#866#0" expanded="false" />
+                <element signature="n#!!block;n#hide_message#0" expanded="false" />
+                <element signature="e#944#994#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Blog.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/Blog.php">
+      <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+            <state vertical-scroll-proportion="-7.90625">
+              <caret line="25" column="42" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="42" />
               <folding>
-                <element signature="e#1266#1292#0#PHP" expanded="false" />
-                <element signature="e#3593#3657#0#PHP" expanded="false" />
-                <element signature="e#4785#4809#0#PHP" expanded="false" />
-                <marker date="1487839714829" expanded="true" signature="649:706" placeholder="select fs_ti..blog_friendship..." />
-                <marker date="1487839714829" expanded="true" signature="781:908" placeholder="select blog_..blog_group..." />
-                <marker date="1487839714829" expanded="true" signature="814:868" placeholder="select count..blog..." />
-                <marker date="1487839714829" expanded="true" signature="996:1101" placeholder="select tag_i..blog_tag..." />
-                <marker date="1487839714829" expanded="true" signature="1020:1063" placeholder="select count..blog..." />
-                <marker date="1487839714829" expanded="true" signature="1192:1251" placeholder="select blog_..blog..." />
-                <marker date="1487839714829" expanded="true" signature="1565:1619" placeholder="select group..blog_group..." />
-                <marker date="1487839714829" expanded="true" signature="2020:2063" placeholder="select tag_n..blog_tag..." />
-                <marker date="1487839714829" expanded="true" signature="2448:2524" placeholder="SELECT COUNT..." />
-                <marker date="1487839714829" expanded="true" signature="2793:2893" placeholder="SELECT * FRO..." />
-                <marker date="1487839714829" expanded="true" signature="4937:4970" placeholder="select * fro..blog..." />
-                <marker date="1487839714829" expanded="true" signature="5038:5083" placeholder="select * fro..blog_group..." />
-                <marker date="1487839714829" expanded="true" signature="5229:5315" placeholder="select * fro..blog..." />
-                <marker date="1487839714829" expanded="true" signature="5394:5497" placeholder="select * fro..blog..." />
-                <marker date="1487839714829" expanded="true" signature="5550:5594" placeholder="update blog ..." />
+                <element signature="e#130#510#0#PHP" expanded="false" />
+                <element signature="e#187#412#1#PHP" expanded="false" />
+                <element signature="e#590#698#0#PHP" expanded="false" />
+                <element signature="n#index#0;n#User#0;n#!!top" expanded="false" />
+                <element signature="n#user_blog#0;n#User#0;n#!!top" expanded="false" />
+                <element signature="n#_get_page#0;n#User#0;n#!!top" expanded="false" />
+                <element signature="n#del_blog#0;n#User#0;n#!!top" expanded="false" />
+                <element signature="e#5258#5382#0#PHP" expanded="false" />
+                <element signature="e#5334#5382#0#PHP" expanded="false" />
+                <element signature="n#up_blog#0;n#User#0;n#!!top" expanded="false" />
+                <element signature="n#blog_update#0;n#User#0;n#!!top" expanded="false" />
+                <element signature="n#add_group#0;n#User#0;n#!!top" expanded="false" />
+                <element signature="e#9126#9271#0#PHP" expanded="false" />
+                <element signature="e#9223#9271#0#PHP" expanded="false" />
+                <element signature="n#blog_type#0;n#User#0;n#!!top" expanded="false" />
+                <element signature="e#9484#9534#0#PHP" expanded="false" />
+                <element signature="n#del_blog_type#0;n#User#0;n#!!top" expanded="false" />
+                <element signature="e#10113#10237#0#PHP" expanded="false" />
+                <element signature="e#10189#10237#0#PHP" expanded="false" />
+                <element signature="n#up_blog_type#0;n#User#0;n#!!top" expanded="false" />
+                <element signature="e#10403#10481#0#PHP" expanded="false" />
+                <element signature="e#10499#10554#0#PHP" expanded="false" />
+                <element signature="e#10679#10779#0#PHP" expanded="false" />
+                <element signature="e#10731#10779#0#PHP" expanded="false" />
+                <element signature="n#blog_tag#0;n#User#0;n#!!top" expanded="false" />
+                <element signature="e#10967#11013#0#PHP" expanded="false" />
+                <element signature="n#del_blog_tag#0;n#User#0;n#!!top" expanded="false" />
+                <element signature="e#11572#11696#0#PHP" expanded="false" />
+                <element signature="e#11648#11696#0#PHP" expanded="false" />
+                <element signature="n#add_tag#0;n#User#0;n#!!top" expanded="false" />
+                <element signature="e#11968#12113#0#PHP" expanded="false" />
+                <element signature="e#12065#12113#0#PHP" expanded="false" />
+                <element signature="n#up_blog_tag#0;n#User#0;n#!!top" expanded="false" />
+                <element signature="e#12270#12344#0#PHP" expanded="false" />
+                <element signature="e#12362#12413#0#PHP" expanded="false" />
+                <element signature="e#12527#12627#0#PHP" expanded="false" />
+                <element signature="e#12579#12627#0#PHP" expanded="false" />
+                <marker date="1488533550359" expanded="false" signature="832:889" placeholder="select fs_ti..blog_friendship..." />
+                <marker date="1488533550359" expanded="false" signature="964:1091" placeholder="select blog_..blog_group..." />
+                <marker date="1488533550359" expanded="false" signature="997:1051" placeholder="select count..blog..." />
+                <marker date="1488533550359" expanded="false" signature="1179:1284" placeholder="select tag_i..blog_tag..." />
+                <marker date="1488533550359" expanded="false" signature="1203:1246" placeholder="select count..blog..." />
+                <marker date="1488533550359" expanded="false" signature="1375:1434" placeholder="select blog_..blog..." />
+                <marker date="1488533550359" expanded="false" signature="1517:1593" placeholder="SELECT COUNT..." />
+                <marker date="1488533550359" expanded="false" signature="1857:1997" placeholder="SELECT * FRO..." />
+                <marker date="1488533550359" expanded="true" signature="2684:2760" placeholder="SELECT COUNT..." />
+                <marker date="1488533550359" expanded="true" signature="3024:3164" placeholder="SELECT blog_..." />
+                <marker date="1488533550359" expanded="false" signature="5046:5099" placeholder="select * fro..blog..." />
+                <marker date="1488533550359" expanded="false" signature="5188:5242" placeholder="delete from ..." />
+                <marker date="1488533550359" expanded="true" signature="5480:5519" placeholder="select * fro..blog_group..." />
+                <marker date="1488533550359" expanded="true" signature="5588:5625" placeholder="select * fro..blog_tag..." />
+                <marker date="1488533550359" expanded="true" signature="7137:7176" placeholder="select * fro..blog_group..." />
+                <marker date="1488533550359" expanded="true" signature="7244:7302" placeholder="select * fro..blog..." />
+                <marker date="1488533550359" expanded="true" signature="7371:7408" placeholder="select * fro..blog_tag..." />
+                <marker date="1488533550359" expanded="false" signature="9007:9114" placeholder="insert into ..." />
+                <marker date="1488533550359" expanded="false" signature="9387:9449" placeholder="select blog_..blog_group..." />
+                <marker date="1488533550359" expanded="false" signature="9877:9942" placeholder="select * fro..blog_group..." />
+                <marker date="1488533550359" expanded="false" signature="10031:10097" placeholder="delete from ..." />
+                <marker date="1488533550359" expanded="false" signature="10895:10932" placeholder="select * fro..blog_tag..." />
+                <marker date="1488533550359" expanded="false" signature="11354:11410" placeholder="select * fro..blog_tag..." />
+                <marker date="1488533550359" expanded="false" signature="11499:11556" placeholder="delete from ..." />
+                <marker date="1488533550359" expanded="false" signature="11853:11956" placeholder="insert into ..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tpl/blog/header.php">
+      <file leaf-file-name="blog_write.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tpl/blog/blog_write.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.78125">
-              <caret line="69" column="21" selection-start-line="69" selection-start-column="21" selection-end-line="69" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="blog_list.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tpl/smg/blog_list.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.1875">
-              <caret line="43" column="85" selection-start-line="43" selection-start-column="85" selection-end-line="43" selection-end-column="85" />
-              <folding />
+            <state vertical-scroll-proportion="-10.96875">
+              <caret line="18" column="63" selection-start-line="18" selection-start-column="63" selection-end-line="18" selection-end-column="63" />
+              <folding>
+                <element signature="n#style#0;n#label#0;n#div#0;n#div#2;n#fieldset#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="blog_update.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tpl/smg/blog_update.php">
+        <entry file="file://$PROJECT_DIR$/tpl/blog/blog_update.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="-28.03125">
+              <caret line="39" column="98" selection-start-line="39" selection-start-column="47" selection-end-line="39" selection-end-column="98" />
+              <folding>
+                <element signature="n#style#0;n#label#0;n#div#0;n#div#2;n#fieldset#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Blog.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/controllers/smg/Blog.php">
+      <file leaf-file-name="user_home_head.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tpl/blog/user_home_head.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.30221704">
-              <caret line="130" column="26" selection-start-line="130" selection-start-column="26" selection-end-line="130" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.18786465">
+              <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
               <folding>
-                <element signature="e#154#236#0#PHP" expanded="false" />
-                <element signature="n#__construct#0;n#Blog#0;n#!!top" expanded="false" />
-                <element signature="n#index#0;n#Blog#0;n#!!top" expanded="false" />
-                <element signature="e#793#846#0#PHP" expanded="false" />
-                <element signature="n#del_blog#0;n#Blog#0;n#!!top" expanded="false" />
-                <element signature="e#1385#1509#0#PHP" expanded="false" />
-                <element signature="e#1461#1509#0#PHP" expanded="false" />
-                <element signature="n#write_blog#0;n#Blog#0;n#!!top" expanded="false" />
-                <element signature="e#1848#1920#0#PHP" expanded="false" />
-                <element signature="n#blog_add#0;n#Blog#0;n#!!top" expanded="false" />
-                <element signature="e#2391#2508#0#PHP" expanded="false" />
-                <element signature="e#2526#2770#0#PHP" expanded="false" />
-                <element signature="e#2828#3030#0#PHP" expanded="false" />
-                <element signature="e#2923#3030#0#PHP" expanded="false" />
-                <element signature="n#up_blog#0;n#Blog#0;n#!!top" expanded="false" />
-                <element signature="e#3092#3193#0#PHP" expanded="false" />
-                <element signature="e#3551#3650#0#PHP" expanded="false" />
-                <element signature="n#add_group#0;n#Blog#0;n#!!top" expanded="false" />
-                <element signature="e#5154#5299#0#PHP" expanded="false" />
-                <element signature="e#5251#5299#0#PHP" expanded="false" />
-                <element signature="n#blog_type#0;n#Blog#0;n#!!top" expanded="false" />
-                <element signature="e#5512#5562#0#PHP" expanded="false" />
-                <element signature="n#del_blog_type#0;n#Blog#0;n#!!top" expanded="false" />
-                <element signature="e#6141#6265#0#PHP" expanded="false" />
-                <element signature="e#6217#6265#0#PHP" expanded="false" />
-                <element signature="n#up_blog_type#0;n#Blog#0;n#!!top" expanded="false" />
-                <element signature="e#6431#6509#0#PHP" expanded="false" />
-                <element signature="e#6527#6582#0#PHP" expanded="false" />
-                <element signature="e#6707#6807#0#PHP" expanded="false" />
-                <element signature="e#6759#6807#0#PHP" expanded="false" />
-                <element signature="n#blog_tag#0;n#Blog#0;n#!!top" expanded="false" />
-                <element signature="e#6995#7041#0#PHP" expanded="false" />
-                <element signature="n#del_blog_tag#0;n#Blog#0;n#!!top" expanded="false" />
-                <element signature="e#7600#7724#0#PHP" expanded="false" />
-                <element signature="e#7676#7724#0#PHP" expanded="false" />
-                <element signature="n#add_tag#0;n#Blog#0;n#!!top" expanded="false" />
-                <element signature="e#7996#8141#0#PHP" expanded="false" />
-                <element signature="e#8093#8141#0#PHP" expanded="false" />
-                <element signature="n#up_blog_tag#0;n#Blog#0;n#!!top" expanded="false" />
-                <element signature="e#8298#8372#0#PHP" expanded="false" />
-                <element signature="e#8390#8441#0#PHP" expanded="false" />
-                <element signature="e#8555#8655#0#PHP" expanded="false" />
-                <element signature="e#8607#8655#0#PHP" expanded="false" />
-                <marker date="1487908408069" expanded="false" signature="567:633" placeholder="select title..blog..." />
-                <marker date="1487908408069" expanded="false" signature="702:764" placeholder="select blog_..blog_group..." />
-                <marker date="1487908408069" expanded="false" signature="1173:1226" placeholder="select * fro..blog..." />
-                <marker date="1487908408069" expanded="false" signature="1315:1369" placeholder="delete from ..." />
-                <marker date="1487908408069" expanded="false" signature="1607:1646" placeholder="select * fro..blog_group..." />
-                <marker date="1487908408069" expanded="false" signature="1715:1752" placeholder="select * fro..blog_tag..." />
-                <marker date="1487908408069" expanded="false" signature="3245:3284" placeholder="select * fro..blog_group..." />
-                <marker date="1487908408069" expanded="false" signature="3352:3410" placeholder="select * fro..blog..." />
-                <marker date="1487908408069" expanded="false" signature="3479:3516" placeholder="select * fro..blog_tag..." />
-                <marker date="1487908408069" expanded="false" signature="5035:5142" placeholder="insert into ..." />
-                <marker date="1487908408069" expanded="false" signature="5415:5477" placeholder="select blog_..blog_group..." />
-                <marker date="1487908408069" expanded="false" signature="5905:5970" placeholder="select * fro..blog_group..." />
-                <marker date="1487908408069" expanded="false" signature="6059:6125" placeholder="delete from ..." />
-                <marker date="1487908408069" expanded="false" signature="6923:6960" placeholder="select * fro..blog_tag..." />
-                <marker date="1487908408069" expanded="false" signature="7382:7438" placeholder="select * fro..blog_tag..." />
-                <marker date="1487908408069" expanded="false" signature="7527:7584" placeholder="delete from ..." />
-                <marker date="1487908408069" expanded="false" signature="7881:7984" placeholder="insert into ..." />
+                <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#2;n#ul#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#3;n#ul#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -187,11 +160,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/application/config/database.php" />
-        <option value="$PROJECT_DIR$/system/core/Controller.php" />
         <option value="E:/xampp7/apache/conf/httpd.conf" />
         <option value="$PROJECT_DIR$/tpl/blog/css/style.css" />
-        <option value="$PROJECT_DIR$/application/config/routes.php" />
         <option value="$PROJECT_DIR$/tpl/tool/index.php" />
         <option value="$PROJECT_DIR$/tpl/tool/qrcode.php" />
         <option value="$PROJECT_DIR$/tpl/tool/email.php" />
@@ -199,17 +169,35 @@
         <option value="$PROJECT_DIR$/tpl/tool/julaibao.php" />
         <option value="$PROJECT_DIR$/application/controllers/tool/Send_email.php" />
         <option value="$USER_HOME$/Desktop/网站正式更名为——静夜思 – 静夜思.html" />
-        <option value="$PROJECT_DIR$/tpl/blog/homepage.php" />
         <option value="$PROJECT_DIR$/tpl/blog/blog_list.php" />
-        <option value="$PROJECT_DIR$/tpl/blog/blog_detail.php" />
-        <option value="$PROJECT_DIR$/application/controllers/Homepage.php" />
-        <option value="$PROJECT_DIR$/application/controllers/Blog.php" />
-        <option value="$PROJECT_DIR$/tpl/blog/right.php" />
         <option value="$PROJECT_DIR$/application/config/constants.php" />
-        <option value="$PROJECT_DIR$/tpl/blog/footer.php" />
-        <option value="$PROJECT_DIR$/tpl/blog/header.php" />
-        <option value="$PROJECT_DIR$/tpl/smg/blog_list.php" />
         <option value="$PROJECT_DIR$/application/controllers/smg/Blog.php" />
+        <option value="$PROJECT_DIR$/application/controllers/tool/Tool.php" />
+        <option value="$PROJECT_DIR$/tpl/tool/tool.php" />
+        <option value="$PROJECT_DIR$/application/config/routes.php" />
+        <option value="$PROJECT_DIR$/application/config/database.php" />
+        <option value="$PROJECT_DIR$/tpl/blog/homepage.php" />
+        <option value="$PROJECT_DIR$/tpl/blog/banner.php" />
+        <option value="$PROJECT_DIR$/tpl/blog/right.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Homepage.php" />
+        <option value="$PROJECT_DIR$/system/core/Controller.php" />
+        <option value="$PROJECT_DIR$/tpl/blog/login.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Login.php" />
+        <option value="$PROJECT_DIR$/tpl/blog/user_header.php" />
+        <option value="$PROJECT_DIR$/tpl/blog/blog_detail.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Blog.php" />
+        <option value="$PROJECT_DIR$/tpl/smg/blog_list.php" />
+        <option value="$PROJECT_DIR$/tpl/blog/footer.php" />
+        <option value="$PROJECT_DIR$/tpl/blog/js/jquery.js" />
+        <option value="$PROJECT_DIR$/tpl/blog/js/widget.js" />
+        <option value="$PROJECT_DIR$/tpl/blog/user_home.php" />
+        <option value="$PROJECT_DIR$/../zhuyk/tpl/smg/blog_update.php" />
+        <option value="$PROJECT_DIR$/tpl/blog/blog_update.php" />
+        <option value="$PROJECT_DIR$/tpl/blog/header_user.php" />
+        <option value="$PROJECT_DIR$/tpl/blog/header.php" />
+        <option value="$PROJECT_DIR$/tpl/blog/blog_write.php" />
+        <option value="$PROJECT_DIR$/application/controllers/User.php" />
+        <option value="$PROJECT_DIR$/tpl/blog/user_home_head.php" />
       </list>
     </option>
   </component>
@@ -250,6 +238,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -296,7 +285,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="smg" />
+              <option name="myItemId" value="blog" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -357,12 +346,17 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../zhuyk" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\baiyang\one_php\tpl\blog" />
+      <recent name="E:\baiyang\one_php\application\controllers" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
@@ -415,6 +409,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="找到" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32897604" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -424,133 +419,44 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="找到" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32897604" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/application/controllers/User.php</url>
+          <line>64</line>
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/application/controllers/User.php</url>
+          <line>180</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/application/controllers/User.php</url>
+          <line>121</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/application/controllers/User.php</url>
+          <line>92</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/application/controllers/User.php</url>
+          <line>197</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="6" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/config/constants.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="14" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Homepage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
-          <folding>
-            <marker date="1487839532942" expanded="true" signature="656:713" placeholder="select fs_ti..blog_friendship..." />
-            <marker date="1487839532942" expanded="true" signature="788:915" placeholder="select blog_..blog_group..." />
-            <marker date="1487839532942" expanded="true" signature="821:875" placeholder="select count..blog..." />
-            <marker date="1487839532942" expanded="true" signature="1003:1108" placeholder="select tag_i..blog_tag..." />
-            <marker date="1487839532942" expanded="true" signature="1027:1070" placeholder="select count..blog..." />
-            <marker date="1487839532942" expanded="true" signature="1199:1258" placeholder="select blog_..blog..." />
-            <marker date="1487839532942" expanded="true" signature="1362:1448" placeholder="select * fro..blog..." />
-            <marker date="1487839532942" expanded="true" signature="1939:2011" placeholder="select * fro..blog..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Blog.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
-          <folding>
-            <element signature="e#1266#1292#0#PHP" expanded="false" />
-            <element signature="e#3593#3657#0#PHP" expanded="false" />
-            <element signature="e#4785#4809#0#PHP" expanded="false" />
-            <marker date="1487839714829" expanded="true" signature="649:706" placeholder="select fs_ti..blog_friendship..." />
-            <marker date="1487839714829" expanded="true" signature="781:908" placeholder="select blog_..blog_group..." />
-            <marker date="1487839714829" expanded="true" signature="814:868" placeholder="select count..blog..." />
-            <marker date="1487839714829" expanded="true" signature="996:1101" placeholder="select tag_i..blog_tag..." />
-            <marker date="1487839714829" expanded="true" signature="1020:1063" placeholder="select count..blog..." />
-            <marker date="1487839714829" expanded="true" signature="1192:1251" placeholder="select blog_..blog..." />
-            <marker date="1487839714829" expanded="true" signature="1565:1619" placeholder="select group..blog_group..." />
-            <marker date="1487839714829" expanded="true" signature="2020:2063" placeholder="select tag_n..blog_tag..." />
-            <marker date="1487839714829" expanded="true" signature="2448:2524" placeholder="SELECT COUNT..." />
-            <marker date="1487839714829" expanded="true" signature="2793:2893" placeholder="SELECT * FRO..." />
-            <marker date="1487839714829" expanded="true" signature="4937:4970" placeholder="select * fro..blog..." />
-            <marker date="1487839714829" expanded="true" signature="5038:5083" placeholder="select * fro..blog_group..." />
-            <marker date="1487839714829" expanded="true" signature="5229:5315" placeholder="select * fro..blog..." />
-            <marker date="1487839714829" expanded="true" signature="5394:5497" placeholder="select * fro..blog..." />
-            <marker date="1487839714829" expanded="true" signature="5550:5594" placeholder="update blog ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/blog/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/blog/right.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="22" selection-start-line="2" selection-start-column="12" selection-end-line="6" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/constants.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="56" selection-start-line="20" selection-start-column="56" selection-end-line="20" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Homepage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
-          <folding>
-            <marker date="1487839532942" expanded="true" signature="656:713" placeholder="select fs_ti..blog_friendship..." />
-            <marker date="1487839532942" expanded="true" signature="788:915" placeholder="select blog_..blog_group..." />
-            <marker date="1487839532942" expanded="true" signature="821:875" placeholder="select count..blog..." />
-            <marker date="1487839532942" expanded="true" signature="1003:1108" placeholder="select tag_i..blog_tag..." />
-            <marker date="1487839532942" expanded="true" signature="1027:1070" placeholder="select count..blog..." />
-            <marker date="1487839532942" expanded="true" signature="1199:1258" placeholder="select blog_..blog..." />
-            <marker date="1487839532942" expanded="true" signature="1362:1448" placeholder="select * fro..blog..." />
-            <marker date="1487839532942" expanded="true" signature="1939:2011" placeholder="select * fro..blog..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/blog/homepage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="140" selection-start-line="30" selection-start-column="140" selection-end-line="30" selection-end-column="140" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/blog/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="52" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/blog/right.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tpl/blog/footer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -586,28 +492,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.6875">
-          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/system/core/Controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49008167">
-          <caret line="83" column="43" selection-start-line="83" selection-start-column="43" selection-end-line="83" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/静夜思-- 分享生活的那些趣事儿.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.3125">
-          <caret line="6" column="31" selection-start-line="0" selection-start-column="0" selection-end-line="178" selection-end-column="2620" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://E:/xampp7/apache/conf/httpd.conf">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.9482565">
@@ -629,24 +513,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.81213534">
-          <caret line="61" column="35" selection-start-line="61" selection-start-column="35" selection-end-line="61" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tpl/tool/qrcode.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.75845975">
           <caret line="67" column="6" selection-start-line="67" selection-start-column="6" selection-end-line="67" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/tool/Tool.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -699,122 +569,211 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/blog/homepage.php">
+    <entry file="file://$PROJECT_DIR$/tpl/smg/blog_update.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5550181">
-          <caret line="26" column="78" selection-start-line="26" selection-start-column="78" selection-end-line="26" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/blog/blog_detail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9031505">
-          <caret line="57" column="47" selection-start-line="57" selection-start-column="47" selection-end-line="57" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/blog/blog_list.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6172695">
-          <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Blog.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
-          <folding>
-            <element signature="e#1266#1292#0#PHP" expanded="false" />
-            <element signature="e#3593#3657#0#PHP" expanded="false" />
-            <element signature="e#4785#4809#0#PHP" expanded="false" />
-            <marker date="1487839714829" expanded="true" signature="649:706" placeholder="select fs_ti..blog_friendship..." />
-            <marker date="1487839714829" expanded="true" signature="781:908" placeholder="select blog_..blog_group..." />
-            <marker date="1487839714829" expanded="true" signature="814:868" placeholder="select count..blog..." />
-            <marker date="1487839714829" expanded="true" signature="996:1101" placeholder="select tag_i..blog_tag..." />
-            <marker date="1487839714829" expanded="true" signature="1020:1063" placeholder="select count..blog..." />
-            <marker date="1487839714829" expanded="true" signature="1192:1251" placeholder="select blog_..blog..." />
-            <marker date="1487839714829" expanded="true" signature="1565:1619" placeholder="select group..blog_group..." />
-            <marker date="1487839714829" expanded="true" signature="2020:2063" placeholder="select tag_n..blog_tag..." />
-            <marker date="1487839714829" expanded="true" signature="2448:2524" placeholder="SELECT COUNT..." />
-            <marker date="1487839714829" expanded="true" signature="2793:2893" placeholder="SELECT * FRO..." />
-            <marker date="1487839714829" expanded="true" signature="4937:4970" placeholder="select * fro..blog..." />
-            <marker date="1487839714829" expanded="true" signature="5038:5083" placeholder="select * fro..blog_group..." />
-            <marker date="1487839714829" expanded="true" signature="5229:5315" placeholder="select * fro..blog..." />
-            <marker date="1487839714829" expanded="true" signature="5394:5497" placeholder="select * fro..blog..." />
-            <marker date="1487839714829" expanded="true" signature="5550:5594" placeholder="update blog ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/constants.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="14" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/blog/footer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.50060457">
+        <state vertical-scroll-proportion="-0.0">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/blog/right.php">
+    <entry file="file://$PROJECT_DIR$/tpl/tool/tool.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="22" selection-start-line="2" selection-start-column="12" selection-end-line="6" selection-end-column="22" />
-          <folding />
+        <state vertical-scroll-proportion="0.49008167">
+          <caret line="74" column="16" selection-start-line="74" selection-start-column="16" selection-end-line="74" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/tool/Tool.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.67094517">
+          <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/blog/banner.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.59043175">
+          <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Homepage.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+          <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
           <folding>
-            <marker date="1487839532942" expanded="true" signature="656:713" placeholder="select fs_ti..blog_friendship..." />
-            <marker date="1487839532942" expanded="true" signature="788:915" placeholder="select blog_..blog_group..." />
-            <marker date="1487839532942" expanded="true" signature="821:875" placeholder="select count..blog..." />
-            <marker date="1487839532942" expanded="true" signature="1003:1108" placeholder="select tag_i..blog_tag..." />
-            <marker date="1487839532942" expanded="true" signature="1027:1070" placeholder="select count..blog..." />
-            <marker date="1487839532942" expanded="true" signature="1199:1258" placeholder="select blog_..blog..." />
-            <marker date="1487839532942" expanded="true" signature="1362:1448" placeholder="select * fro..blog..." />
-            <marker date="1487839532942" expanded="true" signature="1939:2011" placeholder="select * fro..blog..." />
+            <marker date="1488360155814" expanded="true" signature="-1:-1" placeholder="select fs_ti..blog_friendship..." />
+            <marker date="1488360155814" expanded="true" signature="-1:-1" placeholder="select blog_..blog_group..." />
+            <marker date="1488360155814" expanded="true" signature="-1:-1" placeholder="select count..blog..." />
+            <marker date="1488360155814" expanded="true" signature="-1:-1" placeholder="select tag_i..blog_tag..." />
+            <marker date="1488360155814" expanded="true" signature="-1:-1" placeholder="select count..blog..." />
+            <marker date="1488360155814" expanded="true" signature="-1:-1" placeholder="select blog_..blog..." />
+            <marker date="1488360155814" expanded="true" signature="-1:-1" placeholder="select * fro..blog..." />
+            <marker date="1488360155814" expanded="true" signature="-1:-1" placeholder="select * fro..blog..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/blog/header.php">
+    <entry file="file://$PROJECT_DIR$/tpl/smg/header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.78125">
-          <caret line="69" column="21" selection-start-line="69" selection-start-column="21" selection-end-line="69" selection-end-column="21" />
+        <state vertical-scroll-proportion="-19.59375">
+          <caret line="44" column="4" selection-start-line="44" selection-start-column="4" selection-end-line="45" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/smg/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9124854">
+          <caret line="34" column="26" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.81213534">
+          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/smg/js/widget.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.31946">
+          <caret line="51" column="31" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/core/Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8016336">
+          <caret line="83" column="39" selection-start-line="83" selection-start-column="39" selection-end-line="83" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Com_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5367561">
+          <caret line="32" column="22" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/blog/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3488915">
+          <caret line="13" column="31" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="31" />
+          <folding>
+            <element signature="e#196#271#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4562427">
+          <caret line="32" column="9" selection-start-line="30" selection-start-column="8" selection-end-line="32" selection-end-column="9" />
+          <folding>
+            <marker date="1488526932306" expanded="true" signature="-1:-1" placeholder="select fs_ti..blog_friendship..." />
+            <marker date="1488526932306" expanded="true" signature="-1:-1" placeholder="select blog_..blog_group..." />
+            <marker date="1488526932306" expanded="true" signature="-1:-1" placeholder="select count..blog..." />
+            <marker date="1488526932306" expanded="true" signature="-1:-1" placeholder="select tag_i..blog_tag..." />
+            <marker date="1488526932306" expanded="true" signature="-1:-1" placeholder="select count..blog..." />
+            <marker date="1488526932306" expanded="true" signature="-1:-1" placeholder="select blog_..blog..." />
+            <marker date="1488526932306" expanded="true" signature="-1:-1" placeholder="SELECT id,lo..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3932322">
+          <caret line="82" column="33" selection-start-line="82" selection-start-column="33" selection-end-line="82" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/blog/homepage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.6875">
+          <caret line="27" column="111" selection-start-line="27" selection-start-column="95" selection-end-line="27" selection-end-column="111" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/blog/blog_list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.59043175">
+          <caret line="22" column="83" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Blog.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1411902">
+          <caret line="133" column="13" selection-start-line="133" selection-start-column="13" selection-end-line="133" selection-end-column="13" />
+          <folding>
+            <marker date="1488530163331" expanded="true" signature="-1:-1" placeholder="select fs_ti..blog_friendship..." />
+            <marker date="1488530163331" expanded="true" signature="-1:-1" placeholder="select blog_..blog_group..." />
+            <marker date="1488530163331" expanded="true" signature="-1:-1" placeholder="select count..blog..." />
+            <marker date="1488530163331" expanded="true" signature="-1:-1" placeholder="select tag_i..blog_tag..." />
+            <marker date="1488530163331" expanded="true" signature="-1:-1" placeholder="select count..blog..." />
+            <marker date="1488530163331" expanded="true" signature="-1:-1" placeholder="select blog_..blog..." />
+            <marker date="1488530163331" expanded="true" signature="-1:-1" placeholder="select group..blog_group..." />
+            <marker date="1488530163331" expanded="true" signature="-1:-1" placeholder="select tag_n..blog_tag..." />
+            <marker date="1488530163331" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1488530163331" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1488530163331" expanded="true" signature="-1:-1" placeholder="select * fro..blog..." />
+            <marker date="1488530163331" expanded="true" signature="-1:-1" placeholder="select * fro..blog_group..." />
+            <marker date="1488530163331" expanded="true" signature="-1:-1" placeholder="select * fro..blog..." />
+            <marker date="1488530163331" expanded="true" signature="-1:-1" placeholder="select * fro..blog..." />
+            <marker date="1488530163331" expanded="true" signature="-1:-1" placeholder="update blog ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/blog/blog_detail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3488915">
+          <caret line="13" column="93" selection-start-line="13" selection-start-column="83" selection-end-line="13" selection-end-column="93" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tpl/smg/blog_list.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.1875">
-          <caret line="43" column="85" selection-start-line="43" selection-start-column="85" selection-end-line="43" selection-end-column="85" />
+        <state vertical-scroll-proportion="0.7316219">
+          <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/smg/blog_update.php">
+    <entry file="file://$PROJECT_DIR$/tpl/blog/footer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.18786465">
+          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/blog/js/jquery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6175478">
+          <caret line="61" column="23" selection-start-line="61" selection-start-column="23" selection-end-line="61" selection-end-column="23" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/smg/Blog.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30221704">
-          <caret line="130" column="26" selection-start-line="130" selection-start-column="26" selection-end-line="130" selection-end-column="26" />
+        <state vertical-scroll-proportion="-20.3125">
+          <caret line="261" column="5" selection-start-line="46" selection-start-column="4" selection-end-line="261" selection-end-column="5" />
           <folding>
             <element signature="e#154#236#0#PHP" expanded="false" />
             <element signature="n#__construct#0;n#Blog#0;n#!!top" expanded="false" />
@@ -833,6 +792,11 @@
             <element signature="n#up_blog#0;n#Blog#0;n#!!top" expanded="false" />
             <element signature="e#3092#3193#0#PHP" expanded="false" />
             <element signature="e#3551#3650#0#PHP" expanded="false" />
+            <element signature="n#blog_update#0;n#Blog#0;n#!!top" expanded="false" />
+            <element signature="e#4180#4297#0#PHP" expanded="false" />
+            <element signature="e#4315#4559#0#PHP" expanded="false" />
+            <element signature="e#4671#4874#0#PHP" expanded="false" />
+            <element signature="e#4767#4874#0#PHP" expanded="false" />
             <element signature="n#add_group#0;n#Blog#0;n#!!top" expanded="false" />
             <element signature="e#5154#5299#0#PHP" expanded="false" />
             <element signature="e#5251#5299#0#PHP" expanded="false" />
@@ -859,23 +823,213 @@
             <element signature="e#8390#8441#0#PHP" expanded="false" />
             <element signature="e#8555#8655#0#PHP" expanded="false" />
             <element signature="e#8607#8655#0#PHP" expanded="false" />
-            <marker date="1487908408069" expanded="false" signature="567:633" placeholder="select title..blog..." />
-            <marker date="1487908408069" expanded="false" signature="702:764" placeholder="select blog_..blog_group..." />
-            <marker date="1487908408069" expanded="false" signature="1173:1226" placeholder="select * fro..blog..." />
-            <marker date="1487908408069" expanded="false" signature="1315:1369" placeholder="delete from ..." />
-            <marker date="1487908408069" expanded="false" signature="1607:1646" placeholder="select * fro..blog_group..." />
-            <marker date="1487908408069" expanded="false" signature="1715:1752" placeholder="select * fro..blog_tag..." />
-            <marker date="1487908408069" expanded="false" signature="3245:3284" placeholder="select * fro..blog_group..." />
-            <marker date="1487908408069" expanded="false" signature="3352:3410" placeholder="select * fro..blog..." />
-            <marker date="1487908408069" expanded="false" signature="3479:3516" placeholder="select * fro..blog_tag..." />
-            <marker date="1487908408069" expanded="false" signature="5035:5142" placeholder="insert into ..." />
-            <marker date="1487908408069" expanded="false" signature="5415:5477" placeholder="select blog_..blog_group..." />
-            <marker date="1487908408069" expanded="false" signature="5905:5970" placeholder="select * fro..blog_group..." />
-            <marker date="1487908408069" expanded="false" signature="6059:6125" placeholder="delete from ..." />
-            <marker date="1487908408069" expanded="false" signature="6923:6960" placeholder="select * fro..blog_tag..." />
-            <marker date="1487908408069" expanded="false" signature="7382:7438" placeholder="select * fro..blog_tag..." />
-            <marker date="1487908408069" expanded="false" signature="7527:7584" placeholder="delete from ..." />
-            <marker date="1487908408069" expanded="false" signature="7881:7984" placeholder="insert into ..." />
+            <marker date="1487908408069" expanded="false" signature="-1:-1" placeholder="select title..blog..." />
+            <marker date="1487908408069" expanded="false" signature="-1:-1" placeholder="select blog_..blog_group..." />
+            <marker date="1487908408069" expanded="false" signature="-1:-1" placeholder="select * fro..blog..." />
+            <marker date="1487908408069" expanded="false" signature="-1:-1" placeholder="delete from ..." />
+            <marker date="1487908408069" expanded="false" signature="-1:-1" placeholder="select * fro..blog_group..." />
+            <marker date="1487908408069" expanded="false" signature="-1:-1" placeholder="select * fro..blog_tag..." />
+            <marker date="1487908408069" expanded="false" signature="-1:-1" placeholder="select * fro..blog_group..." />
+            <marker date="1487908408069" expanded="false" signature="-1:-1" placeholder="select * fro..blog..." />
+            <marker date="1487908408069" expanded="false" signature="-1:-1" placeholder="select * fro..blog_tag..." />
+            <marker date="1487908408069" expanded="false" signature="-1:-1" placeholder="insert into ..." />
+            <marker date="1487908408069" expanded="false" signature="-1:-1" placeholder="select blog_..blog_group..." />
+            <marker date="1487908408069" expanded="false" signature="-1:-1" placeholder="select * fro..blog_group..." />
+            <marker date="1487908408069" expanded="false" signature="-1:-1" placeholder="delete from ..." />
+            <marker date="1487908408069" expanded="false" signature="-1:-1" placeholder="select * fro..blog_tag..." />
+            <marker date="1487908408069" expanded="false" signature="-1:-1" placeholder="select * fro..blog_tag..." />
+            <marker date="1487908408069" expanded="false" signature="-1:-1" placeholder="delete from ..." />
+            <marker date="1487908408069" expanded="false" signature="-1:-1" placeholder="insert into ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/constants.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="14" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/blog/user_home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4025671">
+          <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/blog/user_blog.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19486581">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../zhuyk/tpl/smg/blog_update.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08051342">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="10" selection-end-column="9" />
+          <folding>
+            <element signature="e#1344#5147#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/blog/right.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27537924">
+          <caret line="30" column="10" selection-start-line="30" selection-start-column="10" selection-end-line="30" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/blog/js/widget.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="50" column="9" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
+          <folding>
+            <element signature="n#!!block;n#show_message#0" expanded="false" />
+            <element signature="e#86#127#0" expanded="false" />
+            <element signature="e#209#266#0" expanded="false" />
+            <element signature="e#299#345#0" expanded="false" />
+            <element signature="e#537#628#0" expanded="false" />
+            <element signature="e#642#766#0" expanded="false" />
+            <element signature="e#787#866#0" expanded="false" />
+            <element signature="n#!!block;n#hide_message#0" expanded="false" />
+            <element signature="e#944#994#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/blog/header_user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.03125">
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="100" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/blog/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21470246">
+          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../zhuyk/tpl/smg/blog_write.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.50991833">
+          <caret line="85" column="0" selection-start-line="36" selection-start-column="24" selection-end-line="85" selection-end-column="0" />
+          <folding>
+            <element signature="e#1343#4632#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/blog/blog_update.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-28.03125">
+          <caret line="39" column="98" selection-start-line="39" selection-start-column="47" selection-end-line="39" selection-end-column="98" />
+          <folding>
+            <element signature="n#style#0;n#label#0;n#div#0;n#div#2;n#fieldset#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/blog/blog_write.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.96875">
+          <caret line="18" column="63" selection-start-line="18" selection-start-column="63" selection-end-line="18" selection-end-column="63" />
+          <folding>
+            <element signature="n#style#0;n#label#0;n#div#0;n#div#2;n#fieldset#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.90625">
+          <caret line="25" column="42" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="42" />
+          <folding>
+            <element signature="e#130#510#0#PHP" expanded="false" />
+            <element signature="e#187#412#1#PHP" expanded="false" />
+            <element signature="e#590#698#0#PHP" expanded="false" />
+            <element signature="n#index#0;n#User#0;n#!!top" expanded="false" />
+            <element signature="n#user_blog#0;n#User#0;n#!!top" expanded="false" />
+            <element signature="n#_get_page#0;n#User#0;n#!!top" expanded="false" />
+            <element signature="n#del_blog#0;n#User#0;n#!!top" expanded="false" />
+            <element signature="e#5258#5382#0#PHP" expanded="false" />
+            <element signature="e#5334#5382#0#PHP" expanded="false" />
+            <element signature="n#up_blog#0;n#User#0;n#!!top" expanded="false" />
+            <element signature="n#blog_update#0;n#User#0;n#!!top" expanded="false" />
+            <element signature="n#add_group#0;n#User#0;n#!!top" expanded="false" />
+            <element signature="e#9126#9271#0#PHP" expanded="false" />
+            <element signature="e#9223#9271#0#PHP" expanded="false" />
+            <element signature="n#blog_type#0;n#User#0;n#!!top" expanded="false" />
+            <element signature="e#9484#9534#0#PHP" expanded="false" />
+            <element signature="n#del_blog_type#0;n#User#0;n#!!top" expanded="false" />
+            <element signature="e#10113#10237#0#PHP" expanded="false" />
+            <element signature="e#10189#10237#0#PHP" expanded="false" />
+            <element signature="n#up_blog_type#0;n#User#0;n#!!top" expanded="false" />
+            <element signature="e#10403#10481#0#PHP" expanded="false" />
+            <element signature="e#10499#10554#0#PHP" expanded="false" />
+            <element signature="e#10679#10779#0#PHP" expanded="false" />
+            <element signature="e#10731#10779#0#PHP" expanded="false" />
+            <element signature="n#blog_tag#0;n#User#0;n#!!top" expanded="false" />
+            <element signature="e#10967#11013#0#PHP" expanded="false" />
+            <element signature="n#del_blog_tag#0;n#User#0;n#!!top" expanded="false" />
+            <element signature="e#11572#11696#0#PHP" expanded="false" />
+            <element signature="e#11648#11696#0#PHP" expanded="false" />
+            <element signature="n#add_tag#0;n#User#0;n#!!top" expanded="false" />
+            <element signature="e#11968#12113#0#PHP" expanded="false" />
+            <element signature="e#12065#12113#0#PHP" expanded="false" />
+            <element signature="n#up_blog_tag#0;n#User#0;n#!!top" expanded="false" />
+            <element signature="e#12270#12344#0#PHP" expanded="false" />
+            <element signature="e#12362#12413#0#PHP" expanded="false" />
+            <element signature="e#12527#12627#0#PHP" expanded="false" />
+            <element signature="e#12579#12627#0#PHP" expanded="false" />
+            <marker date="1488533550359" expanded="false" signature="832:889" placeholder="select fs_ti..blog_friendship..." />
+            <marker date="1488533550359" expanded="false" signature="964:1091" placeholder="select blog_..blog_group..." />
+            <marker date="1488533550359" expanded="false" signature="997:1051" placeholder="select count..blog..." />
+            <marker date="1488533550359" expanded="false" signature="1179:1284" placeholder="select tag_i..blog_tag..." />
+            <marker date="1488533550359" expanded="false" signature="1203:1246" placeholder="select count..blog..." />
+            <marker date="1488533550359" expanded="false" signature="1375:1434" placeholder="select blog_..blog..." />
+            <marker date="1488533550359" expanded="false" signature="1517:1593" placeholder="SELECT COUNT..." />
+            <marker date="1488533550359" expanded="false" signature="1857:1997" placeholder="SELECT * FRO..." />
+            <marker date="1488533550359" expanded="true" signature="2684:2760" placeholder="SELECT COUNT..." />
+            <marker date="1488533550359" expanded="true" signature="3024:3164" placeholder="SELECT blog_..." />
+            <marker date="1488533550359" expanded="false" signature="5046:5099" placeholder="select * fro..blog..." />
+            <marker date="1488533550359" expanded="false" signature="5188:5242" placeholder="delete from ..." />
+            <marker date="1488533550359" expanded="true" signature="5480:5519" placeholder="select * fro..blog_group..." />
+            <marker date="1488533550359" expanded="true" signature="5588:5625" placeholder="select * fro..blog_tag..." />
+            <marker date="1488533550359" expanded="true" signature="7137:7176" placeholder="select * fro..blog_group..." />
+            <marker date="1488533550359" expanded="true" signature="7244:7302" placeholder="select * fro..blog..." />
+            <marker date="1488533550359" expanded="true" signature="7371:7408" placeholder="select * fro..blog_tag..." />
+            <marker date="1488533550359" expanded="false" signature="9007:9114" placeholder="insert into ..." />
+            <marker date="1488533550359" expanded="false" signature="9387:9449" placeholder="select blog_..blog_group..." />
+            <marker date="1488533550359" expanded="false" signature="9877:9942" placeholder="select * fro..blog_group..." />
+            <marker date="1488533550359" expanded="false" signature="10031:10097" placeholder="delete from ..." />
+            <marker date="1488533550359" expanded="false" signature="10895:10932" placeholder="select * fro..blog_tag..." />
+            <marker date="1488533550359" expanded="false" signature="11354:11410" placeholder="select * fro..blog_tag..." />
+            <marker date="1488533550359" expanded="false" signature="11499:11556" placeholder="delete from ..." />
+            <marker date="1488533550359" expanded="false" signature="11853:11956" placeholder="insert into ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/blog/user_home_head.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18786465">
+          <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+          <folding>
+            <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#2;n#ul#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#3;n#ul#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

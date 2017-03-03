@@ -80,7 +80,7 @@ class CI_Controller {
 
         $this->load->helper('url');
         $this->load->database();
-        //$this->load->model('com_model');
+        $this->load->model('com_model');
         $this->load->model('common_model');
 
 		log_message('info', 'Controller Class Initialized');

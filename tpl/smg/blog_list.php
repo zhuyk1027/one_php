@@ -67,34 +67,7 @@
 </div><!--/fluid-row-->
 
 <script>
-    //删除专辑
-    $(".btn-danger").click(function(){
-        var id = $(this).attr('sid');
-        var thiss = $(this);
-        if(confirm('确认删除该博文吗')){
-            show_message('删除中...');
-            $.ajax({
-                url: "/smg/blog/del_blog",
-                data: { "id": id},
-                type: "POST",
-                dataType : "json",
-                success: function (data) {
-                    hide_message();
-                    if(data==1){
-                        thiss.parent().parent().remove();
-                    }else if(data==2){
-                        alert('删除失败!');
-                    }else if(data==-2){
-                        alert('参数不足!');
-                    }else if(data==3){
-                        alert('该博文已被删除!');
-                    }else{
-                        alert('删除失败!');
-                    }
-                }
-            });
-        }
-    })
+
 </script>
 
 

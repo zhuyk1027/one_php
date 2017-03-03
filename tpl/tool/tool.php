@@ -47,6 +47,13 @@
         <p><input type="button" value="转化" onclick="time_changes()"></p>
 
     </li>
+    <li class="backcolor">
+        <p>日期转化为时间戳:</p>
+        <input type="text" name="dates" placeholder="时间戳" style="width: 100%;" size="20" ><br />
+        <span name="time_change1"></span>
+        <p><input type="button" value="转化" onclick="time_changes1()"></p>
+
+    </li>
 </ul>
 </body>
 <script>
@@ -63,18 +70,18 @@
             }
         });
     }
-    //签到
-    function sign_in(){
-        var token = $("input[name='token']").val();
+    function time_changes1(){
+        var dates = $("input[name='dates']").val();
         $.ajax({
-            url: "/tool/sign/baiy_sign",
-            data: { "token": token},
+            url: "/tool/tool/to_time_change1",
+            data: { "dates": dates},
             type: "POST",
             dataType : "json",
             success: function (data) {
-                alert(data[0]+'，获得'+data[1]+'积分.');
+                $("span[name='time_change1']").html(data);
             }
         });
     }
+
 </script>
 </html>
