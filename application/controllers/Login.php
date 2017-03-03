@@ -18,7 +18,9 @@ class Login extends CI_Controller {
     );
 
     public function __construct(){
+
         parent::__construct();
+        $this->load->model('com_model');
         $this->user_id = 1;
         $this->site_info['friendship'] = $this->common_model->get_records('select fs_title,hplink from blog_friendship where is_on=1');
         $this->site_info['groups'] = $this->common_model->get_records('select blog_group_id,group_name,(select count(*) from blog where group_id=blog_group_id ) as num from blog_group where user_id='.$this->user_id);
@@ -28,7 +30,7 @@ class Login extends CI_Controller {
 
 	public function index()
 	{
-        if($this->session->userdata('id')){
+        if(!$this->session->userdata('id')){
             echo "<script>window.location.href='/user'</script>";
         }
 		$data = [
