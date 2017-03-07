@@ -18,6 +18,7 @@ defined('SHOW_DEBUG_BACKTRACE') OR define('SHOW_DEBUG_BACKTRACE', TRUE);
 defined('WEB_URL') OR define('WEB_URL', 'http://www.zhuyk.pub/');
 defined('WEB_NAME') OR define('WEB_NAME', '朱耀昆博客');
 defined('WEIBO') OR define('WEIBO', 'http://weibo.com/5674847826/profile?rightmod=1&wvr=6&mod=personinfo&is_hot=1');
+defined('DESIGN') OR define('DESIGN', '欢迎来到朱耀昆博客，请记住唯一域名 http://www.zhuyk/pub');
 
 defined('EMAIL') OR define('EMAIL', 'zhuyaokun1027@126.com');
 defined('MY_PHOTO') OR define('MY_PHOTO', '/tpl/blog/img/logo.jpg');
@@ -32,6 +33,9 @@ defined('BLOG_IMG') OR define('BLOG_IMG', '/tpl/blog/img/');
 defined('SMG') OR define('SMG', 'smg/');
 defined('SMG_TPL') OR define('SMG_TPL', '/tpl/smg/');
 defined('PUB_PATH') OR define('PUB_PATH', '/tpl/public/');
+
+
+defined('UP_TEMP_PATH') OR define('UP_TEMP_PATH', 'uptemp/');
 
 /*
 |--------------------------------------------------------------------------

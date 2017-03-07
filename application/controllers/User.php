@@ -3,10 +3,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class User extends CI_Controller {
 
     public $site_info = array(
-        'website_title'=>'朱耀昆博客',
+        'website_title'=>WEB_NAME,
         'head'=>array(
-            'head_title'=>'朱耀昆博客',
-            'design'=>'享受每一天的生活，做最精彩的自己。',
+            //'head_title'=>'朱耀昆博客',
+            'design'=>DESIGN,
             'my_photo'=>MY_PHOTO,
             'pay_photo'=>PAY_PHOTO,
             'email'=>EMAIL,
@@ -19,8 +19,6 @@ class User extends CI_Controller {
     );
 
     public function __construct(){
-
-
         parent::__construct();
         $this->load->model('com_model');
 
@@ -36,26 +34,9 @@ class User extends CI_Controller {
     }
 
     function index(){
-        $query = $this->common_model->get_record('SELECT COUNT(*) AS total FROM '.$this->db->dbprefix('blog').' WHERE user_id='.$this->user_id);
-        $total = $query->total;
-        $curr_page = $this->uri->segment(3,0);
-        $page_size = 20;
-        if( ! $curr_page) $curr_page = 1;
-        $offset = ($curr_page - 1) * $page_size;
-        $blog = $this->common_model->get_records('SELECT blog_id,title,group_id,update_time,create_date FROM '.$this->db->dbprefix.'blog WHERE user_id = '.$this->user_id.' LIMIT '.$offset.','.$page_size);
-        $blog_group = $this->site_info['groups'];
-        foreach($blog as $key=>$row){
-            $row->group_name = '无分类';
-            foreach($blog_group as $line){
-                if($row->group_id==$line->blog_group_id){
-                    $row->group_name = $line->group_name;
-                }
-            }
-        }
 
         $data = array(
-            'blog'=>$blog,
-            'paginate' =>  $this->_get_page($total,$curr_page,$page_size,'index'),
+
         );
 
         $data = array_merge($data,$this->site_info);
@@ -229,19 +210,6 @@ class User extends CI_Controller {
     }
 
 
-
-    #添加博文分组
-    function add_group(){
-        $title = $this->input->post('title');
-        if(!$title)echo json_encode(-2);
-        $this->db->query('insert into '.$this->db->dbprefix.'blog_group(group_name,user_id) values(\''.$title.'\','.$this->user_id.')');
-        if($this->db->affected_rows()>0){
-            echo json_encode($this->db->insert_id());
-        }else{
-            echo json_encode(2);
-        }
-    }
-
     #我的博文分类列表
     public function blog_type()
     {
@@ -249,9 +217,20 @@ class User extends CI_Controller {
         $data = [
             'blog_group'=>$blog_group,
         ];
-        $this->site_info['crumbs'] = '<a href="#">分类列表</a>';
         $data = array_merge($data,$this->site_info);
-        $this->load->view('smg/blog_type',$data);
+        $this->load->view('blog/user_blog_type',$data);
+    }
+
+    #添加博文分组
+    function add_group(){
+        $title = $this->input->post('group_name');
+        if(!$title)echo json_encode(-2);
+        $this->db->query('insert into '.$this->db->dbprefix.'blog_group(group_name,user_id) values(\''.$title.'\','.$this->user_id.')');
+        if($this->db->affected_rows()>0){
+            echo json_encode($this->db->insert_id());
+        }else{
+            echo json_encode(2);
+        }
     }
 
     #删除博文分类
@@ -276,7 +255,7 @@ class User extends CI_Controller {
         $group_name = $this->input->post('group_name');
 
         if(!$group_id || !$group_name){
-            echo json_encode(3);die;
+            echo json_encode(-2);die;
         }
 
         $data = array(
@@ -285,7 +264,7 @@ class User extends CI_Controller {
 
         $res = $this->db->update('blog_group',$data,array('blog_group_id'=>$group_id,'user_id'=>$this->user_id));
         if($res){
-            echo json_encode(1);
+            echo json_encode($group_id);
         }else{
             echo json_encode(2);
         }
@@ -301,14 +280,13 @@ class User extends CI_Controller {
         $data = [
             'blog_tag'=>$blog_tag,
         ];
-        $this->site_info['crumbs'] = '<a href="#">标签列表</a>';
         $data = array_merge($data,$this->site_info);
-        $this->load->view('smg/blog_tag',$data);
+        $this->load->view('blog/user_blog_tag',$data);
     }
 
     #删除博文标签
     function del_blog_tag(){
-        $id = $this->input->post('id');
+        $id = $this->input->post('tag_id');
         if(!$id)echo json_encode(-2);
 
         $info = $this->common_model->get_record('select * from blog_tag where tag_id='.$id.' and user_id='.$this->user_id);
@@ -324,7 +302,7 @@ class User extends CI_Controller {
 
     #添加博文标签
     function add_tag(){
-        $title = $this->input->post('title');
+        $title = $this->input->post('tag_name');
         if(!$title)echo json_encode(-2);
         $this->db->query('insert into '.$this->db->dbprefix.'blog_tag(tag_name,user_id) values(\''.$title.'\','.$this->user_id.')');
         if($this->db->affected_rows()>0){
@@ -340,7 +318,7 @@ class User extends CI_Controller {
         $tag_name = $this->input->post('tag_name');
 
         if(!$tag_id || !$tag_name){
-            echo json_encode(3);die;
+            echo json_encode(-2);die;
         }
 
         $data = array(

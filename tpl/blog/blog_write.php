@@ -27,7 +27,7 @@
                             <div class="control-group">
                                 <label class="control-label" for="typeahead">是否置顶</label>
                                 <div class="controls">
-                                    <input type="radio" name="is_top" value="0" >不置顶
+                                    <input type="radio" name="is_top" value="0" checked>不置顶
                                     <input type="radio" name="is_top" value="1" >置顶
                                 </div>
                             </div>

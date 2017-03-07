@@ -2,10 +2,10 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Login extends CI_Controller {
     public $site_info = array(
-        'website_title'=>'朱耀昆博客',
+        'website_title'=>WEB_NAME,
         'head'=>array(
-            'head_title'=>'朱耀昆博客',
-            'design'=>'享受每一天的生活，做最精彩的自己。',
+            //'head_title'=>'朱耀昆博客',
+            'design'=>DESIGN,
             'my_photo'=>MY_PHOTO,
             'pay_photo'=>PAY_PHOTO,
             'email'=>EMAIL,
@@ -30,7 +30,7 @@ class Login extends CI_Controller {
 
 	public function index()
 	{
-        if(!$this->session->userdata('id')){
+        if($this->session->userdata('id')){
             echo "<script>window.location.href='/user'</script>";
         }
 		$data = [
@@ -39,6 +39,7 @@ class Login extends CI_Controller {
         $data = array_merge($data,$this->site_info);
 		$this->load->view(BLOG.'login',$data);
 	}
+
 	public function verification()
 	{
         $this->load->library('form_validation');
@@ -110,7 +111,6 @@ class Login extends CI_Controller {
      * 淘宝IP接口
      * @Return: array
      */
-
     function getCityName($ipaddr)
     {
         $url="http://ip.taobao.com/service/getIpInfo.php?ip=".$ipaddr;

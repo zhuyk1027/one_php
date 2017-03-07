@@ -60,21 +60,15 @@
 <body class="home blog" youdao="bind">
 <header class="header">
     <div class="navbar">
-        <h1 class="logo"><a href="/" title="<?=$head['design']?>"><?=$head['head_title']?></a></h1>
+        <h1 class="logo"><a href="/" title="<?=$website_title?>"><?=$website_title?></a></h1>
         <ul class="nav">
             <li id="menu-item-51"
                 class="menu-item menu-item-type-custom menu-item-object-custom
                 current-menu-item current_page_item menu-item-home menu-item-51">
                 <a href="/">首页</a>
             </li>
-            <?php foreach($groups as $key=>$row){ ?>
-                <li id="menu-item-5<?=$key+2?>" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5<?=$key+2?>">
-                    <a href="/blog/blog_list?type=<?=$row->blog_group_id?>"><?=$row->group_name?></a>
-                </li>
-            <?php  }?>
             <li id="menu-item-60" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60"><a href="/tool">小公举</a></li>
-            <li id="menu-item-61" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-61"><a href="/tool">相册</a></li>
-            <li id="menu-item-62" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-61"><a href="/tool">关于本站</a></li>
+            <li id="menu-item-62" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-61"><a href="/about">关于本站</a></li>
         </ul>
         <div class="screen-mini">
             <button data-type="screen-nav" class="btn btn-inverse screen-nav"><i class="icon-tasks icon-white"></i></button>
@@ -95,7 +89,7 @@
     </div>
     <div class="speedbar">
          <div class="pull-right"><a href="/login" style="color:#F7F7F7;">登录</a></div>
-        <div class="toptip"><strong class="text-success">最新消息：</strong>欢迎来到朱耀昆博客，请记住唯一域名 http://www.zhuyk/pub</div>
+        <div class="toptip"><strong class="text-success">最新消息：</strong><?=$head['design']?></div>
     </div>
 </header>
 <section class="container">

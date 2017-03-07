@@ -3,10 +3,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Homepage extends CI_Controller {
 
     public $site_info = array(
-        'website_title'=>'朱耀昆博客',
+        'website_title'=>WEB_NAME,
         'head'=>array(
-            'head_title'=>'朱耀昆博客',
-            'design'=>'享受每一天的生活，做最精彩的自己。',
+            //'head_title'=>'朱耀昆博客',
+            'design'=>DESIGN,
             'my_photo'=>MY_PHOTO,
             'pay_photo'=>PAY_PHOTO,
             'email'=>EMAIL,
