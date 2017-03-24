@@ -7,6 +7,7 @@ class common_model extends CI_Model
 		parent::__construct();
 	}
 
+	#获取分页数据
 	function get_page_records($arr)
 	{
 		foreach($arr as $k => $v)
@@ -45,7 +46,7 @@ class common_model extends CI_Model
 		$query->free_result();
 		return $data;
 	}
-
+	#获取分页数据
 	function get_pages_records($arr)
 	{
 		foreach($arr as $k => $v)
@@ -158,9 +159,38 @@ class common_model extends CI_Model
 		return $rs;
 	}
 
+    #字符替换
     function replace_tags($str){
         $str = strip_tags($str);
         return $str;
+    }
+
+    function pv_count($str){
+
+        #无则返回
+        if(!$str)return;
+
+        #访问地址处理
+        $str = trim($str,'/index.php/');
+        #首页默认为 `homepage`
+        if($str=='')$str = 'homepage';
+
+        #排除参数数字后缀
+        $str = explode('/',$str);
+        foreach($str as $k=>$row){
+            if(is_numeric($row))unset($str[$k]);
+        }
+        $str = implode($str,'/');
+
+        $pv_count = $this->get_record('select * from pv_count where links= \''.$str.'\' and create_time='.date('Ymd'));
+        if($pv_count){
+            //更改
+            $this->db->query("update pv_count set `pv_count`=`pv_count`+1 where id=".$pv_count->id);
+        }else{
+            //插入
+            $data = array('links'=>$str,'create_time'=>date('Ymd'),'pv_count'=>1);
+            $this->db->insert('pv_count',$data);
+        }
     }
 }
 ?>

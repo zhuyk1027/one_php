@@ -2,6 +2,12 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class tool extends CI_Controller {
+
+	public function __construct(){
+		parent::__construct();
+		$this->common_model->pv_count($_SERVER['PHP_SELF']);
+	}
+
 	public function index()
 	{
 		$this->load->view('tool/index');

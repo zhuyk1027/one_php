@@ -7,6 +7,7 @@ class sign extends CI_Controller {
         parent::__construct();
         $this->load->model('common_model');
         $this->load->helper('array');
+        $this->common_model->pv_count($_SERVER['PHP_SELF']);
     }
 
 	public function index()

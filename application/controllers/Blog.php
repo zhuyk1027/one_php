@@ -21,10 +21,12 @@ class Blog extends CI_Controller {
     public function __construct(){
         parent::__construct();
         $this->user_id = 1;
-        $this->site_info['friendship'] = $this->common_model->get_records('select fs_title,hplink from blog_friendship where is_on=1');
+        $this->site_info['friendship'] = $this->common_model->get_records('select fs_id,fs_title,hplink from blog_friendship where is_on=1');
         $this->site_info['groups'] = $this->common_model->get_records('select blog_group_id,group_name,(select count(*) from blog where group_id=blog_group_id ) as num from blog_group where user_id='.$this->user_id);
         $this->site_info['tags'] = $this->common_model->get_records('select tag_id,tag_name,(select count(*) from blog where tags=tag_id ) as num from blog_tag where user_id='.$this->user_id);
         $this->site_info['ranking'] = $this->common_model->get_records('select blog_id,title from blog order by click desc limit 10');
+
+        $this->common_model->pv_count($_SERVER['PHP_SELF']);
     }
 
     /*

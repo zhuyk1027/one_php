@@ -1,5 +1,5 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-function get_real_path($url)
+function get_real_path($url,$size=0)
 {
 	if(!$url) return '';
 	if(strpos($url,'//') === 0)
@@ -10,11 +10,15 @@ function get_real_path($url)
 	{
 		return 'http://www.zhuyk.pub/'.$url;
 	}
+    else if(strpos($url,"http://happylife.image.alimmdn.com/")==true){
+        return $url.'@608w';
+    }
 	else
 	{
-		return $url;
+        return $size?$url.$size:$url;
 	}
 }
+
 
 function format_url($url)
 {

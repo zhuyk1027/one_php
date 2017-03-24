@@ -44,7 +44,7 @@
         <div class="textwidget">
             <div style="padding:1em;">
                 <?php foreach($friendship as $key=>$row){ ?>
-                    <p><a href="<?=$row->hplink?>" target="_blank"><?=$row->fs_title?></a></p>
+                    <p><a href="/dos/jump/<?=$row->fs_id?>" title="<?=$row->fs_title?>" target="_blank"><?=$row->fs_title?></a></p>
                 <?php  }?>
             </div>
         </div>

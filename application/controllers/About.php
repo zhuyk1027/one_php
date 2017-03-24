@@ -23,18 +23,15 @@ class About extends CI_Controller {
         $this->load->model('com_model');
         $this->load->helper('common');
 
-        if(!$this->session->userdata('id')){
-            echo "<script>window.location.href='/'</script>";
-        }
-
-        $this->user_id = $this->session->userdata('id');
-        $this->site_info['friendship'] = $this->common_model->get_records('select fs_title,hplink from blog_friendship where is_on=1');
+        $this->user_id = 1;
+        $this->site_info['friendship'] = $this->common_model->get_records('select fs_id,fs_title,hplink from blog_friendship where is_on=1');
         $this->site_info['groups'] = $this->common_model->get_records('select blog_group_id,group_name,(select count(*) from blog where group_id=blog_group_id ) as num from blog_group where user_id='.$this->user_id);
         $this->site_info['tags'] = $this->common_model->get_records('select tag_id,tag_name,(select count(*) from blog where tags=tag_id ) as num from blog_tag where user_id='.$this->user_id);
         $this->site_info['ranking'] = $this->common_model->get_records('select blog_id,title from blog order by click desc limit 10');
     }
-    #关于本站
+    #关于本站页面
     public function index(){
+        $this->common_model->pv_count('about/index');
         $station = $this->common_model->get_record('select * from about where type=\'station\'');
         $data = [
             'title'=>'关于本站',
@@ -44,9 +41,30 @@ class About extends CI_Controller {
         $this->load->view('blog/blog_station_show',$data);
     }
 
-    #关于本站
+    #关于我
+    public function user_show()
+    {
+        $this->common_model->pv_count('about/user_show');
+        $key = $this->uri->segment(3,0);
+        if(!$key){
+            redirect('/');
+        }
+        $station = $this->common_model->get_record('select * from about where `key`=\''.$key.'\'');
+        $data = [
+            'title'=>'我的简介',
+            'station'=>$station,
+        ];
+        $data = array_merge($data,$this->site_info);
+        $this->load->view('blog/blog_station_show',$data);
+    }
+
+    #关于本站编写页面
     public function station()
     {
+        if(!$this->session->userdata('id')){
+            echo "<script>window.location.href='/'</script>";
+        }
+
         if(isset($_POST['submit'])){
             $data = array(
                 'cont'=>$_POST['content'],
@@ -67,9 +85,13 @@ class About extends CI_Controller {
         $this->load->view('blog/about_station',$data);
     }
 
-    #关于我
+    #关于我编写页面
     public function user()
     {
+        if(!$this->session->userdata('id')){
+            echo "<script>window.location.href='/'</script>";
+        }
+
         if(isset($_POST['submit'])){
             $data = array(
                 'type'=>'user',
@@ -94,21 +116,6 @@ class About extends CI_Controller {
         ];
         $data = array_merge($data,$this->site_info);
         $this->load->view('blog/about_user',$data);
-    }
-
-    public function user_show()
-    {
-        $key = $this->uri->segment(3,0);
-        if(!$key){
-            redirect('/');
-        }
-        $station = $this->common_model->get_record('select * from about where `key`=\''.$key.'\'');
-        $data = [
-            'title'=>'我的简介',
-            'station'=>$station,
-        ];
-        $data = array_merge($data,$this->site_info);
-        $this->load->view('blog/blog_station_show',$data);
     }
 
 }

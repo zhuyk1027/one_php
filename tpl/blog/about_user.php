@@ -43,7 +43,9 @@
 
                             <div class="form-actions">
                                 <span style="color:gray;">专访地址：
+                                    <?php if(isset($station->key)){ ?>
                                     <a href="<?php echo 'http://'.$_SERVER['HTTP_HOST'].'/about/user_show/'.$station->key; ?>"><?php echo 'http://'.$_SERVER['HTTP_HOST'].'/about/user_show/'.$station->key; ?></a>
+                                    <?php } ?>
                                 </span>
                             </div>
                         </fieldset>
