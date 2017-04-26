@@ -8,6 +8,8 @@
                     <a href="/friendship">友情链接</a>
                     &nbsp;&nbsp; |  &nbsp;&nbsp;
                     <a href="/about/station">关于本站</a>
+                    &nbsp;&nbsp; |  &nbsp;&nbsp;
+                    <a href="/Count/friend_count">跳转统计</a>
                 <?php } ?>
             </h2>
 
@@ -43,6 +45,18 @@
                                 <li style="float:left;padding: 5px;"> <a href="/gallery">相册</a></li>
                                 <li style="float:left;padding: 5px;"> <a href="/gallery/images">图片</a></li>
                                 <li style="float:left;padding: 5px;"> <a href="/gallery/upload">上传图片</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            <?php }else if($head['this_page']=='count'){ ?>
+                <div class="widget widget_text">
+                    <div class="textwidget">
+                        <div style="padding:1em;">
+                            <ul >
+                                <li style="float:left;padding: 5px;"> <a href="/count/friend_count">友链统计</a></li>
+                                <li style="float:left;padding: 5px;"> <a href="/count/ad_count">广告统计</a></li>
+                                <li style="float:left;padding: 5px;"> <a href="/count/pv_count">PV统计</a></li>
                             </ul>
                         </div>
                     </div>

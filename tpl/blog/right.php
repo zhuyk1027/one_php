@@ -1,6 +1,7 @@
 <aside class="sidebar">
 
     <?php  $this->load->view(BLOG.'banner'); ?>
+
     <div class="widget widget_categories"><h3 class="widget_tit">分类目录</h3>		<ul>
             <?php foreach($groups as $key=>$row){ ?>
                 <li class="cat-item cat-item-19">
@@ -44,9 +45,37 @@
         <div class="textwidget">
             <div style="padding:1em;">
                 <?php foreach($friendship as $key=>$row){ ?>
-                    <p><a href="/dos/jump/<?=$row->fs_id?>" title="<?=$row->fs_title?>" target="_blank"><?=$row->fs_title?></a></p>
+                    <p><a href="javascript:void(0);" class="fiend_click" fsid="<?=$row->fs_id?>" title="<?=$row->fs_title?>" target="_blank"><?=$row->fs_title?></a></p>
                 <?php  }?>
             </div>
         </div>
     </div>
 </aside>
+<script>
+    $(function(){
+        $(".fiend_click").click(function(){
+            var fd_id = this.getAttribute("fsid");
+            $.ajax({
+                url: "/dos/jump",
+                data: { "id": fd_id},
+                type: "POST",
+                dataType : "json",
+                success: function (data) {
+                    window.open(data);
+                }
+            });
+        })
+        $(".ad_click").click(function(){
+            var ad_id = this.getAttribute("adid");
+            $.ajax({
+                url: "/dos/jump_ad",
+                data: { "id": ad_id},
+                type: "POST",
+                dataType : "json",
+                success: function (data) {
+                    window.open(data);
+                }
+            });
+        })
+    })
+</script>

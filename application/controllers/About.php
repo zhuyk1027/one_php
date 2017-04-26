@@ -24,6 +24,8 @@ class About extends CI_Controller {
         $this->load->helper('common');
 
         $this->user_id = 1;
+        $time = time();
+        $this->site_info['ad'] = $this->common_model->get_records("select ad_id,ad_title,pic,hplink from blog_ad where is_on=1 and $time>=start_time and $time<=end_time");
         $this->site_info['friendship'] = $this->common_model->get_records('select fs_id,fs_title,hplink from blog_friendship where is_on=1');
         $this->site_info['groups'] = $this->common_model->get_records('select blog_group_id,group_name,(select count(*) from blog where group_id=blog_group_id ) as num from blog_group where user_id='.$this->user_id);
         $this->site_info['tags'] = $this->common_model->get_records('select tag_id,tag_name,(select count(*) from blog where tags=tag_id ) as num from blog_tag where user_id='.$this->user_id);
@@ -61,7 +63,7 @@ class About extends CI_Controller {
     #关于本站编写页面
     public function station()
     {
-        if(!$this->session->userdata('id')){
+        if($this->session->userdata('id')!=1){
             echo "<script>window.location.href='/'</script>";
         }
 
