@@ -5,12 +5,14 @@ class tool extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
-		$this->common_model->pv_count($_SERVER['PHP_SELF']);
+        $this->load->model('com_model');
+        $this->common_model->pv_count($_SERVER['PHP_SELF']);
 	}
 
 	public function index()
 	{
-		$this->load->view('tool/index');
+        $data = array('user'=>$this->session->userdata('id'));
+		$this->load->view('tool/index',$data);
 	}
 
 	public function time_change()
