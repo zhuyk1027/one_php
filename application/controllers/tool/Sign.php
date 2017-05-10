@@ -88,7 +88,6 @@ class sign extends CI_Controller {
             echo json_encode(array(json_decode($output)->message,json_decode($output)->data->integral));
         }
     }
-
     #批量签到
     function baiy_all_sign()
     {
@@ -123,29 +122,35 @@ class sign extends CI_Controller {
                 $lottery = $this->lottery_520($token);
                 $arr = array(
                     '1'=>'免单',
-                    '6'=>'全场95折优惠卷',
-                    '5'=>'全场9折优惠卷',
+                    '2'=>'全场95折优惠卷',
+                    '3'=>'全场9折优惠卷',
                     '4'=>'全场88折优惠卷',
-                    '3'=>'全场85折优惠卷',
-                    '2'=>'全场8折优惠卷',
+                    '5'=>'全场85折优惠卷',
+                    '6'=>'全场8折优惠卷',
                     '99'=>'抽奖错误',
                 );
                 echo $val->account.' 获得'.$arr[$lottery[1]].',message:'.$lottery[0].'<br />';
             }
-            die;
         }
     }
-    #520抽奖
+    #抽奖
     function lottery_520($token,$active_id=5)
     {
-        $url = 'http://mservice.baiyjk.com/wap/active/lottery_basha_do';
+        switch($active_id){
+            case 6:$url = 'http://mservice.baiyjk.com/wap/active/lottery_basha_do';;break;
+            case 5:$url = 'http://mservice.baiyjk.com/wap/active/lottery_520_do';;break;
+        }
+
 
         $post_data['token'] = $token;
         $post_data['active_id'] = $active_id;
 
+        #print_r($post_data);die;
+
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_USERAGENT, 'BaiYangStore/3.0.0 (iPhone; iOS 9.3; Scale/2.00)');
         // post数据
         curl_setopt($ch, CURLOPT_POST, 1);
         // post的变量
@@ -153,10 +158,38 @@ class sign extends CI_Controller {
         $output = curl_exec($ch);
         curl_close($ch);
         //打印获得的数据
-        //print_r($output);
+        #print_r($output);die;
 
         return array(json_decode($output)->message,isset(json_decode($output)->data->postion_id)?json_decode($output)->data->postion_id:99);
     }
+    #批量芭莎抽奖
+    function baiy_basha_lottery()
+    {
+        #获取用户
+        $data = $this->common_model->get_records("select * from baiyang_account");
+        if(empty($data)){ echo "暂无用户"; }
+
+        #批量操作
+        foreach($data as $key=>$val){
+            $token = $this->baiy_login($val->account,$val->password);
+            if(!$token){
+                echo $val->account.' 密码错误<br />';
+            }else{
+                $lottery = $this->lottery_520($token,6);
+                $arr = array(
+                    '1'=>'芭莎明星同款礼盒一个',
+                    '2'=>'芭莎明星同款礼盒立减500元',
+                    '3'=>'芭莎明星同款礼盒立减300元',
+                    '4'=>'芭莎明星同款礼盒立减200元',
+                    '5'=>'克奥妮斯 微针美容膜一对装5折体验券',
+                    '6'=>'谢谢参与',
+                    '99'=>'抽奖错误',
+                );
+                echo $val->account.' 获得'.$arr[$lottery[1]].',message:'.$lottery[0].'<br />';
+            }
+        }
+    }
+
 
 
     public function julaibao()

@@ -64,8 +64,11 @@
 
 		<?php
 			if($user==1){
-				echo '<li style="background-color:green"><a href="/tool/sign">积分商城签到</a></li>';
+				echo '<li style="background-color:green"><a href="/tool/sign">百洋积分商城签到</a></li>';
 				echo '<li style="background-color:green"><a href="/tool/sign/baiy_all_sign">批量积分商城签到</a></li>';
+				echo '<li style="background-color:green"><a href="/tool/sign/baiy_520_lottery">批量520抽奖</a></li>';
+				echo '<li style="background-color:green"><a href="/tool/sign/baiy_basha_lottery">批量芭莎抽奖</a></li>';
+
 				echo '<li style="background-color:#994514"><a href="/tool/sign/julaibao">聚来宝手机注册</a></li>';
 			}
 		?>
