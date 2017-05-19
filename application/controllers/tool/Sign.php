@@ -5,6 +5,7 @@ class sign extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
+        $this->load->model('com_model');
         $this->load->model('common_model');
         $this->load->helper('array');
         $this->common_model->pv_count($_SERVER['PHP_SELF']);
@@ -12,8 +13,11 @@ class sign extends CI_Controller {
 
 	public function index()
 	{
+        if($this->session->userdata('id')!=1){
+            redirect('/');
+        }
 		$data = [
-			'title'=>'签到'
+			'title'=>'批量操作'
 		];
 		$this->load->view('tool/sign',$data);
 	}
@@ -88,7 +92,6 @@ class sign extends CI_Controller {
             echo json_encode(array(json_decode($output)->message,json_decode($output)->data->integral));
         }
     }
-    #批量签到
     function baiy_all_sign()
     {
         #获取用户
@@ -106,12 +109,20 @@ class sign extends CI_Controller {
             }
         }
     }
-    #批量520抽奖
-    function baiy_520_lottery()
+
+    function lottery($id=0)
     {
+        if(!$id){
+            echo "请输入活动ID";die;
+        }
+
         #获取用户
         $data = $this->common_model->get_records("select * from baiyang_account");
         if(empty($data)){ echo "暂无用户"; }
+
+        #对应奖品
+        $goods = $this->common_model->get_records("select * from baiyang_active_detail where active_id=$id");
+        if(empty($goods)){ echo "暂无奖品"; }
 
         #批量操作
         foreach($data as $key=>$val){
@@ -119,33 +130,27 @@ class sign extends CI_Controller {
             if(!$token){
                 echo $val->account.' 密码错误<br />';
             }else{
-                $lottery = $this->lottery_520($token);
-                $arr = array(
-                    '1'=>'免单',
-                    '2'=>'全场95折优惠卷',
-                    '3'=>'全场9折优惠卷',
-                    '4'=>'全场88折优惠卷',
-                    '5'=>'全场85折优惠卷',
-                    '6'=>'全场8折优惠卷',
-                    '99'=>'抽奖错误',
-                );
-                echo $val->account.' 获得'.$arr[$lottery[1]].',message:'.$lottery[0].'<br />';
+                $lottery = $this->lottery_do($token,$id,$goods[0]->url);
+                foreach($goods as $row){
+                    if($row->postion_id==$lottery[1]){
+                        echo $val->account.' 获得'.$row->describe.',message:'.$lottery[0].'<br />';
+                    }
+                }
             }
         }
     }
-    #抽奖
-    function lottery_520($token,$active_id=5)
+    function lottery_do($token,$active_id,$url='')
     {
-        switch($active_id){
-            case 6:$url = 'http://mservice.baiyjk.com/wap/active/lottery_basha_do';;break;
-            case 5:$url = 'http://mservice.baiyjk.com/wap/active/lottery_520_do';;break;
+        if(!$url){
+            switch($active_id){
+                case 7:$url = 'http://mservice.baiyjk.com/wap/active/lottery_520_subway_do';break;
+                case 6:$url = 'http://mservice.baiyjk.com/wap/active/lottery_basha_do';break;
+                case 5:$url = 'http://mservice.baiyjk.com/wap/active/lottery_520_do';break;
+            }
         }
-
 
         $post_data['token'] = $token;
         $post_data['active_id'] = $active_id;
-
-        #print_r($post_data);die;
 
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
@@ -157,41 +162,13 @@ class sign extends CI_Controller {
         curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data);
         $output = curl_exec($ch);
         curl_close($ch);
-        //打印获得的数据
-        #print_r($output);die;
 
         return array(json_decode($output)->message,isset(json_decode($output)->data->postion_id)?json_decode($output)->data->postion_id:99);
     }
-    #批量芭莎抽奖
-    function baiy_basha_lottery()
-    {
-        #获取用户
-        $data = $this->common_model->get_records("select * from baiyang_account");
-        if(empty($data)){ echo "暂无用户"; }
-
-        #批量操作
-        foreach($data as $key=>$val){
-            $token = $this->baiy_login($val->account,$val->password);
-            if(!$token){
-                echo $val->account.' 密码错误<br />';
-            }else{
-                $lottery = $this->lottery_520($token,6);
-                $arr = array(
-                    '1'=>'芭莎明星同款礼盒一个',
-                    '2'=>'芭莎明星同款礼盒立减500元',
-                    '3'=>'芭莎明星同款礼盒立减300元',
-                    '4'=>'芭莎明星同款礼盒立减200元',
-                    '5'=>'克奥妮斯 微针美容膜一对装5折体验券',
-                    '6'=>'谢谢参与',
-                    '99'=>'抽奖错误',
-                );
-                echo $val->account.' 获得'.$arr[$lottery[1]].',message:'.$lottery[0].'<br />';
-            }
-        }
-    }
 
 
 
+    #聚来宝注册页面
     public function julaibao()
     {
         $data = [
@@ -199,7 +176,6 @@ class sign extends CI_Controller {
         ];
         $this->load->view('tool/julaibao',$data);
     }
-
     #聚来宝注册会员
     function julaibao_sign()
     {
@@ -244,9 +220,6 @@ class sign extends CI_Controller {
             $output = curl_exec($ch);
             curl_close($ch);
         }
-
-        //打印获得的数据
-        //print_r($output);
         echo json_encode(implode($user_str,','));
     }
 }

@@ -59,19 +59,15 @@
 		<li style="background-color:coral"><a href="/tool/qrcode">生成二维码</a></li>
 		<li style="background-color:orange"><a href="/tool/send_email">发送邮件</a></li>
 		<li style="background-color:orange"><a href="/tool/tool/time_change">时间戳转化为日期</a></li>
-
 		<li style="background-color:#545164"><a href="/tool/test">功能测试</a></li>
 
 		<?php
 			if($user==1){
-				echo '<li style="background-color:green"><a href="/tool/sign">百洋积分商城签到</a></li>';
-				echo '<li style="background-color:green"><a href="/tool/sign/baiy_all_sign">批量积分商城签到</a></li>';
-				echo '<li style="background-color:green"><a href="/tool/sign/baiy_520_lottery">批量520抽奖</a></li>';
-				echo '<li style="background-color:green"><a href="/tool/sign/baiy_basha_lottery">批量芭莎抽奖</a></li>';
-
-				echo '<li style="background-color:#994514"><a href="/tool/sign/julaibao">聚来宝手机注册</a></li>';
+				echo '<li style="background-color:green"><a href="/tool/sign/index">白羊</a></li>';
 			}
 		?>
+
+		<li style="background-color:#994514"><a href="/tool/sign/julaibao">聚来宝</a></li>
 
 	</ul>
 </div>
