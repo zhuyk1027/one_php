@@ -82,13 +82,23 @@
 <div align="center">
     <ul>
         <li style="background-color:#c09853"><a href="/">返回博客首页</a></li>
-        <li style="background-color:green"><a href="/tool/sign/baiy_all_sign">积分签到</a></li>
     </ul>
-
     <ul class="clear aul">
         <li class="backcolor ali">
-            <p><?php echo $title ?></p>
-            活动ID：<input type="text" name="act_id" placeholder="活动ID"  size="20" value=""><br />
+            <p>All Sign</p>
+            pay密码：<input type="radio" name="pay_pass_sign" value="1" checked>是
+            <input type="radio" name="pay_pass_sign" value="2">否
+            <input type="radio" name="pay_pass_sign" value="3">全部
+            <p><input type="button" value="sign" onclick="jump_sign()"></p>
+        </li>
+    </ul>
+    <ul class="clear aul">
+        <li class="backcolor ali">
+            <p>All Lottery</p>
+            活动 ID：<input type="text" name="act_id" placeholder="活动ID"  size="19" value=""><br />
+            pay密码：<input type="radio" name="pay_pass" value="1" checked>是
+                    <input type="radio" name="pay_pass" value="2">否
+                    <input type="radio" name="pay_pass" value="3">全部
             <p><input type="button" value="sign" onclick="jump()"></p>
         </li>
     </ul>
@@ -97,10 +107,16 @@
 <script>
     function jump(){
         var act_id = $("input[name='act_id']").val();
+        var pay_pass = $("input[name='pay_pass']:checked").val();
         if(act_id==''){
             return false;
         }
-        window.location.href='/tool/sign/lottery/'+act_id;
+
+        window.location.href='/tool/sign/lottery/'+act_id+'/'+pay_pass;
+    }
+    function jump_sign(){
+        var pay_pass = $("input[name='pay_pass_sign']:checked").val();
+        window.location.href='/tool/sign/baiy_all_sign/'+pay_pass;
     }
 
 </script>

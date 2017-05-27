@@ -3,7 +3,7 @@
     <ul id="banner_list">
         <?php foreach($ad as $key=>$row){ ?>
             <li id="banner_<?=$key+1?>" style="display: none">
-                <a href='javascript:void(0)' adid="<?=$row->ad_id?>" class="ad_click">
+                <a href='javascript:void(0)' adid="<?=$row->ad_id?>"><!-- class="ad_click"-->
                     <img src="<?=$row->pic?>" class="jd_ad_img">
                 </a>
             </li>

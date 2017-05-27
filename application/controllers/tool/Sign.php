@@ -92,11 +92,11 @@ class sign extends CI_Controller {
             echo json_encode(array(json_decode($output)->message,json_decode($output)->data->integral));
         }
     }
-    function baiy_all_sign()
+    #批量签到
+    function baiy_all_sign($type=1)
     {
         #获取用户
-        $data = $this->common_model->get_records("select * from baiyang_account");
-        if(empty($data)){ echo "暂无用户"; }
+        $data = $this->get_user($type);
 
         #批量操作
         foreach($data as $key=>$val){
@@ -109,16 +109,28 @@ class sign extends CI_Controller {
             }
         }
     }
-
-    function lottery($id=0)
+    #获取用户
+    function get_user($type=1){
+        #获取用户
+        $sql = "select * from baiyang_account";
+        switch ($type){
+            case 1:$sql .= " where pay_pass>1";break;
+            case 2:$sql .= " where ISNULL(pay_pass)";break;
+        }
+        $data = $this->common_model->get_records($sql);
+        if(empty($data)){ echo "暂无用户";die; }
+        return $data;
+    }
+    #批量抽奖
+    function lottery($id=0,$type = 1)
     {
         if(!$id){
             echo "请输入活动ID";die;
         }
 
         #获取用户
-        $data = $this->common_model->get_records("select * from baiyang_account");
-        if(empty($data)){ echo "暂无用户"; }
+        $data = $this->get_user($type);
+
 
         #对应奖品
         $goods = $this->common_model->get_records("select * from baiyang_active_detail where active_id=$id");

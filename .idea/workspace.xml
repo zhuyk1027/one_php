@@ -22,27 +22,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Sign.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/controllers/tool/Sign.php">
+      <file leaf-file-name="banner.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tpl/blog/banner.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.60166466">
-              <caret line="135" column="97" selection-start-line="135" selection-start-column="97" selection-end-line="135" selection-end-column="97" />
+            <state vertical-scroll-proportion="-3.59375">
+              <caret line="5" column="90" selection-start-line="5" selection-start-column="90" selection-end-line="5" selection-end-column="90" />
               <folding>
-                <element signature="n#__construct#0;n#sign#0;n#!!top" expanded="false" />
-                <element signature="n#index#0;n#sign#0;n#!!top" expanded="false" />
-                <element signature="n#baiy_login#0;n#sign#0;n#!!top" expanded="false" />
-                <element signature="n#baiy_sign#0;n#sign#0;n#!!top" expanded="false" />
-                <element signature="n#baiy_all_sign#0;n#sign#0;n#!!top" expanded="false" />
-                <element signature="n#lottery_do#0;n#sign#0;n#!!top" expanded="false" />
-                <element signature="n#julaibao#0;n#sign#0;n#!!top" expanded="false" />
-                <element signature="e#5622#5662#0#PHP" expanded="false" />
-                <element signature="n#julaibao_sign#0;n#sign#0;n#!!top" expanded="false" />
-                <element signature="e#5951#6005#0#PHP" expanded="false" />
-                <marker date="1495173012388" expanded="true" signature="3056:3085" placeholder="select * fro..baiyang_account..." />
-                <marker date="1495173012388" expanded="true" signature="3688:3717" placeholder="select * fro..baiyang_account..." />
-                <marker date="1495173012388" expanded="true" signature="3828:3863" placeholder="select * fro..baiyang_active_detail..." />
-                <marker date="1495173012388" expanded="true" signature="3828:3880" placeholder="select * fro..baiyang_active_detail..." />
-                <marker date="1495173012388" expanded="true" signature="3828:3881" placeholder="select * fro..baiyang_active_detail..." />
+                <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -51,25 +37,39 @@
       <file leaf-file-name="sign.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tpl/tool/sign.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.59375">
-              <caret line="84" column="91" selection-start-line="84" selection-start-column="91" selection-end-line="84" selection-end-column="91" />
-              <folding>
-                <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="-11.9375">
+              <caret line="100" column="68" selection-start-line="100" selection-start-column="68" selection-end-line="100" selection-end-column="68" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Tool.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/tool/Tool.php">
+      <file leaf-file-name="test.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tpl/tool/test.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.03125">
-              <caret line="7" column="40" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="40" />
-              <folding>
-                <element signature="n#time_change#0;n#tool#0;n#!!top" expanded="false" />
-                <element signature="n#to_time_change#0;n#tool#0;n#!!top" expanded="false" />
-                <element signature="n#to_time_change1#0;n#tool#0;n#!!top" expanded="false" />
-              </folding>
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tool.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tpl/tool/tool.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.1271878">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="email.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tpl/tool/email.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -77,12 +77,19 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tpl/tool/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.75">
+            <state vertical-scroll-proportion="-11.25">
               <caret line="57" column="72" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="72" />
-              <folding>
-                <element signature="n#style#0;n#li#5;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1495166354923" expanded="true" signature="1561:1583" placeholder="..." />
-              </folding>
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="julaibao.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tpl/tool/julaibao.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-25.15625">
+              <caret line="35" column="4" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="63" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -134,7 +141,6 @@
         <option value="$PROJECT_DIR$/application/controllers/About.php" />
         <option value="$PROJECT_DIR$/tpl/blog/right.php" />
         <option value="$PROJECT_DIR$/application/controllers/Dos.php" />
-        <option value="$PROJECT_DIR$/tpl/blog/banner.php" />
         <option value="$PROJECT_DIR$/application/controllers/Count.php" />
         <option value="$PROJECT_DIR$/tpl/blog/count_ad.php" />
         <option value="$PROJECT_DIR$/.htaccess" />
@@ -143,6 +149,7 @@
         <option value="$PROJECT_DIR$/tpl/tool/index.php" />
         <option value="$PROJECT_DIR$/tpl/tool/sign.php" />
         <option value="$PROJECT_DIR$/application/controllers/tool/Sign.php" />
+        <option value="$PROJECT_DIR$/tpl/blog/banner.php" />
       </list>
     </option>
   </component>
@@ -158,9 +165,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="1" />
-    <option name="width" value="1678" />
-    <option name="height" value="1010" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1696" />
+    <option name="height" value="1026" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="添加" />
@@ -185,6 +193,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -233,6 +242,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="tool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="one_php" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="one_php" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blog" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -310,11 +337,10 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../api" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="false" />
   </component>
@@ -367,10 +393,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="0" width="1678" height="1010" extended-state="0" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19795427" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19761905" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="版本控制" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32897604" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -612,13 +638,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/blog/user_home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Gallery.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.90625">
@@ -685,13 +704,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/blog/banner.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13418902">
-          <caret line="5" column="45" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tpl/blog/right.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5974329">
@@ -713,24 +725,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/tool/test.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="17.78125">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-16.53125">
           <caret line="23" column="0" selection-start-line="22" selection-start-column="8" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/tool/tool.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3687282">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -753,23 +751,34 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="23" column="171" selection-start-line="23" selection-start-column="171" selection-end-line="23" selection-end-column="171" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/tool/Sign.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.6875">
+          <caret line="146" column="54" selection-start-line="146" selection-start-column="54" selection-end-line="146" selection-end-column="54" />
           <folding>
-            <marker date="1492574449976" expanded="true" signature="-1:-1" placeholder="select ad_id..blog_ad..." />
-            <marker date="1492574449976" expanded="true" signature="-1:-1" placeholder="select fs_id..blog_friendship..." />
-            <marker date="1492574449976" expanded="true" signature="-1:-1" placeholder="select blog_..blog_group..." />
-            <marker date="1492574449976" expanded="true" signature="-1:-1" placeholder="select count..blog..." />
-            <marker date="1492574449976" expanded="true" signature="-1:-1" placeholder="select tag_i..blog_tag..." />
-            <marker date="1492574449976" expanded="true" signature="-1:-1" placeholder="select count..blog..." />
-            <marker date="1492574449976" expanded="true" signature="-1:-1" placeholder="select blog_..blog..." />
-            <marker date="1492574449976" expanded="true" signature="-1:-1" placeholder="select * fro..blog..." />
-            <marker date="1492574449976" expanded="true" signature="-1:-1" placeholder="select * fro..blog..." />
+            <element signature="n#__construct#0;n#sign#0;n#!!top" expanded="false" />
+            <element signature="n#index#0;n#sign#0;n#!!top" expanded="false" />
+            <element signature="n#baiy_login#0;n#sign#0;n#!!top" expanded="false" />
+            <element signature="n#baiy_sign#0;n#sign#0;n#!!top" expanded="false" />
+            <element signature="n#lottery_do#0;n#sign#0;n#!!top" expanded="false" />
+            <element signature="n#julaibao#0;n#sign#0;n#!!top" expanded="false" />
+            <element signature="e#5872#5912#0#PHP" expanded="false" />
+            <element signature="n#julaibao_sign#0;n#sign#0;n#!!top" expanded="false" />
+            <element signature="e#6201#6255#0#PHP" expanded="false" />
+            <marker date="1495381394000" expanded="true" signature="-1:-1" placeholder="select * fro..baiyang_account..." />
+            <marker date="1495381394000" expanded="true" signature="-1:-1" placeholder="select * fro..baiyang_active_detail..." />
+            <marker date="1495381394000" expanded="true" signature="-1:-1" placeholder="select * fro..baiyang_active_detail..." />
+            <marker date="1495381394000" expanded="true" signature="-1:-1" placeholder="select * fro..baiyang_active_detail..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/tool/Tool.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.03125">
+        <state vertical-scroll-proportion="0.18786465">
           <caret line="7" column="40" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="40" />
           <folding>
             <element signature="n#time_change#0;n#tool#0;n#!!top" expanded="false" />
@@ -779,64 +788,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/tool/email.php">
+    <entry file="file://$PROJECT_DIR$/tpl/blog/user_home.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.75029725">
+        <state vertical-scroll-proportion="-0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/tool/julaibao.php">
+    <entry file="file://$PROJECT_DIR$/tpl/blog/banner.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9571938">
-          <caret line="35" column="4" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="63" />
+        <state vertical-scroll-proportion="-3.59375">
+          <caret line="5" column="90" selection-start-line="5" selection-start-column="90" selection-end-line="5" selection-end-column="90" />
+          <folding>
+            <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/tool/email.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tpl/tool/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.75">
+        <state vertical-scroll-proportion="-11.25">
           <caret line="57" column="72" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="72" />
-          <folding>
-            <element signature="n#style#0;n#li#5;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1495166354923" expanded="true" signature="1561:1583" placeholder="..." />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/tool/julaibao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-25.15625">
+          <caret line="35" column="4" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="63" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tpl/tool/sign.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.59375">
-          <caret line="84" column="91" selection-start-line="84" selection-start-column="91" selection-end-line="84" selection-end-column="91" />
-          <folding>
-            <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="-11.9375">
+          <caret line="100" column="68" selection-start-line="100" selection-start-column="68" selection-end-line="100" selection-end-column="68" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/tool/Sign.php">
+    <entry file="file://$PROJECT_DIR$/tpl/tool/test.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.60166466">
-          <caret line="135" column="97" selection-start-line="135" selection-start-column="97" selection-end-line="135" selection-end-column="97" />
-          <folding>
-            <element signature="n#__construct#0;n#sign#0;n#!!top" expanded="false" />
-            <element signature="n#index#0;n#sign#0;n#!!top" expanded="false" />
-            <element signature="n#baiy_login#0;n#sign#0;n#!!top" expanded="false" />
-            <element signature="n#baiy_sign#0;n#sign#0;n#!!top" expanded="false" />
-            <element signature="n#baiy_all_sign#0;n#sign#0;n#!!top" expanded="false" />
-            <element signature="n#lottery_do#0;n#sign#0;n#!!top" expanded="false" />
-            <element signature="n#julaibao#0;n#sign#0;n#!!top" expanded="false" />
-            <element signature="e#5622#5662#0#PHP" expanded="false" />
-            <element signature="n#julaibao_sign#0;n#sign#0;n#!!top" expanded="false" />
-            <element signature="e#5951#6005#0#PHP" expanded="false" />
-            <marker date="1495173012388" expanded="true" signature="3056:3085" placeholder="select * fro..baiyang_account..." />
-            <marker date="1495173012388" expanded="true" signature="3688:3717" placeholder="select * fro..baiyang_account..." />
-            <marker date="1495173012388" expanded="true" signature="3828:3863" placeholder="select * fro..baiyang_active_detail..." />
-            <marker date="1495173012388" expanded="true" signature="3828:3880" placeholder="select * fro..baiyang_active_detail..." />
-            <marker date="1495173012388" expanded="true" signature="3828:3881" placeholder="select * fro..baiyang_active_detail..." />
-          </folding>
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/tool/tool.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.1271878">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
