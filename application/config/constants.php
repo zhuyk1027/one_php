@@ -21,8 +21,8 @@ defined('WEIBO') OR define('WEIBO', 'http://weibo.com/5674847826/profile?rightmo
 defined('DESIGN') OR define('DESIGN', '欢迎来到朱耀昆博客，请记住唯一域名 http://www.zhuyk/pub');
 
 defined('EMAIL') OR define('EMAIL', 'zhuyaokun1027@126.com');
-defined('MY_PHOTO') OR define('MY_PHOTO', '/tpl/blog/img/logo.jpg');
-defined('PAY_PHOTO') OR define('PAY_PHOTO', '/tpl/blog/img/alipay.png');
+defined('MY_PHOTO') OR define('MY_PHOTO', 'http://happylife.image.alimmdn.com/img/logo.jpg');
+defined('PAY_PHOTO') OR define('PAY_PHOTO', 'http://happylife.image.alimmdn.com/img/alipay.png');
 
 
 defined('BLOG') OR define('BLOG', 'blog/');

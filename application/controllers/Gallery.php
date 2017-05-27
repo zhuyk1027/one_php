@@ -119,7 +119,8 @@ class Gallery extends CI_Controller {
         $gallery = $this->common_model->get_pages_records($page);
 
         foreach($gallery['query'] as $row){
-            $row->pic_path = get_real_path($row->pic_path,'@80h');
+            #$row->pic_path = get_real_path($row->pic_path,'@80h');
+            $row->pic_path = get_real_path($row->pic_path,'@!150');
         }
         $data = [
             'gallery'=>$gallery['query'],
