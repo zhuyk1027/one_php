@@ -26,7 +26,7 @@
         <entry file="file://$PROJECT_DIR$/tpl/blog/banner.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-3.59375">
-              <caret line="5" column="90" selection-start-line="5" selection-start-column="90" selection-end-line="5" selection-end-column="90" />
+              <caret line="5" column="83" selection-start-line="5" selection-start-column="76" selection-end-line="5" selection-end-column="83" />
               <folding>
                 <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -34,10 +34,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Gallery.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="right.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tpl/blog/right.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.52742124">
+              <caret line="67" column="19" selection-start-line="67" selection-start-column="19" selection-end-line="67" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Gallery.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/Gallery.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.59043175">
+            <state vertical-scroll-proportion="-5.21875">
               <caret line="122" column="67" selection-start-line="122" selection-start-column="67" selection-end-line="122" selection-end-column="67" />
               <folding>
                 <element signature="e#133#506#0#PHP" expanded="false" />
@@ -91,7 +101,7 @@
       <file leaf-file-name="user_gallery_list.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tpl/blog/user_gallery_list.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.1875">
+            <state vertical-scroll-proportion="0.0">
               <caret line="10" column="48" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
               <folding />
             </state>
@@ -101,7 +111,7 @@
       <file leaf-file-name="user_images.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tpl/blog/user_images.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.1875">
+            <state vertical-scroll-proportion="0.0">
               <caret line="10" column="71" selection-start-line="10" selection-start-column="71" selection-end-line="10" selection-end-column="72" />
               <folding />
             </state>
@@ -150,7 +160,6 @@
         <option value="$USER_HOME$/Desktop/CertificateVerify.html" />
         <option value="$USER_HOME$/Desktop/CertificateVerify1.html" />
         <option value="$PROJECT_DIR$/application/controllers/About.php" />
-        <option value="$PROJECT_DIR$/tpl/blog/right.php" />
         <option value="$PROJECT_DIR$/application/controllers/Dos.php" />
         <option value="$PROJECT_DIR$/application/controllers/Count.php" />
         <option value="$PROJECT_DIR$/tpl/blog/count_ad.php" />
@@ -160,10 +169,11 @@
         <option value="$PROJECT_DIR$/tpl/tool/index.php" />
         <option value="$PROJECT_DIR$/tpl/tool/sign.php" />
         <option value="$PROJECT_DIR$/application/controllers/tool/Sign.php" />
-        <option value="$PROJECT_DIR$/tpl/blog/banner.php" />
         <option value="$PROJECT_DIR$/application/config/constants.php" />
         <option value="$PROJECT_DIR$/tpl/blog/user_gallery_list.php" />
         <option value="$PROJECT_DIR$/application/controllers/Gallery.php" />
+        <option value="$PROJECT_DIR$/tpl/blog/banner.php" />
+        <option value="$PROJECT_DIR$/tpl/blog/right.php" />
       </list>
     </option>
   </component>
@@ -207,8 +217,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -293,6 +301,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -608,13 +618,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/blog/right.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5974329">
-          <caret line="71" column="37" selection-start-line="71" selection-start-column="37" selection-end-line="71" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Dos.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-15.28125">
@@ -665,10 +668,6 @@
             <element signature="e#5872#5912#0#PHP" expanded="false" />
             <element signature="n#julaibao_sign#0;n#sign#0;n#!!top" expanded="false" />
             <element signature="e#6201#6255#0#PHP" expanded="false" />
-            <marker date="1495381394000" expanded="true" signature="-1:-1" placeholder="select * fro..baiyang_account..." />
-            <marker date="1495381394000" expanded="true" signature="-1:-1" placeholder="select * fro..baiyang_active_detail..." />
-            <marker date="1495381394000" expanded="true" signature="-1:-1" placeholder="select * fro..baiyang_active_detail..." />
-            <marker date="1495381394000" expanded="true" signature="-1:-1" placeholder="select * fro..baiyang_active_detail..." />
           </folding>
         </state>
       </provider>
@@ -690,16 +689,6 @@
         <state vertical-scroll-proportion="-0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/blog/banner.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.59375">
-          <caret line="5" column="90" selection-start-line="5" selection-start-column="90" selection-end-line="5" selection-end-column="90" />
-          <folding>
-            <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -755,17 +744,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.1875">
           <caret line="10" column="30" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
-          <folding>
-            <marker date="1492574449976" expanded="true" signature="-1:-1" placeholder="select ad_id..blog_ad..." />
-            <marker date="1492574449976" expanded="true" signature="-1:-1" placeholder="select fs_id..blog_friendship..." />
-            <marker date="1492574449976" expanded="true" signature="-1:-1" placeholder="select blog_..blog_group..." />
-            <marker date="1492574449976" expanded="true" signature="-1:-1" placeholder="select count..blog..." />
-            <marker date="1492574449976" expanded="true" signature="-1:-1" placeholder="select tag_i..blog_tag..." />
-            <marker date="1492574449976" expanded="true" signature="-1:-1" placeholder="select count..blog..." />
-            <marker date="1492574449976" expanded="true" signature="-1:-1" placeholder="select blog_..blog..." />
-            <marker date="1492574449976" expanded="true" signature="-1:-1" placeholder="select * fro..blog..." />
-            <marker date="1492574449976" expanded="true" signature="-1:-1" placeholder="select * fro..blog..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -779,7 +758,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tpl/blog/user_images.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.1875">
+        <state vertical-scroll-proportion="0.0">
           <caret line="10" column="71" selection-start-line="10" selection-start-column="71" selection-end-line="10" selection-end-column="72" />
           <folding />
         </state>
@@ -787,7 +766,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tpl/blog/user_gallery_list.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.1875">
+        <state vertical-scroll-proportion="0.0">
           <caret line="10" column="48" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
           <folding />
         </state>
@@ -795,7 +774,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Gallery.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.59043175">
+        <state vertical-scroll-proportion="-5.21875">
           <caret line="122" column="67" selection-start-line="122" selection-start-column="67" selection-end-line="122" selection-end-column="67" />
           <folding>
             <element signature="e#133#506#0#PHP" expanded="false" />
@@ -842,6 +821,24 @@
             <marker date="1495871617867" expanded="true" signature="5980:6014" placeholder="select * fro..album..." />
             <marker date="1495871617867" expanded="true" signature="6432:6486" placeholder="SELECT * FRO..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/blog/banner.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.59375">
+          <caret line="5" column="83" selection-start-line="5" selection-start-column="76" selection-end-line="5" selection-end-column="83" />
+          <folding>
+            <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/blog/right.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.52742124">
+          <caret line="67" column="19" selection-start-line="67" selection-start-column="19" selection-end-line="67" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -65,7 +65,7 @@
                 }
             });
         })
-        $(".ad_click").click(function(){
+        $(".ad_list").click(function(){
             var ad_id = this.getAttribute("adid");
             $.ajax({
                 url: "/dos/jump_ad",
