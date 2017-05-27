@@ -93,10 +93,10 @@ class sign extends CI_Controller {
         }
     }
     #批量签到
-    function baiy_all_sign($type=1)
+    function baiy_all_sign($type=1,$page=1,$pagesize=100)
     {
         #获取用户
-        $data = $this->get_user($type);
+        $data = $this->get_user($type,$page,$pagesize);
 
         #批量操作
         foreach($data as $key=>$val){
@@ -110,26 +110,28 @@ class sign extends CI_Controller {
         }
     }
     #获取用户
-    function get_user($type=1){
+    function get_user($type=1,$page=1,$pagesize=100){
+        $offset = ($page-1)*$pagesize;
         #获取用户
         $sql = "select * from baiyang_account";
         switch ($type){
             case 1:$sql .= " where pay_pass>1";break;
             case 2:$sql .= " where ISNULL(pay_pass)";break;
         }
+        $sql .= " limit $offset,$pagesize";
         $data = $this->common_model->get_records($sql);
         if(empty($data)){ echo "暂无用户";die; }
         return $data;
     }
     #批量抽奖
-    function lottery($id=0,$type = 1)
+    function lottery($id=0,$type = 1,$page=1,$pagesize=100)
     {
         if(!$id){
             echo "请输入活动ID";die;
         }
 
         #获取用户
-        $data = $this->get_user($type);
+        $data = $this->get_user($type,$page,$pagesize);
 
 
         #对应奖品
