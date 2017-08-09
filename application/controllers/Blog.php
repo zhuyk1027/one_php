@@ -16,6 +16,7 @@ class Blog extends CI_Controller {
         'groups'=>'',
         'ranking'=>'',
         'friendship'=>'',
+        'head_switch'=>'',
     );
 
     public function __construct(){
@@ -27,7 +28,7 @@ class Blog extends CI_Controller {
         $this->site_info['groups'] = $this->common_model->get_records('select blog_group_id,group_name,(select count(*) from blog where group_id=blog_group_id ) as num from blog_group where user_id='.$this->user_id);
         $this->site_info['tags'] = $this->common_model->get_records('select tag_id,tag_name,(select count(*) from blog where tags=tag_id ) as num from blog_tag where user_id='.$this->user_id);
         $this->site_info['ranking'] = $this->common_model->get_records('select blog_id,title from blog order by click desc limit 10');
-
+        $this->site_info['head_switch'] = $this->common_model->get_records('select * from head_switch order by sort asc');
         $this->common_model->pv_count($_SERVER['PHP_SELF']);
     }
 

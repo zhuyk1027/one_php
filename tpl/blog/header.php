@@ -17,7 +17,7 @@
     <meta property="article:published_time" content="2016-10-27T14:03:04+08:00">
     <meta property="article:author" content="朱耀昆 zhuyk zhuyaokun 朱耀昆PHP开发工程师">
     <meta property="article:published_first" content="朱耀昆博客<?=WEB_URL?>">
-    <meta property="og:image" content="http://zhuyk.pub/logo.jpg">
+    <meta property="og:image" content="<?=WEB_URL?>logo.jpg">
     <meta property="og:release_date" content="2016-10-27T14:03:04+08:00">
     <meta property="og:title" content="PHP程序员，朱耀昆博客-优秀PHP技术博客，朱耀昆 zhuyk zhuyaokun 朱耀昆PHP开发工程师">
     <meta property="og:description" content="朱耀昆优秀PHP技术博客。分享原创教程，技术文档与其他实用分享资源，坚持做优质资源: 写好代码，让代码更扎实稳固，自己才会有质的飞跃">
@@ -35,8 +35,8 @@
     <script>
         window._deel = {
             name: '<?=$website_title?>',
-            url: 'zhuyk.pub',
-            rss: 'zhuyk.pub',
+            url: '<?=WEB_URL?>',
+            rss: '<?=WEB_URL?>',
             ajaxpager: 'on',
             maillist: '',
             maillistCode: '',
@@ -67,8 +67,13 @@
                 current-menu-item current_page_item menu-item-home menu-item-51">
                 <a href="/">首页</a>
             </li>
-            <li id="menu-item-60" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60"><a href="/tool">小公举</a></li>
-            <li id="menu-item-62" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-61"><a href="/about">关于本站</a></li>
+            <?php
+                foreach($head_switch as $row) {
+                    if($row->is_open==1){
+                        echo '<li id="menu-item-'.$row->sort.'" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-'.$row->sort.'"><a href="'.$row->url.'">'.$row->name.'</a></li>';
+                    }
+                }
+            ?>
         </ul>
         <div class="screen-mini">
             <button data-type="screen-nav" class="btn btn-inverse screen-nav"><i class="icon-tasks icon-white"></i></button>

@@ -16,6 +16,8 @@ class About extends CI_Controller {
         'groups'=>'',
         'ranking'=>'',
         'friendship'=>'',
+        'ad'=>'',
+        'head_switch'=>'',
     );
 
     public function __construct(){
@@ -30,6 +32,7 @@ class About extends CI_Controller {
         $this->site_info['groups'] = $this->common_model->get_records('select blog_group_id,group_name,(select count(*) from blog where group_id=blog_group_id ) as num from blog_group where user_id='.$this->user_id);
         $this->site_info['tags'] = $this->common_model->get_records('select tag_id,tag_name,(select count(*) from blog where tags=tag_id ) as num from blog_tag where user_id='.$this->user_id);
         $this->site_info['ranking'] = $this->common_model->get_records('select blog_id,title from blog order by click desc limit 10');
+        $this->site_info['head_switch'] = $this->common_model->get_records('select * from head_switch order by sort asc');
     }
     #关于本站页面
     public function index(){
@@ -109,6 +112,11 @@ class About extends CI_Controller {
                     'Z','X','C','V','B','N','M');
                 $data['key'] = $keys[rand(0,26)].$keys[rand(0,26)].$keys[rand(0,26)].$keys[rand(0,26)].$keys[rand(0,26)].$keys[rand(0,26)];
                 $this->db->insert('about',$data);
+            }
+
+            //如果当前用户为1，则更改头部信息
+            if($this->session->userdata('id')==1){
+                $this->db->update('head_switch',array('is_open'=>$_POST['stu']?$_POST['stu']:0),array('id'=>1));
             }
         }
 

@@ -15,7 +15,7 @@ defined('SHOW_DEBUG_BACKTRACE') OR define('SHOW_DEBUG_BACKTRACE', TRUE);
 
 
 /*常用常量*/
-defined('WEB_URL') OR define('WEB_URL', 'http://www.zhuyk.pub/');
+defined('WEB_URL') OR define('WEB_URL', 'http://www.zhuyk.cn/');
 defined('WEB_NAME') OR define('WEB_NAME', '朱耀昆博客');
 defined('WEIBO') OR define('WEIBO', 'http://weibo.com/5674847826/profile?rightmod=1&wvr=6&mod=personinfo&is_hot=1');
 defined('DESIGN') OR define('DESIGN', '欢迎来到朱耀昆博客，请记住唯一域名 http://www.zhuyk/pub');

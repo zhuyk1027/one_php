@@ -16,8 +16,8 @@
     <script>
         window._deel = {
             name: '<?=$website_title?>',
-            url: 'zhuyk.pub',
-            rss: 'zhuyk.pub',
+            url: '<?=WEB_URL?>',
+            rss: '<?=WEB_URL?>',
             ajaxpager: 'on',
             maillist: '',
             maillistCode: '',
@@ -41,14 +41,13 @@
                 current-menu-item current_page_item menu-item-home menu-item-51">
                 <a href="/">首页</a>
             </li>
-<!--            --><?php //foreach($groups as $key=>$row){ ?>
-<!--                <li id="menu-item-5--><?//=$key+2?><!--" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5--><?//=$key+2?><!--">-->
-<!--                    <a href="/blog/blog_list?type=--><?//=$row->blog_group_id?><!--">--><?//=$row->group_name?><!--</a>-->
-<!--                </li>-->
-<!--            --><?php // }?>
-            <li id="menu-item-60" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60"><a href="/tool">小公举</a></li>
-            <li id="menu-item-61" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-61"><a href="/tool">相册</a></li>
-            <li id="menu-item-62" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-61"><a href="/about">关于本站</a></li>
+            <?php
+            foreach($head_switch as $row) {
+                if($row->is_open==1){
+                    echo '<li id="menu-item-'.$row->sort.'" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-'.$row->sort.'"><a href="'.$row->url.'">'.$row->name.'</a></li>';
+                }
+            }
+            ?>
         </ul>
         <div class="screen-mini">
             <button data-type="screen-nav" class="btn btn-inverse screen-nav"><i class="icon-tasks icon-white"></i></button>

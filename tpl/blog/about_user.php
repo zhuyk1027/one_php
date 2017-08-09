@@ -18,15 +18,17 @@
                 <div style="padding:1em;">
                     <form class="form-horizontal" action="/about/user" method="post" enctype="multipart/form-data" onsubmit="return check_form()">
                         <fieldset>
+                            <?php if($this->session->userdata('id')==1){ ?>
                             <div class="control-group hidden-phone">
-                                <label class="control-label" for="textarea2">关于本站</label>
+                                <label class="control-label" for="textarea2">是否显示</label>
                                 <div class="controls">
                                     <select name="stu">
                                         <option value="1">显示</option>
-                                        <option value="2" <?php if(isset($station->user_id) && $station->stu==2){ echo "selected"; } ?>>不显示</option>
+                                        <option value="0" <?php if(isset($station->user_id) && $station->stu==2){ echo "selected"; } ?>>不显示</option>
                                     </select>
                                 </div>
                             </div>
+                            <?php } ?>
                             <div class="control-group hidden-phone">
                                 <label class="control-label" for="textarea2">关于本站</label>
                                 <div class="controls">
