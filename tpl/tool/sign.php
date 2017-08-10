@@ -163,7 +163,7 @@
     }
     function jump_register(){
         var register_num = $('#register_num option:selected') .val();
-        var is_auto = $("input[name='is_auto']").val();
+        var is_auto = $("input[name='is_auto']:checked").val();
         var invite_code = $("input[name='invite_code']").val();
         window.location.href='/tool/sign/register_do/'+is_auto+'/'+invite_code+'/'+register_num;
     }
