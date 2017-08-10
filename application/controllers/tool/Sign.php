@@ -204,13 +204,18 @@ class sign extends CI_Controller {
     //批量注册功能
     function register_do($is_auto = 1,$invite = 1,$register_num = 1,$j = 0,$error = 0){
         //错误3次之后,停止运行脚本 or 达到数量之后，输出
-        if($error>=3 || $register_num==$j){
-            if($error>=3){echo "多次获取错误<br />";}
+        if($error>=10 || $register_num==$j){
+            if($error>=10){echo "多次获取错误<br />";}
 
             $date = date('Ymd');
             $myfile = fopen($date."register.txt", "r") or die("Unable to open file!");
-            echo fread($myfile,filesize($date."register.txt"));
+            $info = fread($myfile,filesize($date."register.txt"));
             fclose($myfile);
+
+            $info = explode("\r\n",$info);
+            foreach($info as $key=>$value){
+                echo $value.'<br />';
+            }
 
             exit();
         }
@@ -324,6 +329,7 @@ class sign extends CI_Controller {
                 $this->jump_register_url($is_auto,$invite,$register_num,$j,$error);die;
             }
 
+            $udid = $this->get_udid();
 
             //⑨注册
             $param = array(
@@ -332,7 +338,7 @@ class sign extends CI_Controller {
                 'mobile_code'=>$code,
                 'token'=>'c4389008bfefee32e43f41d10998fd0f93c36ccc',
                 'mobile'=>$phone,
-                'udid'=>'c9b31154-fd5a-35ff-8a27-5f4a3f3bb278',
+                'udid'=>$udid,
             );
             $url = 'http://mallapp.baiyjk.com/login/register';
 
@@ -358,6 +364,37 @@ class sign extends CI_Controller {
             $error += 1;
             $this->jump_register_url($is_auto,$invite,$register_num,$j,$error);
         }
+    }
+
+    /*获取udid*/
+    function get_udid(){
+        $udid = array(
+            '72BADF9B-DDA3-440C-9C7C-D2D31F75CFCD',
+            '041E2CA8-7340-41F1-A1A2-1C0AB4F5690A',
+            '490D3C4A-73BB-4E24-B635-6FEA769508FC',
+            '94E3872F-D158-4785-8453-D156B2C99ADD',
+            'F619C7BC-94FB-4B86-9FE8-86FA868B43A9',
+            '2D4A6369-B040-4677-9F5E-0D0165EDBBED',
+            'C0EC1F92-FDCF-4079-91E6-C3F66C8CBD5A',
+            '72BADF9B-DDA3-440C-9C7C-D2D31F75CFCD',
+            'C3A127E1-ACCE-45AE-BC9F-2A2933B496B6',
+            '5F46EA2E-02C4-4BA9-8799-EEE6472587A1',
+            '2839894D-1B77-4F6E-828D-7511CABD5DFE',
+            '2044F664-CEEA-48A0-8139-8AA834D5321D',
+            'E3C0658E-DC8A-4F44-A5AA-DFB15FDEF9E3',
+            'D9E0EE9F-96E1-4B68-9F12-8AFE48CB0F25',
+            '2839894D-1B77-4F6E-828D-7511CABD5DFE',
+            'D9E0EE9F-96E1-4B68-9F12-8AFE48CB0F25',
+            '8D2236A0-6D04-4233-957A-D4EA7B62C05B',
+            'ED2F481B-148C-45E8-9BDA-7D01745D5DDA',
+            '6D3DF893-9139-4FBE-913C-C62C26BFFEC1',
+            '2839894D-1B77-4F6E-828D-7511CABD5DFE',
+            '4B30AEBC-8134-400C-A5AB-7A9466BA7083',
+            'D9E0EE9F-96E1-4B68-9F12-8AFE48CB0F25',
+            'BFFDF023-2247-4770-B92C-E319768FC4A2',
+        );
+
+        return $udid[rand(0,count($udid)-1)];
     }
 
     /** 单次成功后跳转 */
