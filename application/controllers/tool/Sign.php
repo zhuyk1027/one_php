@@ -220,6 +220,10 @@ class sign extends CI_Controller {
             exit();
         }
 
+        if($j == 0){
+            $this->write_err_info(" \r\n ");
+        }
+
         //①邀请码
         $invite_code = $this->get_invite_code($is_auto,$invite);
         if(!$invite_code){
