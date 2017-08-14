@@ -115,7 +115,6 @@
             <p><input type="button" value="sign" onclick="jump()"></p>
         </li>
     </ul>
-
     <ul class="clear aul">
         <li class="backcolor ali">
             <p>Register</p>
@@ -130,6 +129,16 @@
             <p>
                 <input type="button" value="sign" onclick="jump_register()">
                 <input type="button" value="清除TOKEN" onclick="clear_session()">
+            </p>
+        </li>
+    </ul>
+    <ul class="clear aul">
+        <li class="backcolor ali">
+            <p>查看返利金额</p>
+            时间：<input type="radio" name="datetime" value="1" checked>本月
+                  <input type="radio" name="datetime" value="2">上月<br />
+            </p><p>
+                <input type="button" value="查看" onclick="show_backmoney()">
             </p>
         </li>
     </ul>
@@ -172,7 +181,8 @@
         var code = $("input[name='code1']").val();
         var invite_code = $("input[name='invite_code1']").val();
         window.location.href='/tool/sign/register/'+phone+'/'+invite_code+'/'+code;
-    }function clear_session(){
+    }
+    function clear_session(){
         $.ajax({
             url: "/tool/sign/unset_session",
             data: { "is_clean": 1},
@@ -183,6 +193,10 @@
             }
         });
 
+    }
+    function show_backmoney(){
+        var datetime = $("input[name='datetime']:checked").val();
+        window.location.href='/tool/sign/show_backmoney/'+datetime;
     }
 
 </script>

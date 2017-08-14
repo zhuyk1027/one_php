@@ -118,6 +118,43 @@ class sign extends CI_Controller {
 
         return array(json_decode($output)->message,isset(json_decode($output)->data->postion_id)?json_decode($output)->data->postion_id:99);
     }
+    #查看信息
+    function show_back($token,$start,$end)
+    {
+
+        $url = 'http://mallapp.baiyjk.com/v3_3/cps_user/cps_user_promoter_income';
+
+        $post_data['token'] = $token;
+        $post_data['time_name'] = 'other_day';
+        $post_data['start_time'] = $start;
+        $post_data['end_time'] = $end;
+
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_USERAGENT, 'BaiYangStore/3.0.0 (iPhone; iOS 9.3; Scale/2.00)');
+        // post数据
+        curl_setopt($ch, CURLOPT_POST, 1);
+        // post的变量
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data);
+        $output = curl_exec($ch);
+        curl_close($ch);
+
+        if(json_decode($output)->code==200){
+            $arr['back_amount'] = json_decode($output)->data->back_amount;
+            $arr['effect_order_num'] = json_decode($output)->data->effect_order_num;
+            $arr['register_num'] = json_decode($output)->data->register_num;
+            $arr['message'] = 'SUCCESS';
+        }else{
+            $arr['back_amount'] = 0;
+            $arr['effect_order_num'] = 0;
+            $arr['register_num'] = 0;
+            $arr['message'] = 'FAIL';
+        }
+
+        return $arr;
+    }
 
     #获取批量用户
     function get_user($type=1,$page=1,$pagesize=100){
@@ -129,6 +166,13 @@ class sign extends CI_Controller {
             case 2:$sql .= " where ISNULL(pay_pass)";break;
         }
         $sql .= " limit $offset,$pagesize";
+        $data = $this->common_model->get_records($sql);
+        if(empty($data)){ echo "暂无用户";die; }
+        return $data;
+    }
+    function get_cps_user(){
+        #获取用户
+        $sql = "select * from baiyang_account where is_cps=1";
         $data = $this->common_model->get_records($sql);
         if(empty($data)){ echo "暂无用户";die; }
         return $data;
@@ -178,6 +222,35 @@ class sign extends CI_Controller {
                 echo $val->account.' 获得'.$sign_info[1].'积分'.',message:'.$sign_info[0].'<br />';
             }
         }
+    }
+    #批量查看
+    function show_backmoney($type=1)
+    {
+        //php获取本月起始时间戳和结束时间戳
+        if($type==1){
+            $strat=mktime(0,0,0,date('m'),1,date('Y'));
+            $end=mktime(23,59,59,date('m'),date('t'),date('Y'));
+        }else{
+            $strat=mktime(0,0,0,date('m')-1,1,date('Y'));
+            $end=mktime(23,59,59,date('m')-1,date('t'),date('Y'));
+        }
+
+        #获取用户
+        $data = $this->get_cps_user();
+        $back_money = 0;
+        #批量操作
+        foreach($data as $key=>$val){
+            $token = $this->baiy_login($val->account,$val->password);
+            if(!$token){
+                echo $val->account.' 密码错误<br />';
+            }else{
+                $arr = $this->show_back($token,$strat,$end);
+                echo $val->account.' '.$arr['message'].' 返利'.$arr['back_amount'].
+                    ',注册用户:'.$arr['register_num'].'，返利订单'.$arr['effect_order_num'].'<br />';
+                $back_money += $arr['back_amount'];
+            }
+        }
+        echo "共计".$back_money.'元';
     }
 
     /*
