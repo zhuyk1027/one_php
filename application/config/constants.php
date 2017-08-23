@@ -18,22 +18,19 @@ defined('SHOW_DEBUG_BACKTRACE') OR define('SHOW_DEBUG_BACKTRACE', TRUE);
 defined('WEB_URL') OR define('WEB_URL', 'http://www.zhuyk.cn/');
 defined('WEB_NAME') OR define('WEB_NAME', '朱耀昆博客');
 defined('WEIBO') OR define('WEIBO', 'http://weibo.com/5674847826/profile?rightmod=1&wvr=6&mod=personinfo&is_hot=1');
-defined('DESIGN') OR define('DESIGN', '欢迎来到朱耀昆博客，请记住唯一域名 http://www.zhuyk/pub');
+defined('DESIGN') OR define('DESIGN', '欢迎来到朱耀昆博客，请记住唯一域名 http://www.zhuyk/cn');
 
 defined('EMAIL') OR define('EMAIL', 'zhuyaokun1027@126.com');
 defined('MY_PHOTO') OR define('MY_PHOTO', 'http://happylife.image.alimmdn.com/img/logo.jpg');
 defined('PAY_PHOTO') OR define('PAY_PHOTO', 'http://happylife.image.alimmdn.com/img/alipay.png');
-
 
 defined('BLOG') OR define('BLOG', 'blog/');
 defined('BLOG_JS') OR define('BLOG_JS', '/tpl/blog/js/');
 defined('BLOG_CSS') OR define('BLOG_CSS', '/tpl/blog/css/');
 defined('BLOG_IMG') OR define('BLOG_IMG', '/tpl/blog/img/');
 
-defined('SMG') OR define('SMG', 'smg/');
-defined('SMG_TPL') OR define('SMG_TPL', '/tpl/smg/');
 defined('PUB_PATH') OR define('PUB_PATH', '/tpl/public/');
-
+defined('TOOL_CSS') OR define('TOOL_CSS', '/tpl/tool/css/');
 
 defined('UP_TEMP_PATH') OR define('UP_TEMP_PATH', 'uptemp/');
 

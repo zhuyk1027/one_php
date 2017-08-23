@@ -1,5 +1,17 @@
 </section>
 <footer class="footer">
+    <div class="widget widget_text">
+        <div class="textwidget">
+            <div style="padding:1em;">
+                <?php foreach($friendship as $key=>$row){ ?>
+                    <a href="javascript:void(0);" class="fiend_click" style="text-shadow:0 0px 0 #333333;" fsid="<?=$row->fs_id?>" title="<?=$row->fs_title?>" target="_blank">
+                        <?=$row->fs_title?>
+                    </a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <?php  }?>
+            </div>
+        </div>
+    </div>
     <div class="footer-inner">
         <div class="copyright pull-left">
             版权所有，保留一切权利！ © 2017 <a href="<?=WEB_URL?>"><?=$website_title?></a>　Theme

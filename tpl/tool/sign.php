@@ -3,152 +3,136 @@
     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>工具列表</title>
-    <style type="text/css">
-        ul {
-            margin-left:10px;
-            margin-right:10px;
-            margin-top:10px;
-            padding: 0;
-        }
-        li {
-            float: left;
-            margin: 0px;
-            margin-left:1%;
-            padding: 20px;
-            display: inline;
-            color: #fff;
-            font-size: x-large;
-            word-break:break-all;
-            word-wrap : break-word;
-            margin-bottom: 5px;
-        }
-        a {
-            -webkit-tap-highlight-color: rgba(0,0,0,0);
-            text-decoration:none;
-            color:#fff;
-        }
-        a:link{
-            -webkit-tap-highlight-color: rgba(0,0,0,0);
-            text-decoration:none;
-            color:#fff;
-        }
-        a:visited{
-            -webkit-tap-highlight-color: rgba(0,0,0,0);
-            text-decoration:none;
-            color:#fff;
-        }
-        a:hover{
-            -webkit-tap-highlight-color: rgba(0,0,0,0);
-            text-decoration:none;
-            color:#fff;
-        }
-        a:active{
-            -webkit-tap-highlight-color: rgba(0,0,0,0);
-            text-decoration:none;
-            color:#fff;
-        }
-
-
-        .aul {
-            margin: 10px;;
-            padding: 0;
-        }
-        .ali {
-            float: left;
-            margin: 0px;
-            margin-left:1%;
-            padding: 10px;
-            display: inline;
-            color: #fff;
-            font-size: x-large;
-            word-break:break-all;
-            word-wrap : break-word;
-            margin-bottom: 5px;
-        }
-        a {
-            -webkit-tap-highlight-color: rgba(0,0,0,0);
-            text-decoration:none;
-            color:#fff;
-        }
+    <link href="<?=TOOL_CSS?>main.css" rel="stylesheet" type="text/css">
+    <style>
         .backcolor {
             background-color:green;
         }
-        .clear {
-            clear:both;
-        }
+
     </style>
 </head>
 <body>
 <div align="center">
     <ul>
-        <li style="background-color:#c09853"><a href="/">返回博客首页</a></li>
+        <li style="background-color:green"><a href="/tool">返回</a></li>
     </ul>
-    <ul class="clear aul">
-        <li class="backcolor ali">
+    <ul class="clear">
+        <li class="backcolor">
             <p>All Sign</p>
-            pay密码：<input type="radio" name="pay_pass_sign" value="1" checked>是
-            <input type="radio" name="pay_pass_sign" value="2">否
-            <input type="radio" name="pay_pass_sign" value="3">全部<br />
-            page : <select id="sign_page">
-                <?php for($i=1;$i<100;$i++){
-                    echo ' <option value="'.$i.'">'.$i.'</option>';
-                } ?>
-            </select><br />
-            pagesize : <input name="sign_page_size" value="100">
-            <p><input type="button" value="sign" onclick="jump_sign()"></p>
+            <table>
+                <tr>
+                    <td class="right">pay密码：</td>
+                    <td><input type="radio" name="pay_pass_sign" value="1" checked>是
+                        <input type="radio" name="pay_pass_sign" value="2">否
+                        <input type="radio" name="pay_pass_sign" value="3">全部</td>
+                </tr><tr>
+                    <td class="right">page：</td>
+                    <td><select id="sign_page">
+                            <?php for($i=1;$i<100;$i++){
+                                echo ' <option value="'.$i.'">'.$i.'</option>';
+                            } ?>
+                        </select></td>
+                </tr><tr>
+                    <td class="right">pagesize：</td>
+                    <td><input name="sign_page_size" value="100"></td>
+                </tr><tr>
+                    <td colspan="2" class="text_center"><input type="button" class="button" value="sign" onclick="jump_sign()"></td>
+                </tr>
+            </table>
         </li>
     </ul>
-    <ul class="clear aul">
-        <li class="backcolor ali">
+    <ul class="clear">
+        <li class="backcolor">
             <p>All Lottery</p>
-            活动 ID：<input type="text" name="act_id" placeholder="活动ID"  size="19" value=""><br />
-            pay密码：<input type="radio" name="pay_pass" value="1" checked>是
-                    <input type="radio" name="pay_pass" value="2">否
-                    <input type="radio" name="pay_pass" value="3">全部
-            <br />
-            page : <select id="lottery_sign_page">
-                <?php for($i=1;$i<100;$i++){
-                    echo ' <option value="'.$i.'">'.$i.'</option>';
-                } ?>
-            </select><br />
-            pagesize : <input name="lottery_page_size" value="100">
-            <p><input type="button" value="sign" onclick="jump()"></p>
+            <table>
+                <tr>
+                    <td class="right">活动ID：</td>
+                    <td><input type="text" name="act_id" placeholder="活动ID"  size="19" value=""></td>
+                </tr><tr>
+                    <td class="right">pay密码：</td>
+                    <td><input type="radio" name="pay_pass" value="1" checked>是
+                        <input type="radio" name="pay_pass" value="2">否
+                        <input type="radio" name="pay_pass" value="3">全部</td>
+                </tr><tr>
+                    <td class="right">page：</td>
+                    <td><select id="lottery_sign_page">
+                            <?php for($i=1;$i<100;$i++){
+                                echo ' <option value="'.$i.'">'.$i.'</option>';
+                            } ?>
+                        </select></td>
+                </tr><tr>
+                    <td class="right">pagesize：</td>
+                    <td><input name="lottery_page_size" value="100"></td>
+                </tr><tr>
+                    <td colspan="2" class="text_center"><input type="button" class="button" value="sign" onclick="jump()"></td>
+                </tr>
+            </table>
         </li>
     </ul>
-    <ul class="clear aul">
-        <li class="backcolor ali">
+    <ul class="clear">
+        <li class="backcolor">
             <p>Register</p>
-            是否随机邀请码：<input type="radio" name="is_auto" value="1" checked>是
-                            <input type="radio" name="is_auto" value="2">否<br />
-            指定邀请码：<input type="text" name="invite_code" value="1" ><br />
-            注册数量 : <select id="register_num">
-                <?php for($i=1;$i<100;$i++){
-                    echo ' <option value="'.$i.'">'.$i.'</option>';
-                } ?>
-            </select><br />
-            <p>
-                <input type="button" value="sign" onclick="jump_register()">
-                <input type="button" value="清除TOKEN" onclick="clear_session()">
-            </p>
+            <table>
+                <tr>
+                    <td class="right">随机邀请码：</td>
+                    <td><input type="radio" name="is_auto" value="1" checked>是
+                        <input type="radio" name="is_auto" value="2">否</td>
+                </tr><tr>
+                    <td class="right">指定邀请码：</td>
+                    <td><input type="text" name="invite_code" value="1" ></td>
+                </tr><tr>
+                    <td class="right">注册数量：</td>
+                    <td><select id="register_num">
+                            <?php for($i=1;$i<100;$i++){
+                                echo ' <option value="'.$i.'">'.$i.'</option>';
+                            } ?>
+                        </select></td>
+                </tr><tr>
+                    <td colspan="2" class="text_center">
+                        <input type="button" class="button" value="sign" onclick="jump_register()">
+                        <input type="button" class="button" value="清除TOKEN" onclick="clear_session()">
+                    </td>
+                </tr>
+            </table>
         </li>
     </ul>
-    <ul class="clear aul">
-        <li class="backcolor ali">
+    <ul class="clear">
+        <li class="backcolor">
             <p>查看返利金额</p>
-            时间：<input type="radio" name="datetime" value="1" checked>本月
-                  <input type="radio" name="datetime" value="2">上月<br />
-            </p><p>
-                <input type="button" value="查看" onclick="show_backmoney()">
-            </p>
+
+            <table>
+                <tr>
+                    <td class="right">时间：</td>
+                    <td><input type="radio" name="datetime" value="1" checked>本月
+                        <input type="radio" name="datetime" value="2">上月</td>
+                </tr><tr>
+                    <td colspan="2" class="text_center">
+                        <input type="button" class="button" value="查看" onclick="show_backmoney()">
+                    </td>
+                </tr>
+            </table>
         </li>
     </ul>
-    <ul class="clear aul">
-        <li class="backcolor ali">
+    <ul class="clear">
+        <li class="backcolor">
             <p>Register</p>
-            手机：<input type="text" name="phone1"  ><br />
-            验证码：<input type="text" name="code1" ><br />
-            邀请码：<input type="text" name="invite_code1"><br />
-            <p><input type="button" value="sign" onclick="register()"></p>
+
+            <table>
+                <tr>
+                    <td class="right">手机：</td>
+                    <td><input type="text" name="phone1"  ></td>
+                </tr><tr>
+                    <td class="right">验证码：</td>
+                    <td><input type="text" name="code1" ></td>
+                </tr><tr>
+                    <td class="right">邀请码：</td>
+                    <td><input type="text" name="invite_code1"></td>
+                </tr><tr>
+                    <td colspan="2" class="text_center">
+                        <input type="button" class="button" value="sign" onclick="register()">
+                    </td>
+                </tr>
+            </table>
         </li>
     </ul>
 </div>
@@ -198,7 +182,6 @@
         var datetime = $("input[name='datetime']:checked").val();
         window.location.href='/tool/sign/show_backmoney/'+datetime;
     }
-
 </script>
 </body>
 </html>

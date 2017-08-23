@@ -24,9 +24,9 @@ class test extends CI_Controller {
             运行程序为<br />
 
             $ this ->db->trans_start(true);   //增加参数 true 则为测试模式，所有查询将会回滚<br />
-            $ this ->db->query('select * from blog_album where id=30');<br />
-            $ this ->db->query(\"update blog_album set title='5555' where id=30\");<br />
-            $ this ->db->query(\"update blog_album set title='5555' where user_id=26\");<br />
+            $ this ->db->query('select * from album where id=30');<br />
+            $ this ->db->query(\"update album set title='5555' where id=30\");<br />
+            $ this ->db->query(\"update album set title='5555' where user_id=26\");<br />
             $ this ->db->trans_complete();<br />
             </pre>
         ";
@@ -38,9 +38,9 @@ class test extends CI_Controller {
         //$this->db->trans_off();
 
 		$this->db->trans_start(true);   //增加参数 true 则为测试模式，所有查询将会回滚
-		$this->db->query('select * from blog_album where id=30');
-		$this->db->query("update blog_album set title='5555' where id=30");
-		$this->db->query("update blog_album set title='5555' where user_id=26");
+		$this->db->query('select * from album where id=30');
+		$this->db->query("update album set title='5555' where id=30");
+		$this->db->query("update album set title='5555' where user_id=26");
 		$this->db->trans_complete();
 
         if ($this -> db -> trans_status() === FALSE) {

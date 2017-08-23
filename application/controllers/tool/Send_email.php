@@ -21,19 +21,23 @@ class send_email extends CI_Controller {
     {
         $to = $this->input->post('to');
         $title = $this->input->post('title');
-        $conts = "以下信息不具有任何法律效应，不为任何真实信息，此邮件为".WEB_URL."网站测试邮件.\n\n\n".$this->input->post('conts');
+        $conts = "以下信息不具有任何法律效应，不为任何真实信息，此邮件为".WEB_URL." 网站测试邮件.\n\n\n".$this->input->post('conts');
+
+        $pattern = "/^([0-9A-Za-z\\-_\\.]+)@([0-9a-z]+\\.[a-z]{2,3}(\\.[a-z]{2})?)$/i";
+        if(!preg_match($pattern, $to)){
+            echo "请输入正确的邮箱地址";die;
+        }
+        $title .= " - 朱耀昆博客 ".WEB_URL;
 
         $this->load->library('email');
-
         $this->email->from('zhuyaokun1027@126.com', '朱耀昆');
         $this->email->to($to);
         //$this->email->cc('another@another-example.com');
         //$this->email->bcc('them@their-example.com');
-
         $this->email->subject($title);
         $this->email->message($conts);
-
         $res = $this->email->send();
+
         echo $res?'您的邮件发送成功了!':'您的邮件发送失败了!';
     }
 }

@@ -22,7 +22,6 @@ class tool extends CI_Controller {
         ];
         $this->load->view('tool/tool',$data);
 	}
-
     public function to_time_change()
 	{
         $_sjc = $_POST['shijianchuo'];
@@ -33,4 +32,36 @@ class tool extends CI_Controller {
         $_sjc = $_POST['dates'];
         echo json_encode(strtotime($_sjc));
 	}
+
+    public function md5_encode()
+    {
+        $data = [
+            'title'=>'md5加密'
+        ];
+        $this->load->view('tool/md5encode',$data);
+    }
+    public function md5_to_encode()
+    {
+        $str = trim($_POST['words']);
+        echo md5($str);
+    }
+
+    public function json_decode()
+    {
+        $data = [
+            'title'=>'json解析'
+        ];
+        $this->load->view('tool/jsondecode',$data);
+    }
+
+    public function json_to_decode()
+    {
+        $str = trim($_POST['words']);
+//        $arr = json_decode($arr);
+        $arr = json_decode($str,TRUE);
+
+        echo "<pre>";
+        print_r($arr);die;
+        echo "</pre>";
+    }
 }

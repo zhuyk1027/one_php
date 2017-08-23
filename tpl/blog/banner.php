@@ -1,5 +1,5 @@
 <div class="widget widget_recent_entries">
-    <h3 class="widget_tit">广告轮播</h3>
+    <h3 class="widget_tit">亲情推荐</h3>
     <ul id="banner_list">
         <?php foreach($ad as $key=>$row){ ?>
             <li id="banner_<?=$key+1?>" style="display: none">

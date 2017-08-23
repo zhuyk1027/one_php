@@ -277,7 +277,7 @@ class sign extends CI_Controller {
     //批量注册功能
     function register_do($is_auto = 1,$invite = 1,$register_num = 1,$j = 0,$error = 0){
         //错误3次之后,停止运行脚本 or 达到数量之后，输出
-        if($error>=10 || $register_num==$j){
+        if($error>=100 || $register_num==$j){
             if($error>=10){echo "多次获取错误<br />";}
 
             $date = date('Ymd');

@@ -40,16 +40,20 @@
             </li>
         </ul>
     </div>
-    <div class="widget widget_text">
-        <h3 class="widget_tit">友情链接</h3>
-        <div class="textwidget">
-            <div style="padding:1em;">
-                <?php foreach($friendship as $key=>$row){ ?>
-                    <p><a href="javascript:void(0);" class="fiend_click" fsid="<?=$row->fs_id?>" title="<?=$row->fs_title?>" target="_blank"><?=$row->fs_title?></a></p>
-                <?php  }?>
-            </div>
-        </div>
-    </div>
+<!--    <div class="widget widget_text">-->
+<!--        <h3 class="widget_tit">友情链接</h3>-->
+<!--        <div class="textwidget">-->
+<!--            <div style="padding:1em;">-->
+<!--                --><?php //foreach($friendship as $key=>$row){ ?>
+                    <p>
+                        <a href="javascript:void(0);" class="fiend_click" fsid="<?php //echo $row->fs_id; ?>" title="<?php //echo$row->fs_title;?>" target="_blank">
+                            <?php  //echo $row->fs_title;?>
+                        </a>
+                    </p>
+<!--                --><?php // }?>
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
 </aside>
 <script>
     $(function(){
