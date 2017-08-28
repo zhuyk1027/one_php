@@ -245,7 +245,7 @@ class sign extends CI_Controller {
                 echo $val->account.' 密码错误<br />';
             }else{
                 $arr = $this->show_back($token,$strat,$end);
-                echo $val->account.' '.$arr['message'].' 返利'.$arr['back_amount'].
+                echo $val->account.' '.$val->invite_code.' 返利'.$arr['back_amount'].
                     ',注册用户:'.$arr['register_num'].'，返利订单'.$arr['effect_order_num'].'<br />';
                 $back_money += $arr['back_amount'];
             }
@@ -329,6 +329,7 @@ class sign extends CI_Controller {
                 echo $phone."已经注册";
                 $this->write_err_info($phone.'已经注册');
                 $error++;
+                $this->add_black_mobile($token,$phone);
                 $this->jump_register_url($is_auto,$invite,$register_num,$j,$error);die;
             }
 
@@ -343,7 +344,10 @@ class sign extends CI_Controller {
             if($is_cunzai->code != 200){
                 echo $invite_code."邀请码错误";      //邀请码发生问题直接停止
                 $this->write_err_info($phone.'注册失败'.$invite_code.'邀请码错误');
+                $sql = "update tags set type_of='invite1' where val='".$invite_code."'";
+                $this->db->query($sql);
                 $error++;
+                $this->add_black_mobile($token,$phone);
                 $this->jump_register_url($is_auto,$invite,$register_num,$j,$error);die;
             }
 
@@ -362,6 +366,7 @@ class sign extends CI_Controller {
                 echo $phone."发送验证码失败";      //邀请码发生问题直接停止
                 $this->write_err_info($phone.'注册失败,发送验证码失败');
                 $error++;
+                $this->add_black_mobile($token,$phone);
                 $this->jump_register_url($is_auto,$invite,$register_num,$j,$error);die;
             }
 
@@ -380,14 +385,15 @@ class sign extends CI_Controller {
                 }
             };
             $code_str = $code;
-            if(strpos($code,'MSG&32756') == false){
-                $code = explode('&',$code);
-                $code = substr(trim($code[3],'【百洋商城】您的验证码是'),0,4);
-            }else{
+            if(strpos($code,'MSG&32756') === false){
                 echo $phone."获取验证码失败";      //邀请码发生问题直接停止
                 $this->write_err_info($phone.'注册失败,获取验证码失败');
                 $error++;
+                $this->add_black_mobile($token,$phone);
                 $this->jump_register_url($is_auto,$invite,$register_num,$j,$error);die;
+            }else{
+                $code = explode('&',$code);
+                $code = substr(trim($code[3],'【百洋商城】您的验证码是'),0,4);
             }
 
             //⑧检验验证码
@@ -403,6 +409,7 @@ class sign extends CI_Controller {
                 echo $phone."验证码错误";      //邀请码发生问题直接停止
                 $this->write_err_info($phone.'注册失败,验证码错误，获取到的验证码为'.$code_str);
                 $error++;
+                $this->add_black_mobile($token,$phone);
                 $this->jump_register_url($is_auto,$invite,$register_num,$j,$error);die;
             }
 
@@ -424,6 +431,7 @@ class sign extends CI_Controller {
                 echo $phone."注册失败";      //邀请码发生问题直接停止
                 $this->write_err_info($phone.'注册失败,获取验证码失败');
                 $error++;
+                $this->add_black_mobile($token,$phone);
                 $this->jump_register_url($is_auto,$invite,$register_num,$j,$error);die;
             }
 
@@ -519,7 +527,7 @@ class sign extends CI_Controller {
     }
 
     /**
-     * 获取草码手机号
+     * 获取神话手机号
      * @return string
      */
     function get_caoma_moile($token){
@@ -537,33 +545,33 @@ class sign extends CI_Controller {
     }
 
     /**
-     * 释放草码手机号
+     * 释放神话手机号
      * @return string
      */
     function sf_phone($token,$mobile){
         $param = array(
-            'mobile'=>$mobile,
-            'uid'=>'zhuyk111',
             'token'=>$token,
-            'size'=>1,
+            'phoneList'=>$mobile.'-32756;',
         );
-        $url = 'ReleaseMobile';
+        $url = '/pubApi/ReleasePhone';
         $mobile_info = $this->curl_caoma($url,$param);
 
         return $mobile_info;
     }
 
     /**
-     * 加黑草码无用手机号
+     * 加黑神话无用手机号
      * @return string
      */
     function add_black_mobile($token,$phone){
         $param = array(
             'token'=>$token,
-            'phoneList'=>'32756-'.$phone,
+            'phoneList'=>'32756-'.$phone.';',
         );
         $url = '/pubApi/AddBlack';
         $info = $this->curl_caoma($url,$param);
+
+        $this->sf_phone($token,$phone);
         return $info;
     }
 
