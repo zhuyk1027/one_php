@@ -7,7 +7,7 @@ class test extends CI_Controller {
         parent::__construct();
         $this->load->model('common_model');
         $this->load->helper('array');
-        $this->common_model->pv_count($_SERVER['PHP_SELF']);
+        $this->common_model->pv_count('/tool/test');
     }
 
 	public function index()
@@ -24,9 +24,9 @@ class test extends CI_Controller {
             运行程序为<br />
 
             $ this ->db->trans_start(true);   //增加参数 true 则为测试模式，所有查询将会回滚<br />
-            $ this ->db->query('select * from album where id=30');<br />
-            $ this ->db->query(\"update album set title='5555' where id=30\");<br />
-            $ this ->db->query(\"update album set title='5555' where user_id=26\");<br />
+            $ this ->db->query('select * from user_album where id=30');<br />
+            $ this ->db->query(\"update user_album set title='5555' where id=30\");<br />
+            $ this ->db->query(\"update user_album set title='5555' where user_id=26\");<br />
             $ this ->db->trans_complete();<br />
             </pre>
         ";
@@ -38,9 +38,9 @@ class test extends CI_Controller {
         //$this->db->trans_off();
 
 		$this->db->trans_start(true);   //增加参数 true 则为测试模式，所有查询将会回滚
-		$this->db->query('select * from album where id=30');
-		$this->db->query("update album set title='5555' where id=30");
-		$this->db->query("update album set title='5555' where user_id=26");
+		$this->db->query('select * from user_album where id=30');
+		$this->db->query("update user_album set title='5555' where id=30");
+		$this->db->query("update user_album set title='5555' where user_id=26");
 		$this->db->trans_complete();
 
         if ($this -> db -> trans_status() === FALSE) {

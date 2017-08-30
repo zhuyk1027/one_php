@@ -182,14 +182,14 @@ class common_model extends CI_Model
         }
         $str = implode($str,'/');
 
-        $pv_count = $this->get_record('select * from pv_count where links= \''.$str.'\' and create_time='.date('Ymd'));
+        $pv_count = $this->get_record('select * from count_pv where links= \''.$str.'\' and create_time='.date('Ymd'));
         if($pv_count){
             //更改
-            $this->db->query("update pv_count set `pv_count`=`pv_count`+1 where id=".$pv_count->id);
+            $this->db->query("update count_pv set `pv_count`=`pv_count`+1 where id=".$pv_count->id);
         }else{
             //插入
             $data = array('links'=>$str,'create_time'=>date('Ymd'),'pv_count'=>1);
-            $this->db->insert('pv_count',$data);
+            $this->db->insert('count_pv',$data);
         }
     }
 }

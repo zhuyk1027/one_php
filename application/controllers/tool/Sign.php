@@ -8,7 +8,7 @@ class sign extends CI_Controller {
         $this->load->model('com_model');
         $this->load->model('common_model');
         $this->load->helper('array');
-        $this->common_model->pv_count($_SERVER['PHP_SELF']);
+        $this->common_model->pv_count('/tool/sign');
     }
 
 	public function index()
@@ -238,6 +238,10 @@ class sign extends CI_Controller {
         #获取用户
         $data = $this->get_cps_user();
         $back_money = 0;
+
+        $date = date('Ymd');
+        $myfile = fopen($date.".txt", "a+") or die("Unable to open file!");
+        $txt = "\r\n";
         #批量操作
         foreach($data as $key=>$val){
             $token = $this->baiy_login($val->account,$val->password);
@@ -247,10 +251,17 @@ class sign extends CI_Controller {
                 $arr = $this->show_back($token,$strat,$end);
                 echo $val->account.' '.$val->invite_code.' 返利'.$arr['back_amount'].
                     ',注册用户:'.$arr['register_num'].'，返利订单'.$arr['effect_order_num'].'<br />';
+
                 $back_money += $arr['back_amount'];
+
+                $txt .= $val->account.' '.$val->invite_code.' 返利'.$arr['back_amount'].
+                    ',注册用户:'.$arr['register_num'].'，返利订单'.$arr['effect_order_num']."\r\n";
             }
         }
         echo "共计".$back_money.'元';
+        $txt .= "共计".$back_money.'元';
+        fwrite($myfile, date("Y-m-d").' '.$txt."\r\n");
+        fclose($myfile);
     }
 
     /*
@@ -276,20 +287,16 @@ class sign extends CI_Controller {
 
     //批量注册功能
     function register_do($is_auto = 1,$invite = 1,$register_num = 1,$j = 0,$error = 0){
-        //错误3次之后,停止运行脚本 or 达到数量之后，输出
-        if($error>=100 || $register_num==$j){
-            if($error>=10){echo "多次获取错误<br />";}
+        //错误多次之后,停止运行脚本 or 达到数量之后，输出
+        if($error>=30 || $register_num==$j){
 
-            $date = date('Ymd');
-            $myfile = fopen($date."register.txt", "r") or die("Unable to open file!");
-            $info = fread($myfile,filesize($date."register.txt"));
-            fclose($myfile);
+            if($error>=30){echo "多次获取错误<br />";}
 
+            $info = $this->raed_info(date('Ymd')."register.txt");
             $info = explode("\r\n",$info);
             foreach($info as $key=>$value){
                 echo $value.'<br />';
             }
-
             exit();
         }
 
@@ -302,6 +309,8 @@ class sign extends CI_Controller {
         if(!$invite_code){
             $invite_code = $this->get_invite_code($is_auto,1);
         }
+        $cps_id = $invite_code['id'];
+        $invite_code = $invite_code['invite'];
 
         //②获取session存储的神话token
         $token = $this->get_caoma_token();
@@ -344,8 +353,7 @@ class sign extends CI_Controller {
             if($is_cunzai->code != 200){
                 echo $invite_code."邀请码错误";      //邀请码发生问题直接停止
                 $this->write_err_info($phone.'注册失败'.$invite_code.'邀请码错误');
-                $sql = "update tags set type_of='invite1' where val='".$invite_code."'";
-                $this->db->query($sql);
+                $this->db->query("update baiyang_account set is_on=0 where invite_code='".$invite_code."'");
                 $error++;
                 $this->add_black_mobile($token,$phone);
                 $this->jump_register_url($is_auto,$invite,$register_num,$j,$error);die;
@@ -442,6 +450,16 @@ class sign extends CI_Controller {
             $txt = date("Y-m-d H:i").' '.$phone." ".$invite_code." ".$j."\r\n";
             fwrite($myfile, $txt);
             fclose($myfile);
+
+            $data = array(
+                'account'=>$phone,
+                'password'=>substr($phone,5),
+                'from_user'=>$cps_id,
+                'is_use_coupon'=>1,
+                'coupon_end_time'=>date('Ymd',time()+2592000),
+            );
+            $this->db->insert('baiyang_account',$data);
+
             $this->jump_register_url($is_auto,$invite,$register_num,$j,$error);
 
         } else{
@@ -493,13 +511,13 @@ class sign extends CI_Controller {
         if($is_auto==1){
             #取随机一个
             $info = $this->common_model->get_records(
-                "select * from tags where type_of='invite'"
+                "select id,invite_code from baiyang_account where is_cps=1 and is_on=1"
             );
             $info = $info[rand(0,count($info)-1)];
         }else{
-            $info = $this->common_model->get_record("select * from tags where type_of='invite' and id=$invite");
+            $info = $this->common_model->get_record("select id,invite_code from baiyang_account where is_cps=1 and is_on=1 and id=$invite");
         }
-        return isset($info->val)?$info->val:'';
+        return isset($info->invite_code)?array('invite'=>$info->invite_code,'id'=>$info->id):array();
     }
 
     /**
@@ -681,6 +699,12 @@ class sign extends CI_Controller {
         $myfile = fopen($date."register.txt", "a+") or die("Unable to open file!");
         fwrite($myfile, date("Y-m-d H:i").' '.$txt."\r\n");
         fclose($myfile);
+    }
+    function raed_info($txt_name){
+        $myfile = fopen($txt_name, "r") or die("Unable to open file!");
+        $info = fread($myfile,filesize($txt_name));
+        fclose($myfile);
+        return $info;
     }
 
     /*

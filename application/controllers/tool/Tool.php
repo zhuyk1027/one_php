@@ -6,7 +6,7 @@ class tool extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
         $this->load->model('com_model');
-        $this->common_model->pv_count($_SERVER['PHP_SELF']);
+        $this->common_model->pv_count('/tool/tool');
 	}
 
 	public function index()

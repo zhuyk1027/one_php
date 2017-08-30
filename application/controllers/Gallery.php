@@ -41,9 +41,9 @@ class Gallery extends CI_Controller {
     #相册列表
     public function index()
     {
-        $gallery = $this->common_model->get_records('select * from album where user_id='.$this->user_id);
+        $gallery = $this->common_model->get_records('select * from user_album where user_id='.$this->user_id);
         foreach($gallery as $row){
-            $num = $this->common_model->get_record('select count(id) as count,pic_path from image where aid='.$row->id);
+            $num = $this->common_model->get_record('select count(id) as count,pic_path from user_image where aid='.$row->id);
             $row->img_num = $num->count;
             $row->pic_path = $num->pic_path;
             if(!$num->pic_path){
@@ -61,12 +61,12 @@ class Gallery extends CI_Controller {
         $id = $this->input->post('id');
         if(!$id)echo json_encode(-2);
 
-        $image = $this->common_model->get_records('select * from image where aid='.$id.' and user_id='.$this->user_id);//print_r($image);die;
+        $image = $this->common_model->get_records('select * from user_image where aid='.$id.' and user_id='.$this->user_id);//print_r($image);die;
         foreach($image as $row){
             $this->alido(2,$row->pic_path);
         }
-        $this->db->query('delete from '.$this->db->dbprefix.'image where aid='.$id);
-        $this->db->query('delete from '.$this->db->dbprefix.'album where id='.$id);
+        $this->db->query('delete from '.$this->db->dbprefix.'user_image where aid='.$id);
+        $this->db->query('delete from '.$this->db->dbprefix.'user_album where id='.$id);
         if($this->db->affected_rows()>0){
             echo json_encode(1);
         }else{
@@ -77,7 +77,7 @@ class Gallery extends CI_Controller {
     function add_album(){
         $title = $this->input->post('title');
         if(!$title)echo json_encode(-2);
-        $this->db->query('insert into '.$this->db->dbprefix.'album(title,user_id) values(\''.$title.'\','.$this->user_id.')');
+        $this->db->query('insert into '.$this->db->dbprefix.'user_album(title,user_id) values(\''.$title.'\','.$this->user_id.')');
         if($this->db->affected_rows()>0){
             echo json_encode($this->db->insert_id());
         }else{
@@ -89,7 +89,7 @@ class Gallery extends CI_Controller {
         $title = $this->input->post('title');
         $id = $this->input->post('gallery_id');
         if(!$title)echo json_encode(-2);
-        $this->db->query('update '.$this->db->dbprefix.'album set title=\''.$title.'\' where id='.$id.' and user_id='.$this->user_id);
+        $this->db->query('update '.$this->db->dbprefix.'user_album set title=\''.$title.'\' where id='.$id.' and user_id='.$this->user_id);
         if($this->db->affected_rows()>0){
             echo json_encode(1);
         }else{
@@ -100,13 +100,13 @@ class Gallery extends CI_Controller {
     #图片操作
     public function images($id = 0)
     {
-        $album = $this->common_model->get_record('select title from album where id='.$id.' and user_id='.$this->user_id);
+        $album = $this->common_model->get_record('select title from user_album where id='.$id.' and user_id='.$this->user_id);
         if(!$id){
-            $gallery = $this->common_model->get_record('select count(id) as total from image where user_id='.$this->user_id);
-            $sql = 'select * from image where user_id='.$this->user_id;
+            $gallery = $this->common_model->get_record('select count(id) as total from user_image where user_id='.$this->user_id);
+            $sql = 'select * from user_image where user_id='.$this->user_id;
         }else{
-            $gallery = $this->common_model->get_record('select count(id) as total from image where aid='.$id.' and user_id='.$this->user_id);
-            $sql = 'select * from image where user_id='.$this->user_id.' AND aid='.$id;
+            $gallery = $this->common_model->get_record('select count(id) as total from user_image where aid='.$id.' and user_id='.$this->user_id);
+            $sql = 'select * from user_image where user_id='.$this->user_id.' AND aid='.$id;
         }
         $total = $gallery->total;
         $sql .= ' ORDER BY id DESC';
@@ -136,11 +136,11 @@ class Gallery extends CI_Controller {
         $id = $this->input->post('id');
         if(!$id)echo json_encode(-2);
 
-        $image = $this->common_model->get_record('select * from image where id='.$id.' and user_id='.$this->user_id);
+        $image = $this->common_model->get_record('select * from user_image where id='.$id.' and user_id='.$this->user_id);
         if(!$image)echo json_encode(3);
 
         $this->alido(2,$image->pic_path);
-        $this->db->query('delete from '.$this->db->dbprefix.'image where id='.$id);
+        $this->db->query('delete from '.$this->db->dbprefix.'user_image where id='.$id);
         if($this->db->affected_rows()>0){
             echo json_encode(1);
         }else{
@@ -151,7 +151,7 @@ class Gallery extends CI_Controller {
     #上传图片
     public function upload()
     {
-        $gallery = $this->common_model->get_records('select * from album where user_id='.$this->user_id);
+        $gallery = $this->common_model->get_records('select * from user_album where user_id='.$this->user_id);
         $data = [
             'gallery'=>$gallery,
         ];
@@ -164,7 +164,7 @@ class Gallery extends CI_Controller {
         $aid = $this->input->post('aid');
         $imgs = $this->input->post('imgs');
         $alt = $this->input->post('alt');
-        $album = $this->common_model->get_record('SELECT * FROM '.$this->db->dbprefix.'album WHERE id = '.$aid);
+        $album = $this->common_model->get_record('SELECT * FROM '.$this->db->dbprefix.'user_album WHERE id = '.$aid);
         if( ! $album) return ;
 
 
@@ -185,7 +185,7 @@ class Gallery extends CI_Controller {
             $save_data['width'] = $img_size[0];
             $save_data['height'] = $img_size[1];
             $save_data['create_time'] = time();
-            $this->db->insert('image',$save_data);
+            $this->db->insert('user_image',$save_data);
             $id =  $this->db->insert_id();
         }
         unlink($pic_url);
@@ -216,7 +216,7 @@ class Gallery extends CI_Controller {
                 $save_data['width'] = 0;
                 $save_data['height'] = 0;
                 $save_data['create_time'] = time();
-                $this->db->insert('image',$save_data);
+                $this->db->insert('user_image',$save_data);
                 $id = $this->db->insert_id();
 
                 $re_data['success_num'] += 1;
@@ -228,7 +228,7 @@ class Gallery extends CI_Controller {
         $pic_path = $re_data['pic_path'];
         foreach($pic_path as $k=>$row){
             $size = $this->alido(4,$row);//获取图片大小
-            $this->db->update('image',$size,['id'=>$re_data['id'][$k]]);
+            $this->db->update('user_image',$size,['id'=>$re_data['id'][$k]]);
         }
         //$url = '/smg/gallery/upload_success/'.$re_data['all'].'/'.$re_data['success_num'];
         //echo "<script>window.location.href='".$url."'</script>";
@@ -238,7 +238,7 @@ class Gallery extends CI_Controller {
         $aid = $this->input->post('aid');$aid = $aid?$aid:0;
         $ids = $this->input->post('ids');$ids = $ids?$ids:0;
         //echo 'update '.$this->db->dbprefix.'image set aid='.$aid.' where id in ('.$ids.')';die;
-        $this->db->query('update '.$this->db->dbprefix.'image set aid='.$aid.' where id in ('.$ids.') and user_id='.$this->user_id);
+        $this->db->query('update '.$this->db->dbprefix.'user_image set aid='.$aid.' where id in ('.$ids.') and user_id='.$this->user_id);
         $success = 0;
         if($this->db->affected_rows()>0){
             $success = 1;

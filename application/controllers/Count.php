@@ -44,15 +44,15 @@ class Count extends CI_Controller {
         $this->site_info['website_title'] = $this->site_info['website_title'].' - 友链统计';
         #查询今日的访问量
         $day = date('Ymd');
-        $today_count = $this->common_model->get_records('select * from friendship_click where create_time='.$day);
+        $today_count = $this->common_model->get_records('select * from count_friendship where create_time='.$day);
 
         #七天内访问量
         $date = date('Ymd', strtotime('-6 days'));
-        $seven_count = $this->common_model->get_records('select *,sum(click) as total from friendship_click where create_time>='.$date.' group by fs_id');
+        $seven_count = $this->common_model->get_records('select *,sum(click) as total from count_friendship where create_time>='.$date.' group by fs_id');
 
         #本月访问量
         $date = date('Ym').'01';
-        $month_count = $this->common_model->get_records('select *,sum(click) as total from friendship_click where create_time>='.$date.' group by fs_id');
+        $month_count = $this->common_model->get_records('select *,sum(click) as total from count_friendship where create_time>='.$date.' group by fs_id');
 
         #上月访问量
         $start_date = date("Ym", strtotime("-1 month")).'01' ;
@@ -69,7 +69,7 @@ class Count extends CI_Controller {
             $day = 28;
         }
         $end_date = $year.$month.$day;
-        $last_month_count = $this->common_model->get_records('select *,sum(click) as total from friendship_click where create_time>='.$start_date.' and create_time<='.$end_date.' group by fs_id');
+        $last_month_count = $this->common_model->get_records('select *,sum(click) as total from count_friendship where create_time>='.$start_date.' and create_time<='.$end_date.' group by fs_id');
 
         #颜色表
         $color = array('#FFEC8B','#FF6A6A','#D8BFD8','#CDBA96','#FFC125','#C1FFC1','#B3B3B3','#9BCD9B','#8B8B00','#0D0D0D');
@@ -111,11 +111,11 @@ class Count extends CI_Controller {
         $clicks = array();
 
         $date = date('Y').'0101';
-        $this_year_count = $this->common_model->get_record('select *,sum(click) as total from friendship_click where create_time>='.$date);
+        $this_year_count = $this->common_model->get_record('select *,sum(click) as total from count_friendship where create_time>='.$date);
 
         $start_date = date("Y", strtotime("-1 year")).'0101' ;
         $end_date = date("Y", strtotime("-1 year")).'1231' ;
-        $last_year_count = $this->common_model->get_record('select *,sum(click) as total from friendship_click where create_time>='.$start_date.' and create_time<='.$end_date);
+        $last_year_count = $this->common_model->get_record('select *,sum(click) as total from count_friendship where create_time>='.$start_date.' and create_time<='.$end_date);
 
         $siex_month = array(date("Ym", strtotime("-1 month")),date("Ym", strtotime("-2 month")),date("Ym", strtotime("-3 month")),
             date("Ym", strtotime("-4 month")),date("Ym", strtotime("-5 month")),date("Ym", strtotime("-6 month")));
@@ -126,7 +126,7 @@ class Count extends CI_Controller {
         foreach($siex_month as $k=>$row){
             $start_date = $row.'01';
             $end_date = $row.'31';
-            $info = $this->common_model->get_record('select *,sum(click) as total from friendship_click where create_time>='.$start_date.' and create_time<='.$end_date);
+            $info = $this->common_model->get_record('select *,sum(click) as total from count_friendship where create_time>='.$start_date.' and create_time<='.$end_date);
             $clicks[] = array('name'=>$row,'value'=>$info->total?$info->total:0,'color'=>$color[$k]);
         }
 
@@ -148,15 +148,15 @@ class Count extends CI_Controller {
         $this->site_info['website_title'] = $this->site_info['website_title'].' - 广告统计';
         #查询今日的访问量
         $day = date('Ymd');
-        $today_count = $this->common_model->get_records('select * from ad_click where create_time='.$day);
+        $today_count = $this->common_model->get_records('select * from count_ad where create_time='.$day);
 
         #七天内访问量
         $date = date('Ymd', strtotime('-6 days'));
-        $seven_count = $this->common_model->get_records('select *,sum(click) as total from ad_click where create_time>='.$date.' group by ad_id');
+        $seven_count = $this->common_model->get_records('select *,sum(click) as total from count_ad where create_time>='.$date.' group by ad_id');
 
         #本月访问量
         $date = date('Ym').'01';
-        $month_count = $this->common_model->get_records('select *,sum(click) as total from ad_click where create_time>='.$date.' group by ad_id');
+        $month_count = $this->common_model->get_records('select *,sum(click) as total from count_ad where create_time>='.$date.' group by ad_id');
 
         #上月访问量
         $start_date = date("Ym", strtotime("-1 month")).'01' ;
@@ -173,7 +173,7 @@ class Count extends CI_Controller {
             $day = 28;
         }
         $end_date = $year.$month.$day;
-        $last_month_count = $this->common_model->get_records('select *,sum(click) as total from ad_click where create_time>='.$start_date.' and create_time<='.$end_date.' group by ad_id');
+        $last_month_count = $this->common_model->get_records('select *,sum(click) as total from count_ad where create_time>='.$start_date.' and create_time<='.$end_date.' group by ad_id');
 
         #颜色表
         $color = array('#FFEC8B','#FF6A6A','#D8BFD8','#CDBA96','#FFC125','#C1FFC1','#B3B3B3','#9BCD9B','#8B8B00','#0D0D0D');
@@ -215,11 +215,11 @@ class Count extends CI_Controller {
         $clicks = array();
 
         $date = date('Y').'0101';
-        $this_year_count = $this->common_model->get_record('select *,sum(click) as total from ad_click where create_time>='.$date);
+        $this_year_count = $this->common_model->get_record('select *,sum(click) as total from count_ad where create_time>='.$date);
 
         $start_date = date("Y", strtotime("-1 year")).'0101' ;
         $end_date = date("Y", strtotime("-1 year")).'1231' ;
-        $last_year_count = $this->common_model->get_record('select *,sum(click) as total from ad_click where create_time>='.$start_date.' and create_time<='.$end_date);
+        $last_year_count = $this->common_model->get_record('select *,sum(click) as total from count_ad where create_time>='.$start_date.' and create_time<='.$end_date);
 
         $siex_month = array(date("Ym", strtotime("-1 month")),date("Ym", strtotime("-2 month")),date("Ym", strtotime("-3 month")),
             date("Ym", strtotime("-4 month")),date("Ym", strtotime("-5 month")),date("Ym", strtotime("-6 month")));
@@ -230,7 +230,7 @@ class Count extends CI_Controller {
         foreach($siex_month as $k=>$row){
             $start_date = $row.'01';
             $end_date = $row.'31';
-            $info = $this->common_model->get_record('select *,sum(click) as total from ad_click where create_time>='.$start_date.' and create_time<='.$end_date);
+            $info = $this->common_model->get_record('select *,sum(click) as total from count_ad where create_time>='.$start_date.' and create_time<='.$end_date);
             $clicks[] = array('name'=>$row,'value'=>$info->total?$info->total:0,'color'=>$color[$k]);
         }
         $data = [
@@ -248,18 +248,19 @@ class Count extends CI_Controller {
 
     public function pv_count()
     {
+
         $this->site_info['website_title'] = $this->site_info['website_title'].' - pv统计';
         #查询今日的访问量
         $day = date('Ymd');
-        $today_count = $this->common_model->get_records('select * from pv_count where create_time='.$day);
+        $today_count = $this->common_model->get_records('select * from count_pv where create_time='.$day);
 
         #七天内访问量
         $date = date('Ymd', strtotime('-6 days'));
-        $seven_count = $this->common_model->get_records('select *,sum(pv_count) as total from pv_count where create_time>='.$date.' group by links');
+        $seven_count = $this->common_model->get_records('select *,sum(pv_count) as total from count_pv where create_time>='.$date.' group by links');
 
         #本月访问量
         $date = date('Ym').'01';
-        $month_count = $this->common_model->get_records('select *,sum(pv_count) as total from pv_count where create_time>='.$date.' group by links');
+        $month_count = $this->common_model->get_records('select *,sum(pv_count) as total from count_pv where create_time>='.$date.' group by links');
 
         #上月访问量
         $start_date = date("Ym", strtotime("-1 month")).'01' ;
@@ -276,10 +277,17 @@ class Count extends CI_Controller {
             $day = 28;
         }
         $end_date = $year.$month.$day;
-        $last_month_count = $this->common_model->get_records('select *,sum(pv_count) as total from pv_count where create_time>='.$start_date.' and create_time<='.$end_date.' group by links');
+        $last_month_count = $this->common_model->get_records('select *,sum(pv_count) as total from count_pv where create_time>='.$start_date.' and create_time<='.$end_date.' group by links');
 
         #颜色表
-        $color = array('#FFEC8B','#FF6A6A','#D8BFD8','#CDBA96','#FFC125','#C1FFC1','#B3B3B3','#9BCD9B','#8B8B00','#0D0D0D');
+        $color = array(
+            '#FFEC8B','#FF6A6A','#D8BFD8','#CDBA96','#FFC125',
+            '#C1FFC1','#B3B3B3','#9BCD9B','#8B8B00','#0D0D0D',
+            '#FAEBD7','#FF1493','#DDA0DD','#EE7AE9','#DEB887',
+            '#CDCDB4','#CDAA7D','#CD9B9B','#CD6600','#C0FF3E',
+            '#B4EEB4','#C1CDC1','#C0FF3E','#B8860B','#B452CD',
+            '#B22222','#ADD8E6','#9ACD32','#969696','#8E8E38',
+        );
 
         #四张百分比图
         $percent = array();
@@ -318,11 +326,11 @@ class Count extends CI_Controller {
         $clicks = array();
 
         $date = date('Y').'0101';
-        $this_year_count = $this->common_model->get_record('select *,sum(pv_count) as total from pv_count where create_time>='.$date);
+        $this_year_count = $this->common_model->get_record('select *,sum(pv_count) as total from count_pv where create_time>='.$date);
 
         $start_date = date("Y", strtotime("-1 year")).'0101' ;
         $end_date = date("Y", strtotime("-1 year")).'1231' ;
-        $last_year_count = $this->common_model->get_record('select *,sum(pv_count) as total from pv_count where create_time>='.$start_date.' and create_time<='.$end_date);
+        $last_year_count = $this->common_model->get_record('select *,sum(pv_count) as total from count_pv where create_time>='.$start_date.' and create_time<='.$end_date);
 
         $siex_month = array(date("Ym", strtotime("-1 month")),date("Ym", strtotime("-2 month")),date("Ym", strtotime("-3 month")),
             date("Ym", strtotime("-4 month")),date("Ym", strtotime("-5 month")),date("Ym", strtotime("-6 month")));
@@ -333,7 +341,7 @@ class Count extends CI_Controller {
         foreach($siex_month as $k=>$row){
             $start_date = $row.'01';
             $end_date = $row.'31';
-            $info = $this->common_model->get_record('select *,sum(pv_count) as total from pv_count where create_time>='.$start_date.' and create_time<='.$end_date);
+            $info = $this->common_model->get_record('select *,sum(pv_count) as total from count_pv where create_time>='.$start_date.' and create_time<='.$end_date);
             $clicks[] = array('name'=>$row,'value'=>$info->total?$info->total:0,'color'=>$color[$k]);
         }
 

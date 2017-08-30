@@ -6,7 +6,7 @@ class qrcode extends CI_Controller {
     {
         parent::__construct();
         $this->load->model('common_model');
-        $this->common_model->pv_count($_SERVER['PHP_SELF']);
+        $this->common_model->pv_count('/tool/qrcode');
     }
 
 	public function index()

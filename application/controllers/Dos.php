@@ -21,11 +21,11 @@ class Dos extends CI_Controller {
         if(!$friendship)return false;
 
         //更改
-        $this->db->query("update friendship_click set click=click+1 where fs_id=".$id.' and create_time='.date('Ymd'));
+        $this->db->query("update count_friendship set click=click+1 where fs_id=".$id.' and create_time='.date('Ymd'));
         if($this->db->affected_rows()<1){
             //插入
             $data = array('fs_id'=>$id,'fs_title'=>$friendship->fs_title,'create_time'=>date('Ymd'),'click'=>1);
-            $this->db->insert('friendship_click',$data);
+            $this->db->insert('count_friendship',$data);
         }
         echo json_encode($friendship->hplink);
 
@@ -40,11 +40,11 @@ class Dos extends CI_Controller {
         if(!$ad)return false;
 
         //更改
-        $this->db->query("update ad_click set click=click+1 where ad_id=".$id.' and create_time='.date('Ymd'));
+        $this->db->query("update count_ad set click=click+1 where ad_id=".$id.' and create_time='.date('Ymd'));
         if($this->db->affected_rows()<1){
             //插入
             $data = array('ad_id'=>$id,'ad_title'=>$ad->ad_title,'create_time'=>date('Ymd'),'click'=>1);
-            $this->db->insert('ad_click',$data);
+            $this->db->insert('count_ad',$data);
         }
         echo json_encode($ad->hplink);
 
