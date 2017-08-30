@@ -37,7 +37,7 @@ class About extends CI_Controller {
     #关于本站页面
     public function index(){
         $this->common_model->pv_count('about/index');
-        $station = $this->common_model->get_record('select * from about where type=\'station\'');
+        $station = $this->common_model->get_record('select * from blog_about where type=\'station\'');
         $data = [
             'title'=>'关于本站',
             'station'=>$station,
@@ -54,7 +54,7 @@ class About extends CI_Controller {
         if(!$key){
             redirect('/');
         }
-        $station = $this->common_model->get_record('select * from about where `key`=\''.$key.'\'');
+        $station = $this->common_model->get_record('select * from blog_about where `key`=\''.$key.'\'');
         $data = [
             'title'=>'我的简介',
             'station'=>$station,
@@ -75,14 +75,14 @@ class About extends CI_Controller {
                 'cont'=>$_POST['content'],
                 'create_time'=>time(),
             );
-            $this->db->update('about',$data,array('type'=>'station'));
+            $this->db->update('blog_about',$data,array('type'=>'station'));
             if($this->db->affected_rows()<1){
                 $data['type'] = 'station';
-                $this->db->insert('about',$data);
+                $this->db->insert('blog_about',$data);
             }
         }
 
-        $station = $this->common_model->get_record('select * from about where type=\'station\'');
+        $station = $this->common_model->get_record('select * from blog_about where type=\'station\'');
         $data = [
             'station'=>$station,
         ];
@@ -104,14 +104,14 @@ class About extends CI_Controller {
                 'cont'=>$_POST['content'],
                 'create_time'=>time(),
             );
-            $this->db->update('about',$data,array('user_id'=>$this->user_id));
+            $this->db->update('blog_about',$data,array('user_id'=>$this->user_id));
             if($this->db->affected_rows()<1){
                 $data['user_id'] = $this->user_id;
                 $keys = array('Q','W','E','R','T','Y','U','I','O','P',
                     'A','S','D','F','G','H','J','K','L',
                     'Z','X','C','V','B','N','M');
                 $data['key'] = $keys[rand(0,26)].$keys[rand(0,26)].$keys[rand(0,26)].$keys[rand(0,26)].$keys[rand(0,26)].$keys[rand(0,26)];
-                $this->db->insert('about',$data);
+                $this->db->insert('blog_about',$data);
             }
 
             //如果当前用户为1，则更改头部信息
@@ -120,7 +120,7 @@ class About extends CI_Controller {
             }
         }
 
-        $station = $this->common_model->get_record('select * from about where user_id='.$this->user_id);
+        $station = $this->common_model->get_record('select * from blog_about where user_id='.$this->user_id);
         $data = [
             'station'=>$station,
         ];
