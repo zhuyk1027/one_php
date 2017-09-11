@@ -349,7 +349,6 @@ class sign extends CI_Controller {
             );
             $url = 'http://mallapp.baiyjk.com/cps_user/check_invite_code';
             $is_cunzai = $this->curl_baiy($url,$param);
-
             if($is_cunzai->code != 200){
                 echo $invite_code."邀请码错误";      //邀请码发生问题直接停止
                 $this->write_err_info($phone.'注册失败'.$invite_code.'邀请码错误');
@@ -458,7 +457,7 @@ class sign extends CI_Controller {
                 'is_use_coupon'=>1,
                 'coupon_end_time'=>date('Ymd',time()+2592000),
             );
-            $this->db->insert('baiyang_account',$data);
+            //$this->db->insert('baiyang_account',$data);
 
             $this->jump_register_url($is_auto,$invite,$register_num,$j,$error);
 
