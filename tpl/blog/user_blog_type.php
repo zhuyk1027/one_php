@@ -7,7 +7,7 @@
 
             <?php foreach($blog_group as $key=>$row){ ?>
                 <article class="excerpt excerpt-nothumbnail">
-                    <?=$row->group_name?>
+                    <a href="/user/user_blog/0?group_id=<?php echo $row->blog_group_id?>"><?=$row->group_name?></a>
                     <span style="float:right;">
                         <a href="javascript:void(0)" sid="<?php echo $row->blog_group_id?>" aname="<?=$row->group_name?>" class="sub_up">修改</a> &nbsp; | &nbsp;
                         <a href="javascript:void(0)" sid="<?php echo $row->blog_group_id?>" class="del_type">删除</a>
@@ -47,7 +47,7 @@
     </div>
 <?php  $this->load->view(BLOG.'right'); ?>
 <script>
-    //删除专辑
+    //修改专辑
     $(".sub_up").click(function(){
         var id = $(this).attr('sid');
         var aname = $(this).attr('aname');
@@ -59,7 +59,11 @@
         var url = '';
         var title = $("input[name='title']").val();
         var group_id = $("input[name='group_id']").val();
-        //alert(title);return false;
+
+        if(title.length<1){
+            alert('请先输入标题');return false;
+        }
+
         show_message('操作中...');
 
         if(group_id!=0){
@@ -101,7 +105,7 @@
                     }else if(data==-2){
                         alert('参数不足!');
                     }else if(data==3){
-                        alert('该博文已被删除!');
+                        alert('该博文分类已被删除!');
                     }else{
                         alert('删除失败!');
                     }

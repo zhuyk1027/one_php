@@ -7,7 +7,7 @@
 
             <?php foreach($blog_tag as $key=>$row){ ?>
                 <article class="excerpt excerpt-nothumbnail">
-                    <?=$row->tag_name?>
+                    <a href="/user/user_blog/0?tag_id=<?php echo $row->tag_id?>"><?=$row->tag_name?></a>
                     <span style="float:right;">
                         <a href="javascript:void(0)" sid="<?php echo $row->tag_id?>" aname="<?=$row->tag_name?>" class="sub_up">修改</a> &nbsp; | &nbsp;
                         <a href="javascript:void(0)" sid="<?php echo $row->tag_id?>" class="del_type">删除</a>

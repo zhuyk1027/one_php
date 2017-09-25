@@ -2,23 +2,6 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 class User extends CI_Controller {
 
-    public $site_info = array(
-        'website_title'=>WEB_NAME,
-        'head'=>array(
-            //'head_title'=>'朱耀昆博客',
-            'design'=>DESIGN,
-            'my_photo'=>MY_PHOTO,
-            'pay_photo'=>PAY_PHOTO,
-            'email'=>EMAIL,
-            'this_page'=>'blog',
-        ),
-        'tags'=>'',
-        'groups'=>'',
-        'ranking'=>'',
-        'friendship'=>'',
-        'head_switch'=>'',
-    );
-
     public function __construct(){
         parent::__construct();
         $this->load->model('com_model');
@@ -28,13 +11,7 @@ class User extends CI_Controller {
         }
 
         $this->user_id = $this->session->userdata('id');
-        $time = time();
-        $this->site_info['ad'] = $this->common_model->get_records("select ad_id,ad_title,pic,hplink from blog_ad where is_on=1 and $time>=start_time and $time<=end_time");
-        $this->site_info['friendship'] = $this->common_model->get_records('select fs_id,fs_title,hplink from blog_friendship where is_on=1');
-        $this->site_info['groups'] = $this->common_model->get_records('select blog_group_id,group_name,(select count(*) from blog where group_id=blog_group_id ) as num from blog_group where user_id='.$this->user_id);
-        $this->site_info['tags'] = $this->common_model->get_records('select tag_id,tag_name,(select count(*) from blog where tags=tag_id ) as num from blog_tag where user_id='.$this->user_id);
-        $this->site_info['ranking'] = $this->common_model->get_records('select blog_id,title from blog order by click desc limit 10');
-        $this->site_info['head_switch'] = $this->common_model->get_records('select * from head_switch order by sort asc');
+        $this->site_info['head']['this_page']='blog';
     }
 
     function index(){
@@ -49,13 +26,29 @@ class User extends CI_Controller {
 
     #用户博文列表
     function user_blog(){
-        $query = $this->common_model->get_record('SELECT COUNT(*) AS total FROM '.$this->db->dbprefix('blog').' WHERE user_id='.$this->user_id);
+
+        $where = '';
+
+        $group_id = isset($_GET['group_id'])?$_GET['group_id']:0;
+        if($group_id){
+            $where = ' and group_id='.$group_id;
+        }
+        $tag_id = isset($_GET['tag_id'])?$_GET['tag_id']:0;
+        if($tag_id){
+            $where = " and find_in_set('".$tag_id."', tags)";
+        }
+
+        $query = $this->common_model->get_record('SELECT COUNT(*) AS total FROM '.$this->db->dbprefix('blog').' WHERE user_id='.$this->user_id.$where);
         $total = $query->total;
+
         $curr_page = $this->uri->segment(3,0);
         $page_size = 20;
         if( ! $curr_page) $curr_page = 1;
         $offset = ($curr_page - 1) * $page_size;
-        $blog = $this->common_model->get_records('SELECT blog_id,title,group_id,update_time,create_date FROM '.$this->db->dbprefix.'blog WHERE user_id = '.$this->user_id.' LIMIT '.$offset.','.$page_size);
+        $sql = 'SELECT blog_id,title,group_id,update_time,create_date FROM '.$this->db->dbprefix.'blog 
+        WHERE user_id = '.$this->user_id.$where.' ORDER BY blog_id DESC LIMIT '.$offset.','.$page_size;
+        $blog = $this->common_model->get_records($sql);
+
         $blog_group = $this->site_info['groups'];
         foreach($blog as $key=>$row){
             $row->group_name = '无分类';
@@ -78,7 +71,6 @@ class User extends CI_Controller {
     #分页字符串    t 总条数 c 当前页码  p 页码大小 博文分类 访问操作
     function _get_page($t,$c,$p,$type)
     {
-        // $type index search tag
         $str = '';
         if( ! $c) $c = 1;
         if($t > 0 && $p > 0)
@@ -89,6 +81,7 @@ class User extends CI_Controller {
             {
                 if(isset($_SERVER['QUERY_STRING']) && $_SERVER['QUERY_STRING']) $q_str = '?'.$_SERVER['QUERY_STRING'];
                 else $q_str = '';
+
                 if(($s = $c - 4) <= 0) $s = 1;
                 if(($e = $c + 4) > $page_total) $e = $page_total;
 

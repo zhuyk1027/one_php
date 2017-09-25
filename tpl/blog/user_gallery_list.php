@@ -6,7 +6,7 @@
             <?php  $this->load->view(BLOG.'user_home_head'); ?>
             <?php foreach($gallery as $key=>$row){ ?>
                 <article class="excerpt excerpt-nothumbnail">
-                    <?=$row->title?>
+                    <a href="/gallery/images/<?php echo $row->id?>" ><?=$row->title?></a>
                     <span style="float:right;">
                         <a href="/gallery/images/<?php echo $row->id?>" >查看</a> &nbsp; | &nbsp;
                         <a href="javascript:void(0)" sid="<?php echo $row->id?>" aname="<?=$row->title?>" class="sub_up">修改</a> &nbsp; | &nbsp;

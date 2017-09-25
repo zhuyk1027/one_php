@@ -2,37 +2,10 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 class About extends CI_Controller {
 
-    public $site_info = array(
-        'website_title'=>WEB_NAME,
-        'head'=>array(
-            //'head_title'=>'朱耀昆博客',
-            'design'=>DESIGN,
-            'my_photo'=>MY_PHOTO,
-            'pay_photo'=>PAY_PHOTO,
-            'email'=>EMAIL,
-            'this_page'=>'about',
-        ),
-        'tags'=>'',
-        'groups'=>'',
-        'ranking'=>'',
-        'friendship'=>'',
-        'ad'=>'',
-        'head_switch'=>'',
-    );
-
     public function __construct(){
         parent::__construct();
         $this->load->model('com_model');
         $this->load->helper('common');
-
-        $this->user_id = 1;
-        $time = time();
-        $this->site_info['ad'] = $this->common_model->get_records("select ad_id,ad_title,pic,hplink from blog_ad where is_on=1 and $time>=start_time and $time<=end_time");
-        $this->site_info['friendship'] = $this->common_model->get_records('select fs_id,fs_title,hplink from blog_friendship where is_on=1');
-        $this->site_info['groups'] = $this->common_model->get_records('select blog_group_id,group_name,(select count(*) from blog where group_id=blog_group_id ) as num from blog_group where user_id='.$this->user_id);
-        $this->site_info['tags'] = $this->common_model->get_records('select tag_id,tag_name,(select count(*) from blog where tags=tag_id ) as num from blog_tag where user_id='.$this->user_id);
-        $this->site_info['ranking'] = $this->common_model->get_records('select blog_id,title from blog order by click desc limit 10');
-        $this->site_info['head_switch'] = $this->common_model->get_records('select * from head_switch order by sort asc');
     }
     #关于本站页面
     public function index(){
@@ -96,6 +69,7 @@ class About extends CI_Controller {
         if(!$this->session->userdata('id')){
             echo "<script>window.location.href='/'</script>";
         }
+        $user_id = $this->session->userdata('id');
 
         if(isset($_POST['submit'])){
             $data = array(
@@ -104,9 +78,9 @@ class About extends CI_Controller {
                 'cont'=>$_POST['content'],
                 'create_time'=>time(),
             );
-            $this->db->update('blog_about',$data,array('user_id'=>$this->user_id));
+            $this->db->update('blog_about',$data,array('user_id'=>$user_id));
             if($this->db->affected_rows()<1){
-                $data['user_id'] = $this->user_id;
+                $data['user_id'] = $user_id;
                 $keys = array('Q','W','E','R','T','Y','U','I','O','P',
                     'A','S','D','F','G','H','J','K','L',
                     'Z','X','C','V','B','N','M');
@@ -120,7 +94,7 @@ class About extends CI_Controller {
             }
         }
 
-        $station = $this->common_model->get_record('select * from blog_about where user_id='.$this->user_id);
+        $station = $this->common_model->get_record('select * from blog_about where user_id='.$user_id);
         $data = [
             'station'=>$station,
         ];

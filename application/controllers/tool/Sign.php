@@ -118,7 +118,7 @@ class sign extends CI_Controller {
 
         return array(json_decode($output)->message,isset(json_decode($output)->data->postion_id)?json_decode($output)->data->postion_id:99);
     }
-    #查看信息
+    #查看返利信息
     function show_back($token,$start,$end)
     {
 
@@ -170,6 +170,7 @@ class sign extends CI_Controller {
         if(empty($data)){ echo "暂无用户";die; }
         return $data;
     }
+    #获取批量cps用户
     function get_cps_user(){
         #获取用户
         $sql = "select * from baiyang_account where is_cps=1";
@@ -288,9 +289,9 @@ class sign extends CI_Controller {
     //批量注册功能
     function register_do($is_auto = 1,$invite = 1,$register_num = 1,$j = 0,$error = 0){
         //错误多次之后,停止运行脚本 or 达到数量之后，输出
-        if($error>=30 || $register_num==$j){
+        if($error>=100 || $register_num==$j){
 
-            if($error>=30){echo "多次获取错误<br />";}
+            if($error>=100){echo "多次获取错误<br />";}
 
             $info = $this->raed_info(date('Ymd')."register.txt");
             $info = explode("\r\n",$info);
@@ -320,7 +321,9 @@ class sign extends CI_Controller {
         //$phone = "17097517581";
         echo $phone.'<br />';
         if(strlen($phone)!=11){
-            echo '手机号码错误';die;
+            echo '手机号码错误';
+            unset($_SESSION['SHENHUA_TOKEN']);
+            $this->jump_register_url($is_auto,$invite,$register_num,$j,$error);die;
         }
 
         //假如获取成功
@@ -689,10 +692,12 @@ class sign extends CI_Controller {
         return $string;
     }
 
+    /** 清除session，更新token */
     function unset_session(){
         unset($_SESSION['SHENHUA_TOKEN']);
     }
 
+    /** 读取/写入text文件  */
     function write_err_info($txt){
         $date = date('Ymd');
         $myfile = fopen($date."register.txt", "a+") or die("Unable to open file!");
@@ -706,11 +711,7 @@ class sign extends CI_Controller {
         return $info;
     }
 
-    /*
-     * 以上为批量注册用户操作
-     * */
-
-    #聚来宝注册页面
+    /** 聚来宝注册页面 */
     public function julaibao()
     {
         $data = [
@@ -718,7 +719,7 @@ class sign extends CI_Controller {
         ];
         $this->load->view('tool/julaibao',$data);
     }
-    #聚来宝注册会员
+    /** 聚来宝注册会员 */
     function julaibao_sign()
     {
         $recommender = @$_POST['recommender'];

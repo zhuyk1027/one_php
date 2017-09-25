@@ -25,7 +25,7 @@
     </div>
 <?php  $this->load->view(BLOG.'right'); ?>
 <script>
-    //删除专辑
+    //删除博文
     $(".del_blog").click(function(){
         var id = $(this).attr('sid');
         var thiss = $(this);

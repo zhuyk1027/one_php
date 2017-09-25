@@ -68,4 +68,12 @@ class test extends CI_Controller {
         */
 	}
 
+	public function add_redis_info()
+    {
+        $data = [
+            'title'=>'redis  添加'
+        ];
+        $this->load->view('tool/redis_add',$data);
+    }
+
 }
