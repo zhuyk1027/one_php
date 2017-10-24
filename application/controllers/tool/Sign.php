@@ -321,7 +321,7 @@ class sign extends CI_Controller {
         //$phone = "17097517581";
         echo $phone.'<br />';
         if(strlen($phone)!=11){
-            echo '手机号码错误';
+            echo '手机号码错误'.$phone;
             unset($_SESSION['SHENHUA_TOKEN']);
             $this->jump_register_url($is_auto,$invite,$register_num,$j,$error);die;
         }
@@ -647,8 +647,15 @@ class sign extends CI_Controller {
             return false;
         }
 
+        $xip = $cip = mt_rand(100,254).'.'.mt_rand(0,254).'.'.mt_rand(0,254).'.'.mt_rand(0,254);
+        $header = array(
+            'CLIENT-IP:'.$cip,
+            'X-FORWARDED-FOR:'.$xip,
+        );
+
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt ($ch,CURLOPT_HTTPHEADER, $header);          //伪造IP，避免短信ip锁定
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_USERAGENT, 'BaiYangStore/3.3.0 (iPhone; iOS 9.3; Scale/2.00)');
         // post数据
