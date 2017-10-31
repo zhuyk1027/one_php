@@ -2,7 +2,7 @@
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>工具列表</title>
+    <title><?=$title?></title>
     <link href="<?=TOOL_CSS?>main.css" rel="stylesheet" type="text/css">
     <style>
         .backcolor {

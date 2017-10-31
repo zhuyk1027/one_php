@@ -2,65 +2,49 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class sign extends CI_Controller {
+
     public function __construct()
     {
         parent::__construct();
         $this->load->model('com_model');
-        $this->load->model('common_model');
         $this->load->helper('array');
-        $this->common_model->pv_count('/tool/sign');
     }
 
 	public function index()
 	{
-        if($this->session->userdata('id')!=1){
-            redirect('/');
-        }
 		$data = [
-			'title'=>'批量操作'
+			'title'=>'白羊'
 		];
 		$this->load->view('tool/sign',$data);
 	}
 
-    #登录
+    //登录
     function baiy_login($account='',$pass='')
     {
+        $url = 'http://mallapp.baiyjk.com/login/login';
         if($account){
-            $url = 'http://mallapp.baiyjk.com/login/login';
             $post_data['account'] = $account;
             $post_data['password'] = $pass;
             $post_data['udid']='123456789012345678901234567890123456';
         }else{
-            $url = 'http://mallapp.baiyjk.com/login/login';
             $filed = array('account','password','udid');
             $post_data = elements($filed,$_POST);
             $post_data['udid']='123456789012345678901234567890123456';
         }
 
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_USERAGENT, 'BaiYangStore/3.0.0 (iPhone; iOS 9.3; Scale/2.00)');
-        // post数据
-        curl_setopt($ch, CURLOPT_POST, 1);
-        // post的变量
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data);
-        $output = curl_exec($ch);
-        curl_close($ch);
-        //打印获得的数据
-        #print_r($output);die;
+        $output = $this->curl_baiy($url,$post_data);
 
         if($account){
-            if(isset(json_decode($output)->data->token)){
-                return json_decode($output)->data->token;
+            if(isset($output->data->token)){
+                return $output->data->token;
             }else{
                 return '';
             }
         }else{
-            echo json_encode(json_decode($output)->data->token);
+            echo json_encode($output->data->token);
         }
     }
-    #签到
+    //签到
     function baiy_sign($token='')
     {
         $url = 'http://mservice.baiyjk.com/wap/integral/sign';
@@ -72,26 +56,15 @@ class sign extends CI_Controller {
             $post_data = elements($filed,$_POST);
         }
 
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_USERAGENT, 'BaiYangStore/3.0.0 (iPhone; iOS 9.3; Scale/2.00)');
-        // post数据
-        curl_setopt($ch, CURLOPT_POST, 1);
-        // post的变量
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data);
-        $output = curl_exec($ch);
-        curl_close($ch);
-        //打印获得的数据
-        //print_r($output);
+        $output = $this->curl_baiy($url,$post_data);
 
         if($token){
-            return array(json_decode($output)->message,json_decode($output)->data->integral);
+            return array($output->message,$output->data->integral);
         }else{
-            echo json_encode(array(json_decode($output)->message,json_decode($output)->data->integral));
+            echo json_encode(array($output->message,$output->data->integral));
         }
     }
-    #抽奖
+    //抽奖
     function lottery_do($token,$active_id,$url='')
     {
         if(!$url){
@@ -105,20 +78,11 @@ class sign extends CI_Controller {
         $post_data['token'] = $token;
         $post_data['active_id'] = $active_id;
 
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_USERAGENT, 'BaiYangStore/3.0.0 (iPhone; iOS 9.3; Scale/2.00)');
-        // post数据
-        curl_setopt($ch, CURLOPT_POST, 1);
-        // post的变量
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data);
-        $output = curl_exec($ch);
-        curl_close($ch);
+        $output = $this->curl_baiy($url,$post_data);
 
-        return array(json_decode($output)->message,isset(json_decode($output)->data->postion_id)?json_decode($output)->data->postion_id:99);
+        return array($output->message,isset($output->data->postion_id)?$output->data->postion_id:99);
     }
-    #查看返利信息
+    //查看返利信息
     function show_back($token,$start,$end)
     {
 
@@ -129,22 +93,12 @@ class sign extends CI_Controller {
         $post_data['start_time'] = $start;
         $post_data['end_time'] = $end;
 
+        $output = $this->curl_baiy($url,$post_data);
 
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_USERAGENT, 'BaiYangStore/3.0.0 (iPhone; iOS 9.3; Scale/2.00)');
-        // post数据
-        curl_setopt($ch, CURLOPT_POST, 1);
-        // post的变量
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data);
-        $output = curl_exec($ch);
-        curl_close($ch);
-
-        if(json_decode($output)->code==200){
-            $arr['back_amount'] = json_decode($output)->data->back_amount;
-            $arr['effect_order_num'] = json_decode($output)->data->effect_order_num;
-            $arr['register_num'] = json_decode($output)->data->register_num;
+        if($output->code==200){
+            $arr['back_amount'] = $output->data->back_amount;
+            $arr['effect_order_num'] = $output->data->effect_order_num;
+            $arr['register_num'] = $output->data->register_num;
             $arr['message'] = 'SUCCESS';
         }else{
             $arr['back_amount'] = 0;
@@ -152,32 +106,25 @@ class sign extends CI_Controller {
             $arr['register_num'] = 0;
             $arr['message'] = 'FAIL';
         }
-
         return $arr;
     }
 
-    #获取批量用户
+    //获取批量用户
     function get_user($type=1,$page=1,$pagesize=100){
         $offset = ($page-1)*$pagesize;
-        #获取用户
+        //获取用户
         $sql = "select * from baiyang_account";
         switch ($type){
-            case 1:$sql .= " where pay_pass>1";break;
-            case 2:$sql .= " where ISNULL(pay_pass)";break;
+            case 1:$sql .= " where pay_pass>1";break;           //有支付密码的
+            case 2:$sql .= " where ISNULL(pay_pass)";break;     //无支付密码的
+            case 3:$sql .= " where is_cps=1";break;             //cps用户
         }
         $sql .= " limit $offset,$pagesize";
         $data = $this->common_model->get_records($sql);
         if(empty($data)){ echo "暂无用户";die; }
         return $data;
     }
-    #获取批量cps用户
-    function get_cps_user(){
-        #获取用户
-        $sql = "select * from baiyang_account where is_cps=1";
-        $data = $this->common_model->get_records($sql);
-        if(empty($data)){ echo "暂无用户";die; }
-        return $data;
-    }
+
     #批量抽奖
     function lottery($id=0,$type = 1,$page=1,$pagesize=100)
     {
@@ -190,7 +137,7 @@ class sign extends CI_Controller {
 
         #对应奖品
         $goods = $this->common_model->get_records("select * from baiyang_active_detail where active_id=$id");
-        if(empty($goods)){ echo "暂无奖品"; }
+        if(empty($goods)){ echo "暂无奖品";die; }
 
         #批量操作
         foreach($data as $key=>$val){
@@ -233,16 +180,17 @@ class sign extends CI_Controller {
             $end=mktime(23,59,59,date('m'),date('t'),date('Y'));
         }else{
             $strat=mktime(0,0,0,date('m')-1,1,date('Y'));
-            $end=mktime(23,59,59,date('m')-1,date('t'),date('Y'));
+            $end=mktime(0,0,0,date('m'),1,date('Y'))-1;
         }
 
         #获取用户
-        $data = $this->get_cps_user();
+        $data = $this->get_user(3);
         $back_money = 0;
 
         $date = date('Ymd');
         $myfile = fopen($date.".txt", "a+") or die("Unable to open file!");
         $txt = "\r\n";
+
         #批量操作
         foreach($data as $key=>$val){
             $token = $this->baiy_login($val->account,$val->password);
@@ -250,15 +198,16 @@ class sign extends CI_Controller {
                 echo $val->account.' 密码错误<br />';
             }else{
                 $arr = $this->show_back($token,$strat,$end);
-                echo $val->account.' '.$val->invite_code.' 返利'.$arr['back_amount'].
-                    ',注册用户:'.$arr['register_num'].'，返利订单'.$arr['effect_order_num'].'<br />';
+                echo $val->account.' 返利'.$arr['back_amount'].
+                    ',注册用户:'.$arr['register_num'].'，返利订单'.$arr['effect_order_num']." ".$val->nickname.'<br />';
 
                 $back_money += $arr['back_amount'];
 
-                $txt .= $val->account.' '.$val->invite_code.' 返利'.$arr['back_amount'].
-                    ',注册用户:'.$arr['register_num'].'，返利订单'.$arr['effect_order_num']."\r\n";
+                $txt .= $val->account.' 返利'.$arr['back_amount'].
+                    ',注册用户:'.$arr['register_num'].'，返利订单'.$arr['effect_order_num'].' '.$val->nickname."\r\n";
             }
         }
+
         echo "共计".$back_money.'元';
         $txt .= "共计".$back_money.'元';
         fwrite($myfile, date("Y-m-d").' '.$txt."\r\n");
@@ -288,11 +237,13 @@ class sign extends CI_Controller {
 
     //批量注册功能
     function register_do($is_auto = 1,$invite = 1,$register_num = 1,$j = 0,$error = 0){
+
         //错误多次之后,停止运行脚本 or 达到数量之后，输出
-        if($error>=100 || $register_num==$j){
+        if($error>=($register_num/2) || $register_num==$j){
 
-            if($error>=100){echo "多次获取错误<br />";}
+            if($error>=($register_num/2)){echo "多次获取错误<br />";}
 
+            //读取txt文档信息
             $info = $this->raed_info(date('Ymd')."register.txt");
             $info = explode("\r\n",$info);
             foreach($info as $key=>$value){
@@ -301,7 +252,8 @@ class sign extends CI_Controller {
             exit();
         }
 
-        if($j == 0){
+        //开始空格
+        if($j == 0 && $error==0){
             $this->write_err_info(" \r\n ");
         }
 
@@ -318,12 +270,11 @@ class sign extends CI_Controller {
 
         //③获取手机号
         $phone = $this->get_caoma_moile($token);
-        //$phone = "17097517581";
         echo $phone.'<br />';
         if(strlen($phone)!=11){
             echo '手机号码错误'.$phone;
             unset($_SESSION['SHENHUA_TOKEN']);
-            $this->jump_register_url($is_auto,$invite,$register_num,$j,$error);die;
+            $this->jump_register_url($is_auto,$invite,$register_num,$j,$error);exit();
         }
 
         //假如获取成功
@@ -346,6 +297,7 @@ class sign extends CI_Controller {
             }
 
             //⑤检验邀请码
+            /*
             $param = array(
                 'invite_code'=>$invite_code,
                 'token'=>'c4389008bfefee32e43f41d10998fd0f93c36ccc',
@@ -360,6 +312,7 @@ class sign extends CI_Controller {
                 $this->add_black_mobile($token,$phone);
                 $this->jump_register_url($is_auto,$invite,$register_num,$j,$error);die;
             }
+            */
 
             //⑥根据手机号发送验证码
             $param = array(
@@ -385,7 +338,7 @@ class sign extends CI_Controller {
             //⑦获取手机验证码
             $code = $this->get_mobile_code($token,$phone);
             $num = 1;
-            while($code<3 &&$num<10){
+            while($code<3 && $num<10){
                 echo "第".$num."次获取失败<br />";
                 $num = $num+1;
                 sleep(5);
@@ -407,6 +360,7 @@ class sign extends CI_Controller {
             }
 
             //⑧检验验证码
+            /*
             $param = array(
                 'mobile_code'=>$code,
                 'token'=>'c4389008bfefee32e43f41d10998fd0f93c36ccc',
@@ -421,7 +375,7 @@ class sign extends CI_Controller {
                 $error++;
                 $this->add_black_mobile($token,$phone);
                 $this->jump_register_url($is_auto,$invite,$register_num,$j,$error);die;
-            }
+            }*/
 
             $udid = $this->get_udid();
 
@@ -447,12 +401,10 @@ class sign extends CI_Controller {
 
             //注册成功后跳转至当前页，避免超时
             $j = $j+1;
-            $date = date('Ymd');
-            $myfile = fopen($date."register.txt", "a+") or die("Unable to open file!");
             $txt = date("Y-m-d H:i").' '.$phone." ".$invite_code." ".$j."\r\n";
-            fwrite($myfile, $txt);
-            fclose($myfile);
+            $this->write_err_info($txt);
 
+            /*
             $data = array(
                 'account'=>$phone,
                 'password'=>substr($phone,5),
@@ -460,7 +412,8 @@ class sign extends CI_Controller {
                 'is_use_coupon'=>1,
                 'coupon_end_time'=>date('Ymd',time()+2592000),
             );
-            //$this->db->insert('baiyang_account',$data);
+            $this->db->insert('baiyang_account',$data);
+            */
 
             $this->jump_register_url($is_auto,$invite,$register_num,$j,$error);
 
@@ -555,7 +508,7 @@ class sign extends CI_Controller {
             'token'=>$token,
             'ItemId'=>'32756',
             'Count'=>'1',
-            'PhoneType'=>rand(1,3),
+            'PhoneType'=>5,
             //'onlyKey'=>1,
         );
         $url = '/pubApi/GetPhone';
@@ -647,7 +600,7 @@ class sign extends CI_Controller {
             return false;
         }
 
-        $xip = $cip = mt_rand(100,254).'.'.mt_rand(0,254).'.'.mt_rand(0,254).'.'.mt_rand(0,254);
+        $xip = $cip = '125.68.54.'.mt_rand(0,254);
         $header = array(
             'CLIENT-IP:'.$cip,
             'X-FORWARDED-FOR:'.$xip,
