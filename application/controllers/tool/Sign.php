@@ -199,12 +199,12 @@ class sign extends CI_Controller {
             }else{
                 $arr = $this->show_back($token,$strat,$end);
                 echo $val->account.' 返利'.$arr['back_amount'].
-                    ',注册用户:'.$arr['register_num'].'，返利订单'.$arr['effect_order_num']." ".$val->nickname.'<br />';
+                    ',注册用户:'.$arr['register_num'].'，返利订单'.$arr['effect_order_num'].'<br />';
 
                 $back_money += $arr['back_amount'];
 
                 $txt .= $val->account.' 返利'.$arr['back_amount'].
-                    ',注册用户:'.$arr['register_num'].'，返利订单'.$arr['effect_order_num'].' '.$val->nickname."\r\n";
+                    ',注册用户:'.$arr['register_num'].'，返利订单'.$arr['effect_order_num']."\r\n";
             }
         }
 
@@ -239,9 +239,9 @@ class sign extends CI_Controller {
     function register_do($is_auto = 1,$invite = 1,$register_num = 1,$j = 0,$error = 0){
 
         //错误多次之后,停止运行脚本 or 达到数量之后，输出
-        if($error>=($register_num/2) || $register_num==$j){
+        if($error>=$register_num || $register_num==$j){
 
-            if($error>=($register_num/2)){echo "多次获取错误<br />";}
+            if($error>=$register_num){echo "多次获取错误<br />";}
 
             //读取txt文档信息
             $info = $this->raed_info(date('Ymd')."register.txt");
@@ -262,7 +262,7 @@ class sign extends CI_Controller {
         if(!$invite_code){
             $invite_code = $this->get_invite_code($is_auto,1);
         }
-        $cps_id = $invite_code['id'];
+        //$cps_id = $invite_code['id'];
         $invite_code = $invite_code['invite'];
 
         //②获取session存储的神话token
@@ -290,7 +290,7 @@ class sign extends CI_Controller {
 
             if($is_cunzai->code != 200){
                 echo $phone."已经注册";
-                $this->write_err_info($phone.'已经注册');
+                //$this->write_err_info($phone.'已经注册');
                 $error++;
                 $this->add_black_mobile($token,$phone);
                 $this->jump_register_url($is_auto,$invite,$register_num,$j,$error);die;
@@ -327,7 +327,7 @@ class sign extends CI_Controller {
             $is_send = $this->curl_baiy($url,$param);
             if($is_send->code != 200){
                 echo $phone."发送验证码失败";      //邀请码发生问题直接停止
-                $this->write_err_info($phone.'注册失败,发送验证码失败');
+                //$this->write_err_info($phone.'注册失败,发送验证码失败');
                 $error++;
                 $this->add_black_mobile($token,$phone);
                 $this->jump_register_url($is_auto,$invite,$register_num,$j,$error);die;
@@ -350,7 +350,7 @@ class sign extends CI_Controller {
             $code_str = $code;
             if(strpos($code,'MSG&32756') === false){
                 echo $phone."获取验证码失败";      //邀请码发生问题直接停止
-                $this->write_err_info($phone.'注册失败,获取验证码失败');
+                //$this->write_err_info($phone.'注册失败,获取验证码失败');
                 $error++;
                 $this->add_black_mobile($token,$phone);
                 $this->jump_register_url($is_auto,$invite,$register_num,$j,$error);die;
@@ -393,7 +393,7 @@ class sign extends CI_Controller {
             $is_right = $this->curl_baiy($url,$param);
             if($is_right->code != 200){
                 echo $phone."注册失败";      //邀请码发生问题直接停止
-                $this->write_err_info($phone.'注册失败,获取验证码失败');
+                //$this->write_err_info($phone.'注册失败,获取验证码失败');
                 $error++;
                 $this->add_black_mobile($token,$phone);
                 $this->jump_register_url($is_auto,$invite,$register_num,$j,$error);die;
@@ -401,7 +401,7 @@ class sign extends CI_Controller {
 
             //注册成功后跳转至当前页，避免超时
             $j = $j+1;
-            $txt = date("Y-m-d H:i").' '.$phone." ".$invite_code." ".$j."\r\n";
+            $txt = $phone." ".$invite_code." ".$j."\r\n";
             $this->write_err_info($txt);
 
             /*
@@ -661,7 +661,7 @@ class sign extends CI_Controller {
     function write_err_info($txt){
         $date = date('Ymd');
         $myfile = fopen($date."register.txt", "a+") or die("Unable to open file!");
-        fwrite($myfile, date("Y-m-d H:i").' '.$txt."\r\n");
+        fwrite($myfile, date("Y-m-d H:i").' '.$txt);
         fclose($myfile);
     }
     function raed_info($txt_name){
