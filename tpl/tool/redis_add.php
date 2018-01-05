@@ -7,13 +7,14 @@
     <style type="text/css">
         .backcolor {
             background-color:#545164;
+            width: 315px;
         }
     </style>
     <script src="<?=PUB_PATH?>js/jquery-1.8.3.min.js"></script>
 </head>
 <body>
 <ul>
-    <li class="backcolor"><a href="JavaScript:void(history.go(-1))">返回</a></li>
+    <li style="background-color:#545164"><a href="JavaScript:void(history.go(-1))">返回</a></li>
 </ul>
 <ul class="clear">
     <li class="backcolor">

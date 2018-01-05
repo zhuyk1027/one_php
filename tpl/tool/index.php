@@ -11,14 +11,11 @@
 			padding: 0;
 		}
 		li {
-			/*width: 10%;*/
 			float: left;
 			margin: 0px;
 			margin-left:1%;
 			padding: 20px;
-			/*height: 100px;*/
 			display: inline;
-			/*line-height: 100px;*/
 			color: #fff;
 			font-size: x-large;
 			word-break:break-all;

@@ -7,34 +7,57 @@
     <style type="text/css">
         .backcolor {
             background-color:#CD8162;
+            width: 315px;
         }
     </style>
 </head>
 <body>
 <ul>
-    <li class="backcolor"><a href="/tool">返回</a></li>
+    <li style="background-color:#CD8162"><a href="/tool">返回</a></li>
 </ul>
 <ul class="clear">
-    <form method="post" action="/tool/tool/md5_to_encode" target="froms">
     <li class="backcolor">
         <p class="text_center"><?php echo $title;?></p>
         <table>
             <tr>
-                <td class="right"width="80">字符：</td>
+                <td class="right" style="width: 80px;">字符：</td>
                 <td><input type="text" name="words" placeholder="字符串" ></td>
-            </tr><tr>
+            </tr>
+            <tr>
                 <td colspan="2" class="text_center">
-                    <input type="submit" class="button" value="加密">
+                    <input type="button" class="button" value="加密" onclick="tomd5()">
                 </td>
-            </tr><tr >
+            </tr>
+            <tr >
                 <td class="right">密文：</td>
                 <td>
-                    <iframe name="froms" id="froms" style="border:0px;" width="270" height="36"></iframe>
+                    <span name="froms"></span>
                 </td>
             </tr>
         </table>
     </li>
-    </form>
 </ul>
 </body>
+<script src="<?=PUB_PATH?>js/jquery-1.8.3.min.js"></script>
+<script>
+    var flag=0;
+    function tomd5(){
+        if(flag==1){
+            return false;
+        }flag=1;
+
+        var words = $("input[name='words']").val();
+        $.ajax({
+            url: "/tool/tool/md5_to_encode",
+            data: { "words": words},
+            type: "POST",
+            dataType : "text",
+            success: function (data) {
+                $("span[name='froms']").html(data);
+                $("input[name='words']").val('');
+                flag=0;
+            }
+        });
+    }
+</script>
 </html>

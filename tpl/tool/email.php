@@ -7,18 +7,18 @@
     <style type="text/css">
         .backcolor {
             background-color:#8B7D6B;
+            width: 315px;
         }
     </style>
 </head>
 <body>
 <ul>
-    <li class="backcolor"><a href="/tool">返回</a></li>
+    <li style="background-color:#8B7D6B"><a href="/tool">返回</a></li>
 </ul>
 <ul class="clear">
-    <form method="post" action="/tool/send_email/send_email" target="froms">
     <li class="backcolor">
         <p class="text_center">邮件发送</p>
-        <table style="width: 420px;">
+        <table>
             <tr>
                 <td class="right">收件人：</td>
                 <td><input type="text" name="to" placeholder="收件人" ></td>
@@ -30,22 +30,47 @@
             </tr><tr >
                 <td class="right">内容：</td>
                 <td>
-                    <textarea name="conts" cols="40" rows="6"
+                    <textarea name="conts" cols="30" rows="8"
                               placeholder="请输入您要发送的内容（ps：本邮件由本站公共邮箱发出，不承诺任何法律效益，不承担任何责任）"></textarea>
                 </td>
             </tr><tr>
                 <td colspan="2" class="text_center">
-                    <input type="submit" class="button">
+                    <input type="button" onclick="send_email()" class="button" value="发送">
                 </td>
             </tr><tr >
                 <td class="right">状态：</td>
                 <td>
-                    <iframe name="froms" id="froms" style="border:0px;" height="36"></iframe>
+                    <span name="froms"></span>
                 </td>
             </tr>
         </table>
     </li>
-    </form>
 </ul>
 </body>
+<script src="<?=PUB_PATH?>js/jquery-1.8.3.min.js"></script>
+<script>
+    var flag=0;
+    function send_email(){
+        if(flag==1){
+            return false;
+        }flag=1;
+
+        var to = $("input[name='to']").val();
+        var title = $("input[name='title']").val();
+        var conts = $("textarea[name='conts']").val();
+        $.ajax({
+            url: "/tool/send_email/send_email",
+            data: { "to": to,"title": title,"conts": conts},
+            type: "POST",
+            dataType : "text",
+            success: function (data) {
+                $("span[name='froms']").html(data);
+                $("input[name='to']").val('');
+                $("input[name='title']").val('');
+                $("textarea[name='conts']").val('');
+                flag=0;
+            }
+        });
+    }
+</script>
 </html>

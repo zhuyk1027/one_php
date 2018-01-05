@@ -7,34 +7,53 @@
     <style type="text/css">
         .backcolor {
             background-color:#CD919E;
+            width: 315px;
         }
     </style>
 </head>
 <body>
 <ul>
-    <li class="backcolor"><a href="/tool">返回</a></li>
+    <li style="background-color:#CD919E"><a href="/tool">返回</a></li>
 </ul>
 <ul class="clear">
-    <form method="post" action="/tool/tool/json_to_decode" target="froms">
     <li class="backcolor">
         <p class="text_center"><?php echo $title;?></p>
         <table>
             <tr>
-                <td class="right"width="80">字符：</td>
-                <td><textarea name="words" cols="33" rows="8"></textarea></td>
+                <td><textarea name="words" cols="40" rows="8"></textarea></td>
             </tr><tr>
                 <td colspan="2" class="text_center">
-                    <input type="submit" class="button" value="加密">
+                    <input type="button" class="button" value="解析" onclick="tojsondecode()">
                 </td>
             </tr>
         </table>
     </li>
 
     <li class="backcolor clear">
-        <iframe name="froms" id="froms" style="border:0px;width:100%;min-width:340px;height: auto;min-height: 300px;"  ></iframe>
+        <span name="froms" ></span>
     </li>
-    </form>
 </ul>
-
 </body>
+<script src="<?=PUB_PATH?>js/jquery-1.8.3.min.js"></script>
+<script>
+    var flag=0;
+    function tojsondecode(){
+        if(flag==1){
+            return false;
+        }flag=1;
+
+        var words = $("textarea[name='words']").val();
+        $.ajax({
+            url: "/tool/tool/json_to_decode",
+            data: { "words": words},
+            type: "POST",
+            dataType : "text",
+            success: function (data) {
+                $("span[name='froms']").html(data);
+                $("input[name='words']").val('');
+                flag=0;
+            }
+        });
+    }
+</script>
 </html>

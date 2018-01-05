@@ -7,6 +7,7 @@
     <style>
         .backcolor {
             background-color:green;
+            width: 315px;
         }
 
     </style>
