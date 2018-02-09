@@ -9,7 +9,6 @@
                     <?php foreach($blog_top as $key=>$row){ ?>
                     <li class="item">
                         <a href="/blog/detail/<?=$row->blog_id?>">
-                            <img src="<?=BLOG_IMG?>thumbnail.png" alt="<?=$row->title?>">
                             <h3><?=$row->title?></h3>
                             <p class="muted"><?=$row->cont?>.</p>
                         </a>

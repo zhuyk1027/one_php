@@ -61,11 +61,8 @@ class CI_Controller {
     public $site_info = array(
         'website_title'=>WEB_NAME,
         'head'=>array(
-            'head_title'=>'朱耀昆博客',
+            'head_title'=>WEB_NAME,
             'design'=>DESIGN,
-            'my_photo'=>MY_PHOTO,
-            'pay_photo'=>PAY_PHOTO,
-            'email'=>EMAIL,
             'this_page'=>'',
         ),
         'tags'=>'',

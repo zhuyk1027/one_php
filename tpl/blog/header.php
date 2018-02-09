@@ -7,7 +7,7 @@
     <title><?=$website_title?></title>
     <link rel="shortcut icon" type="image/x-icon" href="/tpl/blog/img/favicon.ico" media="screen" />
 
-    <meta name="author" content="朱耀昆 zhuyk zhuyaokun 朱耀昆PHP开发工程师">
+    <meta name="author" content="朱耀昆 zhuyk zhuyaokun 朱耀昆PHP开发工程师 <?=$website_title?>">
     <meta name="keywords" content="PHP程序员，朱耀昆博客-优秀PHP技术博客，朱耀昆，zhuyk，zhuyaokun，百洋商城，乐生活，森果，学乎网">
     <meta name="description" content="朱耀昆，资深PHP工程师，优秀PHP技术博客。分享原创教程，技术文档与其他实用分享资源，坚持做优质资源: 写好代码，让代码更扎实稳固，自己才会有质的飞跃">
     <meta name="copyright" content="朱耀昆 Zhuyk">
@@ -15,12 +15,12 @@
     <meta property="og:type" content="article">
     <meta property="og:url" content="<?=WEB_URL?>">
     <meta property="article:published_time" content="2016-10-27T14:03:04+08:00">
-    <meta property="article:author" content="朱耀昆 zhuyk zhuyaokun 朱耀昆PHP开发工程师">
+    <meta property="article:author" content="朱耀昆 zhuyk zhuyaokun 朱耀昆PHP开发工程师 <?=$website_title?>">
     <meta property="article:published_first" content="朱耀昆博客<?=WEB_URL?>">
     <meta property="og:image" content="<?=WEB_URL?>logo.jpg">
     <meta property="og:release_date" content="2016-10-27T14:03:04+08:00">
-    <meta property="og:title" content="PHP程序员，朱耀昆博客-优秀PHP技术博客，朱耀昆 zhuyk zhuyaokun 朱耀昆PHP开发工程师">
-    <meta property="og:description" content="朱耀昆优秀PHP技术博客。分享原创教程，技术文档与其他实用分享资源，坚持做优质资源: 写好代码，让代码更扎实稳固，自己才会有质的飞跃">
+    <meta property="og:title" content="PHP程序员，朱耀昆博客-优秀PHP技术博客，朱耀昆 zhuyk zhuyaokun 朱耀昆PHP开发工程师 <?=$website_title?>">
+    <meta property="og:description" content="<?=$website_title?> 朱耀昆优秀PHP技术博客。分享原创教程，技术文档与其他实用分享资源，坚持做优质资源: 写好代码，让代码更扎实稳固，自己才会有质的飞跃">
     <meta name="robots" content="all">
     <meta name="generator" content="php">
     <meta http-equiv="Content-Language" content="zh-cn">
@@ -57,7 +57,7 @@
     <script type="text/javascript" src="<?=BLOG_JS?>jquery.js?ver=3.0"></script>
     <script type="text/javascript" src="<?=BLOG_JS?>widget.js"></script>
 </head>
-<body class="home blog" youdao="bind">
+<body class="home blog"  youdao="bind">
 <header class="header">
     <div class="navbar">
         <h1 class="logo"><a href="/" title="<?=$website_title?>"><?=$website_title?></a></h1>

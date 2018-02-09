@@ -16,13 +16,14 @@ defined('SHOW_DEBUG_BACKTRACE') OR define('SHOW_DEBUG_BACKTRACE', TRUE);
 
 /*常用常量*/
 defined('WEB_URL') OR define('WEB_URL', 'http://www.zhuyk.cn/');
-defined('WEB_NAME') OR define('WEB_NAME', '朱耀昆博客');
-defined('WEIBO') OR define('WEIBO', 'http://weibo.com/5674847826/profile?rightmod=1&wvr=6&mod=personinfo&is_hot=1');
-defined('DESIGN') OR define('DESIGN', '欢迎来到朱耀昆博客，请记住唯一域名 http://www.zhuyk/cn');
+defined('WEB_NAME') OR define('WEB_NAME', '灰猪领地');
+defined('WEB_MASTER') OR define('WEB_MASTER', '灰猪君');
 
-defined('EMAIL') OR define('EMAIL', 'zhuyaokun1027@126.com');
-defined('MY_PHOTO') OR define('MY_PHOTO', 'http://happylife.image.alimmdn.com/img/logo.jpg');
-defined('PAY_PHOTO') OR define('PAY_PHOTO', 'http://happylife.image.alimmdn.com/img/alipay.png');
+defined('WEIBO') OR define('WEIBO', 'http://weibo.com/5674847826/profile?rightmod=1&wvr=6&mod=personinfo&is_hot=1');
+defined('DESIGN') OR define('DESIGN', '欢迎来到灰猪领地，请记住唯一域名 http://www.zhuyk/cn');
+defined('SIGN') OR define('SIGN', '一台笔记本，一杯咖啡，像写代码一样简单的生活，挺好。');
+
+defined('BEIAN') OR define('BEIAN', '粤ICP备17095701号');
 
 defined('BLOG') OR define('BLOG', 'blog/');
 defined('BLOG_JS') OR define('BLOG_JS', '/tpl/blog/js/');

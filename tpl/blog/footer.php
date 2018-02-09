@@ -14,8 +14,7 @@
     </div>
     <div class="footer-inner">
         <div class="copyright pull-left">
-            版权所有，保留一切权利！ © 2017 <a href="<?=WEB_URL?>"><?=$website_title?></a>　Theme
-            <a href="http://www.daqianduan.com/" target="_blank">D8</a>
+            Copyright © 2017 <a href="<?=WEB_URL?>"><?=$website_title?></a>　<?=BEIAN?>
         </div>
 
     </div>
@@ -26,4 +25,5 @@
     <button class="btn btn-inverse" data-type="totop" title="回顶部"><i class="icon-eject icon-white"></i></button>
 </div>
 </body>
+<script type="text/javascript" src="<?=PUB_PATH?>js/aiguo.js?uU4"></script>
 </html>

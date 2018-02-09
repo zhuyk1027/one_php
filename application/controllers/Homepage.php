@@ -13,7 +13,7 @@ class Homepage extends CI_Controller {
 	public function index()
 	{
         #最新的博客
-        $blog = $this->common_model->get_records('select * from blog where user_id='.$this->user_id.' order by create_date desc  limit 8');
+        $blog = $this->common_model->get_records('select * from blog where user_id='.$this->user_id.' order by create_date desc  limit 7');
         $blog_group = $this->site_info['groups'];
         foreach($blog as $key=>$row){
             $row->cont = substr($row->cont,0,666);

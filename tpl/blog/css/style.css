@@ -1,11 +1,7 @@
-/* 
-	Theme Name: D8
-	Theme URL: http://www.daqianduan.com/theme/d8/
-	Description: 大前端D8主题（付费） 技术支持：<a href="http://www.daqianduan.com">大前端</a>
-	Author: 浩子
-	Author URI: http://www.daqianduan.com
-	Version: 3.0
-*/
+body{
+    background:url("../img/background.jpg") no-repeat fixed;
+}
+
 article,aside,details,figcaption,figure,footer,header,hgroup,nav,section{display:block}
 audio,canvas,video{display:inline-block;*display:inline;*zoom:1}
 audio:not([controls]){display:none}
@@ -144,7 +140,7 @@ a{color:#428BD1;text-decoration:none}
 a:hover,a:focus{color:#3071A9;text-decoration:none}
 ::selection{background:#72d0eb;color:#fff;text-shadow:none}
 ::-moz-selection{background:#72d0eb;color:#fff;text-shadow:none}
-.header,.container,.footer{max-width:1320px;margin:0 auto;text-align:left;position:relative;*zoom:1}
+.header,.container,.footer{max-width:1200px;margin:0 auto;text-align:left;position:relative;*zoom:1}
 .header:before,.container:before,.footer:before,.header:after,.container:after,.footer:after{display:table;content:"";line-height:0}
 .header:after,.container:after,.footer:after{clear:both}
 .header{top:0;width:100%;z-index:999;margin-bottom:10px}
@@ -196,7 +192,8 @@ a:hover,a:focus{color:#3071A9;text-decoration:none}
 .page-navbar > li > ul{font-size:14px}
 .page-navbar > li > ul a{padding-left: 36px;}
 .page-navbar li:hover a{background-color: #F7F7F7;color: #666;}
-.page-navbar li.current-menu-item a,.page-navbar li.current-menu-parent a,.page-navbar li.current_page_item a,.page-navbar li.current-post-ancestor a,.page-navbar li ul{background-color:#F7F7F7;border-left-color: #428BCA;color: #666;}
+.page-navbar li.current-menu-item a,.page-navbar li.current-menu-parent a,.page-navbar li.current_page_item a,.page-navbar li.current-post-ancestor a,
+.page-navbar li ul{background-color:#F7F7F7;border-left-color: #428BCA;color: #666;}
 
 form{margin:0 0 20px}
 fieldset{padding:0;margin:0;border:0}
@@ -627,10 +624,11 @@ button.btn.btn-mini,input[type="submit"].btn.btn-mini{*padding-top:1px;*padding-
 .tabs-right > .nav-tabs .active > a,.tabs-right > .nav-tabs .active > a:hover,.tabs-right > .nav-tabs .active > a:focus{border-color:#ddd #ddd #ddd transparent;*border-left-color:#ffffff}
 .nav > .disabled > a{color:#999999}
 .nav > .disabled > a:hover,.nav > .disabled > a:focus{text-decoration:none;background-color:transparent;cursor:default}
+
 .navbar{height:52px;background-color:#4a4a4a;*position:relative;*z-index:2;*zoom:1;}
 .navbar:before,.navbar:after{display:table;content:"";line-height:0}
 .navbar:after{clear:both}
-.navbar .logo{float:left;width:230px;background:#428bca url("img/logo.png") no-repeat 50% 50%;height:52px;overflow:hidden;line-height:208px;font-size:18px;font-weight:bold;color:#fff;margin:0;*line-height: 0;*text-indent: -999;}
+.navbar .logo{float:left;width:230px;background:white url("../img/logo.png") no-repeat 50% 50%;height:52px;overflow:hidden;line-height:208px;font-size:18px;font-weight:bold;color:#fff;margin:0;*line-height: 0;*text-indent: -999;}
 .navbar .logo a{height:52px;display:block;color:#fff;overflow:hidden}
 .navbar .nav{position:relative;left:0;display:block;float:left;margin:0 10px 0 0;font-size:14px}
 .navbar .nav.pull-right{float:right;margin-right:0}
@@ -826,7 +824,7 @@ font-weight: normal;}
 .sticky ul{margin-right: -2px;}
 .sticky li{width: 50%;float: left;margin-bottom: 1px;}
 .sticky li span{margin-left: -20px;}
-.sticky li a{display:block;background-color: #fff;margin-right: 1px;padding: 5px 20px 5px 140px;}
+.sticky li a{display:block;background-color: #fff;margin-right: 1px;padding: 5px 20px 5px 20px;}
 .sticky h3{font-size: 14px;margin: 0;font-weight: normal;height: 35px;overflow: hidden;}
 .sticky img{float: left;margin:8px 0 0 -120px;max-width: 100px;max-height: 70px;}
 .sticky p{overflow: hidden;height: 40px;}
@@ -1367,4 +1365,12 @@ input.search-input{width: 150px;}
 }
 
 @media print{}
+
+.user1{
+    height: 135px;
+    background:url('../img/user1.png') repeat;
+    text-align: center;
+}
+.user3{  text-align: center;font-size:22px;  }
+.user4{  text-align: center;padding:10px;  }
 
