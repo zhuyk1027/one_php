@@ -1,0 +1,6 @@
+.idea/*
+idea/*
+sess/*
+ueditor/*
+tpl/register_log/*
+application/config/database.php

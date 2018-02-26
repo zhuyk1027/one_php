@@ -187,7 +187,7 @@ class sign extends CI_Controller {
         $data = $this->get_user(3);
         $back_money = 0;
 
-        $date = date('Ymd');
+        $date = 'tpl/register_log/'.date('Ymd');
         $myfile = fopen($date.".txt", "a+") or die("Unable to open file!");
         $txt = "\r\n";
 
@@ -244,7 +244,7 @@ class sign extends CI_Controller {
             if($error>=$register_num){echo "多次获取错误<br />";}
 
             //读取txt文档信息
-            $info = $this->raed_info(date('Ymd')."register.txt");
+            $info = $this->raed_info('tpl/register_log/'.date('Ymd')."register.txt");
             $info = explode("\r\n",$info);
             foreach($info as $key=>$value){
                 echo $value.'<br />';
@@ -659,7 +659,7 @@ class sign extends CI_Controller {
 
     /** 读取/写入text文件  */
     function write_err_info($txt){
-        $date = date('Ymd');
+        $date = 'tpl/register_log/'.date('Ymd');
         $myfile = fopen($date."register.txt", "a+") or die("Unable to open file!");
         fwrite($myfile, date("Y-m-d H:i").' '.$txt);
         fclose($myfile);

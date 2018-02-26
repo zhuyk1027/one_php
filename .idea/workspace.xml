@@ -73,7 +73,7 @@
         <entry file="file://$PROJECT_DIR$/tpl/blog/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="20000">
-              <caret line="800" column="35" lean-forward="true" selection-start-line="800" selection-start-column="35" selection-end-line="800" selection-end-column="35" />
+              <caret line="800" column="35" lean-forward="false" selection-start-line="800" selection-start-column="35" selection-end-line="800" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -83,7 +83,7 @@
         <entry file="file://$PROJECT_DIR$/application/controllers/Blog.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="125">
-              <caret line="5" column="24" lean-forward="true" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+              <caret line="5" column="24" lean-forward="false" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
               <folding>
                 <marker date="1506062752866" expanded="true" signature="571:625" ph="select group... blog_group" />
                 <marker date="1506062752866" expanded="true" signature="1014:1057" ph="select tag_n... blog_tag" />
@@ -103,7 +103,7 @@
         <entry file="file://$PROJECT_DIR$/system/core/Controller.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="125">
-              <caret line="51" column="21" lean-forward="true" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
+              <caret line="51" column="21" lean-forward="false" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
               <folding>
                 <element signature="e#6#1666#0#PHP" expanded="false" />
                 <element signature="e#1732#2048#0#PHP" expanded="false" />
@@ -128,12 +128,99 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="20180131.txt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/20180131.txt">
+      <file leaf-file-name="Sign.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/controllers/tool/Sign.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="309">
+              <caret line="662" column="39" lean-forward="false" selection-start-line="662" selection-start-column="39" selection-end-line="662" selection-end-column="39" />
+              <folding>
+                <element signature="n#index#0;n#sign#0;n#!!top" expanded="false" />
+                <element signature="e#302#324#0#PHP" expanded="false" />
+                <element signature="n#baiy_login#0;n#sign#0;n#!!top" expanded="false" />
+                <element signature="e#495#872#0#PHP" expanded="false" />
+                <element signature="e#679#872#0#PHP" expanded="false" />
+                <element signature="e#936#1176#0#PHP" expanded="false" />
+                <element signature="e#962#1099#0#PHP" expanded="false" />
+                <element signature="e#1053#1099#0#PHP" expanded="false" />
+                <element signature="e#1109#1176#0#PHP" expanded="false" />
+                <element signature="n#baiy_sign#0;n#sign#0;n#!!top" expanded="false" />
+                <element signature="e#1304#1469#0#PHP" expanded="false" />
+                <element signature="e#1367#1469#0#PHP" expanded="false" />
+                <element signature="e#1533#1716#0#PHP" expanded="false" />
+                <element signature="e#1622#1716#0#PHP" expanded="false" />
+                <element signature="n#lottery_do#0;n#sign#0;n#!!top" expanded="false" />
+                <element signature="e#1797#2148#0#PHP" expanded="false" />
+                <element signature="e#1820#2138#0#PHP" expanded="false" />
+                <element signature="n#show_back#0;n#sign#0;n#!!top" expanded="false" />
+                <element signature="n#get_user#0;n#sign#0;n#!!top" expanded="false" />
+                <element signature="e#3422#3665#0#PHP" expanded="false" />
+                <element signature="n#lottery#0;n#sign#0;n#!!top" expanded="false" />
+                <element signature="e#3924#3975#0#PHP" expanded="false" />
+                <element signature="e#4241#4765#0#PHP" expanded="false" />
+                <element signature="e#4353#4755#0#PHP" expanded="false" />
+                <element signature="e#4429#4755#0#PHP" expanded="false" />
+                <element signature="e#4524#4741#0#PHP" expanded="false" />
+                <element signature="e#4569#4723#0#PHP" expanded="false" />
+                <element signature="n#baiy_all_sign#0;n#sign#0;n#!!top" expanded="false" />
+                <element signature="e#4939#5307#0#PHP" expanded="false" />
+                <element signature="e#5051#5297#0#PHP" expanded="false" />
+                <element signature="e#5127#5297#0#PHP" expanded="false" />
+                <element signature="e#6736#6767#0#PHP" expanded="false" />
+                <element signature="n#register#0;n#sign#0;n#!!top" expanded="false" />
+                <element signature="e#6875#7163#0#PHP" expanded="false" />
+                <element signature="e#7458#7846#0#PHP" expanded="false" />
+                <element signature="e#9315#10091#0#PHP" expanded="false" />
+                <element signature="e#11926#12601#0#PHP" expanded="false" />
+                <element signature="e#13596#13929#0#PHP" expanded="false" />
+                <element signature="n#get_udid#0;n#sign#0;n#!!top" expanded="false" />
+                <element signature="e#14238#15450#0#PHP" expanded="false" />
+                <element signature="n#jump_register_url#0;n#sign#0;n#!!top" expanded="false" />
+                <element signature="n#get_invite_code#0;n#sign#0;n#!!top" expanded="false" />
+                <element signature="e#15847#16256#0#PHP" expanded="false" />
+                <element signature="e#15903#16038#0#PHP" expanded="false" />
+                <element signature="e#16100#16256#0#PHP" expanded="false" />
+                <element signature="e#16370#16420#0#PHP" expanded="false" />
+                <element signature="n#get_caoma_token#0;n#sign#0;n#!!top" expanded="false" />
+                <element signature="e#16543#17208#0#PHP" expanded="false" />
+                <element signature="e#16577#16727#0#PHP" expanded="false" />
+                <element signature="e#17244#17292#0#PHP" expanded="false" />
+                <element signature="n#get_caoma_moile#0;n#sign#0;n#!!top" expanded="false" />
+                <element signature="e#17685#17733#0#PHP" expanded="false" />
+                <element signature="n#sf_phone#0;n#sign#0;n#!!top" expanded="false" />
+                <element signature="e#18016#18066#0#PHP" expanded="false" />
+                <element signature="n#add_black_mobile#0;n#sign#0;n#!!top" expanded="false" />
+                <element signature="e#18380#18430#0#PHP" expanded="false" />
+                <element signature="n#get_mobile_code#0;n#sign#0;n#!!top" expanded="false" />
+                <element signature="e#18493#18598#0#PHP" expanded="false" />
+                <element signature="e#18717#18749#0#PHP" expanded="false" />
+                <element signature="n#curl_caoma#0;n#sign#0;n#!!top" expanded="false" />
+                <element signature="e#19430#19462#0#PHP" expanded="false" />
+                <element signature="n#curl_baiy#0;n#sign#0;n#!!top" expanded="false" />
+                <element signature="e#19516#19573#0#PHP" expanded="false" />
+                <element signature="e#19644#19728#0#PHP" expanded="false" />
+                <element signature="n#get_sign#0;n#sign#0;n#!!top" expanded="false" />
+                <element signature="n#order_array#0;n#sign#0;n#!!top" expanded="false" />
+                <element signature="e#20501#20609#0#PHP" expanded="false" />
+                <element signature="e#20665#20773#0#PHP" expanded="false" />
+                <element signature="e#20730#20773#0#PHP" expanded="false" />
+                <element signature="n#post_to_string#0;n#sign#0;n#!!top" expanded="false" />
+                <element signature="e#20902#21107#0#PHP" expanded="false" />
+                <element signature="e#20955#21097#0#PHP" expanded="false" />
+                <element signature="n#unset_session#0;n#sign#0;n#!!top" expanded="false" />
+                <element signature="n#julaibao#0;n#sign#0;n#!!top" expanded="false" />
+                <element signature="e#21848#21888#0#PHP" expanded="false" />
+                <element signature="n#julaibao_sign#0;n#sign#0;n#!!top" expanded="false" />
+                <element signature="e#22183#22237#0#PHP" expanded="false" />
+                <element signature="e#22358#23291#0#PHP" expanded="false" />
+                <element signature="e#22419#22499#0#PHP" expanded="false" />
+                <element signature="e#22557#22823#0#PHP" expanded="false" />
+                <marker date="1519614415071" expanded="false" signature="3382:3411" ph="select * fro... baiyang_account" />
+                <marker date="1519614415071" expanded="false" signature="4113:4165" ph="select * fro... baiyang_active_detail" />
+                <marker date="1519614415071" expanded="true" signature="9818:9889" ph="update baiya... " />
+                <marker date="1519614415071" expanded="false" signature="15954:16010" ph="select val f... tags" />
+                <marker date="1519614415071" expanded="false" signature="15954:16023" ph="select id,in... baiyang_account" />
+                <marker date="1519614415071" expanded="false" signature="16159:16236" ph="select val f... tags" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -142,8 +229,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ad_click</find>
-      <find>friendship_click</find>
       <find>album</find>
       <find>count_pv</find>
       <find>image</find>
@@ -172,6 +257,8 @@
       <find>gougou.png</find>
       <find>header-bg.jpg</find>
       <find>.item</find>
+      <find>raed_info</find>
+      <find>fopen</find>
     </findStrings>
     <dirStrings>
       <dir>F:\workspace\one_php\wechat</dir>
@@ -208,7 +295,6 @@
         <option value="$PROJECT_DIR$/application/controllers/Login.php" />
         <option value="$PROJECT_DIR$/application/controllers/User.php" />
         <option value="$PROJECT_DIR$/tpl/blog/user_gallery_list.php" />
-        <option value="$PROJECT_DIR$/application/controllers/tool/Sign.php" />
         <option value="$PROJECT_DIR$/tpl/tool/index.php" />
         <option value="$PROJECT_DIR$/tpl/tool/sign.php" />
         <option value="$PROJECT_DIR$/tpl/tool/redis_add.php" />
@@ -234,6 +320,7 @@
         <option value="$PROJECT_DIR$/tpl/blog/css/style.css" />
         <option value="$PROJECT_DIR$/tpl/blog/right.php" />
         <option value="$PROJECT_DIR$/application/config/constants.php" />
+        <option value="$PROJECT_DIR$/application/controllers/tool/Sign.php" />
       </list>
     </option>
   </component>
@@ -268,7 +355,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -404,12 +490,35 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tool" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="one_php" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="one_php" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="config" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -549,12 +658,13 @@
       <workItem from="1516772610496" duration="974000" />
       <workItem from="1517456012932" duration="2915000" />
       <workItem from="1518156721544" duration="11263000" />
-      <workItem from="1519609654388" duration="22000" />
+      <workItem from="1519609654388" duration="618000" />
+      <workItem from="1519613746937" duration="670000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114593000" />
+    <option name="totallyTimeSpent" value="115859000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -715,104 +825,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="8" column="36" lean-forward="false" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/tool/Sign.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="9" column="37" lean-forward="true" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
-          <folding>
-            <element signature="n#index#0;n#sign#0;n#!!top" expanded="false" />
-            <element signature="e#302#324#0#PHP" expanded="false" />
-            <element signature="n#baiy_login#0;n#sign#0;n#!!top" expanded="false" />
-            <element signature="e#495#872#0#PHP" expanded="false" />
-            <element signature="e#679#872#0#PHP" expanded="false" />
-            <element signature="e#936#1176#0#PHP" expanded="false" />
-            <element signature="e#962#1099#0#PHP" expanded="false" />
-            <element signature="e#1053#1099#0#PHP" expanded="false" />
-            <element signature="e#1109#1176#0#PHP" expanded="false" />
-            <element signature="n#baiy_sign#0;n#sign#0;n#!!top" expanded="false" />
-            <element signature="e#1304#1469#0#PHP" expanded="false" />
-            <element signature="e#1367#1469#0#PHP" expanded="false" />
-            <element signature="e#1533#1716#0#PHP" expanded="false" />
-            <element signature="e#1622#1716#0#PHP" expanded="false" />
-            <element signature="n#lottery_do#0;n#sign#0;n#!!top" expanded="false" />
-            <element signature="e#1797#2148#0#PHP" expanded="false" />
-            <element signature="e#1820#2138#0#PHP" expanded="false" />
-            <element signature="n#show_back#0;n#sign#0;n#!!top" expanded="false" />
-            <element signature="n#get_user#0;n#sign#0;n#!!top" expanded="false" />
-            <element signature="e#3422#3665#0#PHP" expanded="false" />
-            <element signature="n#lottery#0;n#sign#0;n#!!top" expanded="false" />
-            <element signature="e#3924#3975#0#PHP" expanded="false" />
-            <element signature="e#4241#4765#0#PHP" expanded="false" />
-            <element signature="e#4353#4755#0#PHP" expanded="false" />
-            <element signature="e#4429#4755#0#PHP" expanded="false" />
-            <element signature="e#4524#4741#0#PHP" expanded="false" />
-            <element signature="e#4569#4723#0#PHP" expanded="false" />
-            <element signature="n#baiy_all_sign#0;n#sign#0;n#!!top" expanded="false" />
-            <element signature="e#4939#5307#0#PHP" expanded="false" />
-            <element signature="e#5051#5297#0#PHP" expanded="false" />
-            <element signature="e#5127#5297#0#PHP" expanded="false" />
-            <element signature="n#show_backmoney#0;n#sign#0;n#!!top" expanded="false" />
-            <element signature="e#6716#6747#0#PHP" expanded="false" />
-            <element signature="n#register#0;n#sign#0;n#!!top" expanded="false" />
-            <element signature="e#6855#7143#0#PHP" expanded="false" />
-            <element signature="n#register_do#0;n#sign#0;n#!!top" expanded="false" />
-            <element signature="e#7438#7806#0#PHP" expanded="false" />
-            <element signature="e#9275#10051#0#PHP" expanded="false" />
-            <element signature="e#11886#12561#0#PHP" expanded="false" />
-            <element signature="e#13556#13889#0#PHP" expanded="false" />
-            <element signature="n#get_udid#0;n#sign#0;n#!!top" expanded="false" />
-            <element signature="e#14198#15410#0#PHP" expanded="false" />
-            <element signature="n#jump_register_url#0;n#sign#0;n#!!top" expanded="false" />
-            <element signature="n#get_invite_code#0;n#sign#0;n#!!top" expanded="false" />
-            <element signature="e#15807#16216#0#PHP" expanded="false" />
-            <element signature="e#15863#15998#0#PHP" expanded="false" />
-            <element signature="e#16060#16216#0#PHP" expanded="false" />
-            <element signature="e#16330#16380#0#PHP" expanded="false" />
-            <element signature="n#get_caoma_token#0;n#sign#0;n#!!top" expanded="false" />
-            <element signature="e#16503#17168#0#PHP" expanded="false" />
-            <element signature="e#16537#16687#0#PHP" expanded="false" />
-            <element signature="e#17204#17252#0#PHP" expanded="false" />
-            <element signature="n#get_caoma_moile#0;n#sign#0;n#!!top" expanded="false" />
-            <element signature="e#17645#17693#0#PHP" expanded="false" />
-            <element signature="n#sf_phone#0;n#sign#0;n#!!top" expanded="false" />
-            <element signature="e#17976#18026#0#PHP" expanded="false" />
-            <element signature="n#add_black_mobile#0;n#sign#0;n#!!top" expanded="false" />
-            <element signature="e#18340#18390#0#PHP" expanded="false" />
-            <element signature="n#get_mobile_code#0;n#sign#0;n#!!top" expanded="false" />
-            <element signature="e#18453#18558#0#PHP" expanded="false" />
-            <element signature="e#18677#18709#0#PHP" expanded="false" />
-            <element signature="n#curl_caoma#0;n#sign#0;n#!!top" expanded="false" />
-            <element signature="e#19390#19422#0#PHP" expanded="false" />
-            <element signature="n#curl_baiy#0;n#sign#0;n#!!top" expanded="false" />
-            <element signature="e#19476#19533#0#PHP" expanded="false" />
-            <element signature="e#19604#19688#0#PHP" expanded="false" />
-            <element signature="n#get_sign#0;n#sign#0;n#!!top" expanded="false" />
-            <element signature="n#order_array#0;n#sign#0;n#!!top" expanded="false" />
-            <element signature="e#20461#20569#0#PHP" expanded="false" />
-            <element signature="e#20625#20733#0#PHP" expanded="false" />
-            <element signature="e#20690#20733#0#PHP" expanded="false" />
-            <element signature="n#post_to_string#0;n#sign#0;n#!!top" expanded="false" />
-            <element signature="e#20862#21067#0#PHP" expanded="false" />
-            <element signature="e#20915#21057#0#PHP" expanded="false" />
-            <element signature="n#unset_session#0;n#sign#0;n#!!top" expanded="false" />
-            <element signature="n#raed_info#0;n#sign#0;n#!!top" expanded="false" />
-            <element signature="n#julaibao#0;n#sign#0;n#!!top" expanded="false" />
-            <element signature="e#21788#21828#0#PHP" expanded="false" />
-            <element signature="n#julaibao_sign#0;n#sign#0;n#!!top" expanded="false" />
-            <element signature="e#22123#22177#0#PHP" expanded="false" />
-            <element signature="e#22298#23231#0#PHP" expanded="false" />
-            <element signature="e#22359#22439#0#PHP" expanded="false" />
-            <element signature="e#22497#22763#0#PHP" expanded="false" />
-            <marker date="1513128768102" expanded="false" signature="3382:3411" ph="select * fro... baiyang_account" />
-            <marker date="1513128768102" expanded="false" signature="4113:4165" ph="select * fro... baiyang_active_detail" />
-            <marker date="1513128768102" expanded="true" signature="9778:9849" ph="update baiya... " />
-            <marker date="1513128768102" expanded="false" signature="15914:15970" ph="select val f... tags" />
-            <marker date="1513128768102" expanded="false" signature="15914:15983" ph="select id,in... baiyang_account" />
-            <marker date="1513128768102" expanded="false" signature="16119:16196" ph="select val f... tags" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1021,7 +1033,7 @@
     <entry file="file://$PROJECT_DIR$/application/controllers/Blog.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
-          <caret line="5" column="24" lean-forward="true" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+          <caret line="5" column="24" lean-forward="false" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
           <folding>
             <marker date="1506062752866" expanded="true" signature="571:625" ph="select group... blog_group" />
             <marker date="1506062752866" expanded="true" signature="1014:1057" ph="select tag_n... blog_tag" />
@@ -1055,7 +1067,7 @@
     <entry file="file://$PROJECT_DIR$/tpl/blog/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20000">
-          <caret line="800" column="35" lean-forward="true" selection-start-line="800" selection-start-column="35" selection-end-line="800" selection-end-column="35" />
+          <caret line="800" column="35" lean-forward="false" selection-start-line="800" selection-start-column="35" selection-end-line="800" selection-end-column="35" />
           <folding />
         </state>
       </provider>
@@ -1076,10 +1088,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/20180226register.txt" />
+    <entry file="file://$PROJECT_DIR$/20180131.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/system/core/Controller.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
-          <caret line="51" column="21" lean-forward="true" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
+          <caret line="51" column="21" lean-forward="false" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
           <folding>
             <element signature="e#6#1666#0#PHP" expanded="false" />
             <element signature="e#1732#2048#0#PHP" expanded="false" />
@@ -1103,19 +1124,98 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/20180226register.txt">
+    <entry file="file://$PROJECT_DIR$/application/controllers/tool/Sign.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/20180131.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="309">
+          <caret line="662" column="39" lean-forward="false" selection-start-line="662" selection-start-column="39" selection-end-line="662" selection-end-column="39" />
+          <folding>
+            <element signature="n#index#0;n#sign#0;n#!!top" expanded="false" />
+            <element signature="e#302#324#0#PHP" expanded="false" />
+            <element signature="n#baiy_login#0;n#sign#0;n#!!top" expanded="false" />
+            <element signature="e#495#872#0#PHP" expanded="false" />
+            <element signature="e#679#872#0#PHP" expanded="false" />
+            <element signature="e#936#1176#0#PHP" expanded="false" />
+            <element signature="e#962#1099#0#PHP" expanded="false" />
+            <element signature="e#1053#1099#0#PHP" expanded="false" />
+            <element signature="e#1109#1176#0#PHP" expanded="false" />
+            <element signature="n#baiy_sign#0;n#sign#0;n#!!top" expanded="false" />
+            <element signature="e#1304#1469#0#PHP" expanded="false" />
+            <element signature="e#1367#1469#0#PHP" expanded="false" />
+            <element signature="e#1533#1716#0#PHP" expanded="false" />
+            <element signature="e#1622#1716#0#PHP" expanded="false" />
+            <element signature="n#lottery_do#0;n#sign#0;n#!!top" expanded="false" />
+            <element signature="e#1797#2148#0#PHP" expanded="false" />
+            <element signature="e#1820#2138#0#PHP" expanded="false" />
+            <element signature="n#show_back#0;n#sign#0;n#!!top" expanded="false" />
+            <element signature="n#get_user#0;n#sign#0;n#!!top" expanded="false" />
+            <element signature="e#3422#3665#0#PHP" expanded="false" />
+            <element signature="n#lottery#0;n#sign#0;n#!!top" expanded="false" />
+            <element signature="e#3924#3975#0#PHP" expanded="false" />
+            <element signature="e#4241#4765#0#PHP" expanded="false" />
+            <element signature="e#4353#4755#0#PHP" expanded="false" />
+            <element signature="e#4429#4755#0#PHP" expanded="false" />
+            <element signature="e#4524#4741#0#PHP" expanded="false" />
+            <element signature="e#4569#4723#0#PHP" expanded="false" />
+            <element signature="n#baiy_all_sign#0;n#sign#0;n#!!top" expanded="false" />
+            <element signature="e#4939#5307#0#PHP" expanded="false" />
+            <element signature="e#5051#5297#0#PHP" expanded="false" />
+            <element signature="e#5127#5297#0#PHP" expanded="false" />
+            <element signature="e#6736#6767#0#PHP" expanded="false" />
+            <element signature="n#register#0;n#sign#0;n#!!top" expanded="false" />
+            <element signature="e#6875#7163#0#PHP" expanded="false" />
+            <element signature="e#7458#7846#0#PHP" expanded="false" />
+            <element signature="e#9315#10091#0#PHP" expanded="false" />
+            <element signature="e#11926#12601#0#PHP" expanded="false" />
+            <element signature="e#13596#13929#0#PHP" expanded="false" />
+            <element signature="n#get_udid#0;n#sign#0;n#!!top" expanded="false" />
+            <element signature="e#14238#15450#0#PHP" expanded="false" />
+            <element signature="n#jump_register_url#0;n#sign#0;n#!!top" expanded="false" />
+            <element signature="n#get_invite_code#0;n#sign#0;n#!!top" expanded="false" />
+            <element signature="e#15847#16256#0#PHP" expanded="false" />
+            <element signature="e#15903#16038#0#PHP" expanded="false" />
+            <element signature="e#16100#16256#0#PHP" expanded="false" />
+            <element signature="e#16370#16420#0#PHP" expanded="false" />
+            <element signature="n#get_caoma_token#0;n#sign#0;n#!!top" expanded="false" />
+            <element signature="e#16543#17208#0#PHP" expanded="false" />
+            <element signature="e#16577#16727#0#PHP" expanded="false" />
+            <element signature="e#17244#17292#0#PHP" expanded="false" />
+            <element signature="n#get_caoma_moile#0;n#sign#0;n#!!top" expanded="false" />
+            <element signature="e#17685#17733#0#PHP" expanded="false" />
+            <element signature="n#sf_phone#0;n#sign#0;n#!!top" expanded="false" />
+            <element signature="e#18016#18066#0#PHP" expanded="false" />
+            <element signature="n#add_black_mobile#0;n#sign#0;n#!!top" expanded="false" />
+            <element signature="e#18380#18430#0#PHP" expanded="false" />
+            <element signature="n#get_mobile_code#0;n#sign#0;n#!!top" expanded="false" />
+            <element signature="e#18493#18598#0#PHP" expanded="false" />
+            <element signature="e#18717#18749#0#PHP" expanded="false" />
+            <element signature="n#curl_caoma#0;n#sign#0;n#!!top" expanded="false" />
+            <element signature="e#19430#19462#0#PHP" expanded="false" />
+            <element signature="n#curl_baiy#0;n#sign#0;n#!!top" expanded="false" />
+            <element signature="e#19516#19573#0#PHP" expanded="false" />
+            <element signature="e#19644#19728#0#PHP" expanded="false" />
+            <element signature="n#get_sign#0;n#sign#0;n#!!top" expanded="false" />
+            <element signature="n#order_array#0;n#sign#0;n#!!top" expanded="false" />
+            <element signature="e#20501#20609#0#PHP" expanded="false" />
+            <element signature="e#20665#20773#0#PHP" expanded="false" />
+            <element signature="e#20730#20773#0#PHP" expanded="false" />
+            <element signature="n#post_to_string#0;n#sign#0;n#!!top" expanded="false" />
+            <element signature="e#20902#21107#0#PHP" expanded="false" />
+            <element signature="e#20955#21097#0#PHP" expanded="false" />
+            <element signature="n#unset_session#0;n#sign#0;n#!!top" expanded="false" />
+            <element signature="n#julaibao#0;n#sign#0;n#!!top" expanded="false" />
+            <element signature="e#21848#21888#0#PHP" expanded="false" />
+            <element signature="n#julaibao_sign#0;n#sign#0;n#!!top" expanded="false" />
+            <element signature="e#22183#22237#0#PHP" expanded="false" />
+            <element signature="e#22358#23291#0#PHP" expanded="false" />
+            <element signature="e#22419#22499#0#PHP" expanded="false" />
+            <element signature="e#22557#22823#0#PHP" expanded="false" />
+            <marker date="1519614415071" expanded="false" signature="3382:3411" ph="select * fro... baiyang_account" />
+            <marker date="1519614415071" expanded="false" signature="4113:4165" ph="select * fro... baiyang_active_detail" />
+            <marker date="1519614415071" expanded="true" signature="9818:9889" ph="update baiya... " />
+            <marker date="1519614415071" expanded="false" signature="15954:16010" ph="select val f... tags" />
+            <marker date="1519614415071" expanded="false" signature="15954:16023" ph="select id,in... baiyang_account" />
+            <marker date="1519614415071" expanded="false" signature="16159:16236" ph="select val f... tags" />
+          </folding>
         </state>
       </provider>
     </entry>
