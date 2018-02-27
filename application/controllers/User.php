@@ -4,7 +4,6 @@ class User extends CI_Controller {
 
     public function __construct(){
         parent::__construct();
-        $this->load->model('com_model');
 
         if(!$this->session->userdata('id')){
             echo "<script>window.location.href='/'</script>";
@@ -12,6 +11,7 @@ class User extends CI_Controller {
 
         $this->user_id = $this->session->userdata('id');
         $this->site_info['head']['this_page']='blog';
+        $this->site_info['is_login'] = $this->session->userdata('id')?1:0;
     }
 
     function index(){

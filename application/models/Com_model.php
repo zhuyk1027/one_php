@@ -16,6 +16,10 @@ class Com_model extends CI_Model
 		$this->session->set_userdata($session_data);
 	}
 
+	function set_sessions($arr)
+	{
+		$this->session->set_userdata($arr);
+	}
 	
 	function check_is_login()
 	{

@@ -1,4 +1,4 @@
-<?php  $this->load->view(BLOG.'header_user'); ?>
+<?php  $this->load->view(BLOG.'header'); ?>
 
 <style>
     #pick_img li{float:left;}

@@ -1,4 +1,4 @@
-<?php  $this->load->view(BLOG.'header_user'); ?>
+<?php  $this->load->view(BLOG.'header'); ?>
 <!-- 配置文件 -->
 <script type="text/javascript" src="<?php echo PUB_PATH; ?>/js/ueditor1_4_utf8_php/ueditor.config.js"></script>
 <!-- 编辑器源码文件 -->

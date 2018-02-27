@@ -4,7 +4,7 @@ class Gallery extends CI_Controller {
 
     public function __construct(){
         parent::__construct();
-        $this->load->model('com_model');
+
         $this->load->helper('common');
 
         if(!$this->session->userdata('id')){
@@ -13,6 +13,7 @@ class Gallery extends CI_Controller {
 
         $this->user_id = $this->session->userdata('id');
         $this->site_info['head']['this_page']='gallery';
+        $this->site_info['is_login'] = $this->session->userdata('id')?1:0;
     }
 
     #相册列表

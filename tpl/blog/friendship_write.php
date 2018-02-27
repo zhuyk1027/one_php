@@ -1,4 +1,4 @@
-<?php  $this->load->view(BLOG.'header_user'); ?>
+<?php  $this->load->view(BLOG.'header'); ?>
 
 <div class="content-wrap">
     <div class="content">

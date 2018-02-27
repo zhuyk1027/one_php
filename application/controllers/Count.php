@@ -5,7 +5,7 @@ class Count extends CI_Controller {
 
     public function __construct(){
         parent::__construct();
-        $this->load->model('com_model');
+
         $this->load->helper('common');
 
         if($this->session->userdata('id')!=1){
@@ -13,6 +13,7 @@ class Count extends CI_Controller {
         }
 
         $this->site_info['head']['this_page']='count';
+        $this->site_info['is_login'] = $this->session->userdata('id')?1:0;
     }
 
     #友情链接统计

@@ -4,8 +4,9 @@ class About extends CI_Controller {
 
     public function __construct(){
         parent::__construct();
-        $this->load->model('com_model');
+
         $this->load->helper('common');
+        $this->site_info['is_login'] = $this->session->userdata('id')?1:0;
     }
     #关于本站页面
     public function index(){

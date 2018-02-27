@@ -4,6 +4,7 @@ class Dos extends CI_Controller {
 
     public function __construct(){
         parent::__construct();
+        $this->site_info['is_login'] = $this->session->userdata('id')?1:0;
     }
 
     #首页显示

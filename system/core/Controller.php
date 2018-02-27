@@ -95,6 +95,7 @@ class CI_Controller {
 
         $this->load->helper('url');
         $this->load->database();
+        $this->load->model('com_model');
         $this->load->model('common_model');
 
         $time = time();

@@ -93,8 +93,35 @@
         </div>
     </div>
     <div class="speedbar">
-         <div class="pull-right"><a href="/login" style="color:#F7F7F7;">登录</a></div>
+        <?php if($is_login>0){ ?>
+            <div class="pull-right">
+                <a href="/user" >个人中心</a>
+                <a href="/login/leave" >退出</a>
+            </div>
+        <?php }else{ ?>
+            <div class="pull-right">
+                <a href="#" onclick='qqLogin()'>
+                    <img src='/tpl/public/img/qq/Connect_logo_1.png' >QQ登录
+                </a>
+            </div>
+        <?php } ?>
+
         <div class="toptip"><strong class="text-success">最新消息：</strong><?=$head['design']?></div>
     </div>
 </header>
+<script>
+    var A = 'open';
+    function qqLogin()
+    {
+        //以下为按钮点击事件的逻辑。注意这里要重新打开窗口
+        //否则后面跳转到QQ登录，授权页面时会直接缩小当前浏览器的窗口，而不是打开新窗口
+        A=window.open("/oauth/index.php","TencentLogin", "width=450,height=320,menubar=0,scrollbars=1,resizable=1,status=1,titlebar=0,toolbar=0,location=1");
+    }
+    var loop = setInterval(function() {
+        if(A .closed) {
+            clearInterval(loop);
+            window.location.href='http://www.zhuyk.cn/user';
+        }
+    }, 1000);
+</script>
 <section class="container">

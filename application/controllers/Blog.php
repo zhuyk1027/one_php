@@ -6,6 +6,7 @@ class Blog extends CI_Controller {
         parent::__construct();
         $this->user_id = 1;
         $this->common_model->pv_count($_SERVER['PHP_SELF']);
+        $this->site_info['is_login'] = $this->session->userdata('id')?1:0;
     }
 
     /*

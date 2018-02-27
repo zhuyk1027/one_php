@@ -2,11 +2,12 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Homepage extends CI_Controller {
 
-
     public function __construct(){
         parent::__construct();
+
         $this->user_id = 1;
         $this->common_model->pv_count($_SERVER['PHP_SELF']);
+        $this->site_info['is_login'] = $this->session->userdata('id')?1:0;
     }
 
     #首页显示
