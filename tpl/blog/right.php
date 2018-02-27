@@ -5,7 +5,7 @@
             <p class="user3"><?=WEB_MASTER?></p>
             <p class="user4">
                 <?=SIGN?><br /><br />
-                <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=&site=qq&menu=yes">
+                <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1072437504&site=qq&menu=yes">
                     <img src="/tpl/blog/img/icon_QQ.png" width="20">
                     联系站长
                 </a>&nbsp;&nbsp;
