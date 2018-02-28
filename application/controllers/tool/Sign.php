@@ -178,19 +178,19 @@ class sign extends CI_Controller {
         if($type==1){
             $strat=mktime(0,0,0,date('m'),1,date('Y'));
             $end=mktime(23,59,59,date('m'),date('t'),date('Y'));
+            $date = 'tpl/register_log/'.date('Ym');
         }else{
             $strat=mktime(0,0,0,date('m')-1,1,date('Y'));
             $end=mktime(0,0,0,date('m'),1,date('Y'))-1;
+            $date = 'tpl/register_log/'.date("Ym", strtotime("-1 month"));
         }
 
         #获取用户
         $data = $this->get_user(3);
         $back_money = 0;
 
-        $date = 'tpl/register_log/'.date('Ymd');
         $myfile = fopen($date.".txt", "a+") or die("Unable to open file!");
-        $txt = "\r\n";
-
+        $txt = '';
         #批量操作
         foreach($data as $key=>$val){
             $token = $this->baiy_login($val->account,$val->password);
@@ -198,19 +198,21 @@ class sign extends CI_Controller {
                 echo $val->account.' 密码错误<br />';
             }else{
                 $arr = $this->show_back($token,$strat,$end);
-                echo $val->account.' 返利'.$arr['back_amount'].
-                    ',注册用户:'.$arr['register_num'].'，返利订单'.$arr['effect_order_num'].'<br />';
+                if($arr['back_amount']>0){
+                    echo $val->account.' 返利'.$arr['back_amount'].
+                        ',注册用户:'.$arr['register_num'].'，返利订单'.$arr['effect_order_num'].'<br />';
 
-                $back_money += $arr['back_amount'];
+                    $back_money += $arr['back_amount'];
 
-                $txt .= $val->account.' 返利'.$arr['back_amount'].
-                    ',注册用户:'.$arr['register_num'].'，返利订单'.$arr['effect_order_num']."\r\n";
+                    $txt .= $val->account.' 返利'.$arr['back_amount'].
+                        ',注册用户:'.$arr['register_num'].'，返利订单'.$arr['effect_order_num']."\r\n";
+                }
             }
         }
 
         echo "共计".$back_money.'元';
         $txt .= "共计".$back_money.'元';
-        fwrite($myfile, date("Y-m-d").' '.$txt."\r\n");
+        fwrite($myfile, $txt."\r\n");
         fclose($myfile);
     }
 
