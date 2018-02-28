@@ -88,7 +88,9 @@
                 <!--<button class="btn btn-primary" data-toggle="modal" data-target="#feed">订阅</button>-->
                 <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">关注 <i class="caret"></i></button>
                 <ul class="dropdown-menu pull-right">
-                    <li><a href="<?=WEIBO?>" target="_blank">新浪微博</a></li>														</ul>
+                    <li><a href="<?=WEIBO?>" target="_blank">新浪微博</a></li>
+                    <li><a href="#">微信公众号<br /><img src="/tpl/public/img/weixin_dy.jpg" width="150"></a></li>
+                </ul>
             </div>
         </div>
     </div>
