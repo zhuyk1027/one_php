@@ -491,7 +491,7 @@ class sign extends CI_Controller {
             'itemid'=>649,
             'mobile'=>$mobile,
         );
-        $mobile_info = $this->curl_caoma($param);
+        $mobile_info = $this->curl_yima($param);
 
         return $mobile_info;
     }
@@ -507,7 +507,7 @@ class sign extends CI_Controller {
             'itemid'=>649,
             'mobile'=>$phone,
         );
-        $info = $this->curl_caoma($param);
+        $info = $this->curl_yima($param);
         $this->sf_yima_phone($token,$phone);
         return $info;
     }
