@@ -64,6 +64,7 @@
 			if($user==1){
 				echo '<li style="background-color:green"><a href="/tool/sign/index">白羊</a></li>';
 				echo '<li style="background-color:#994514"><a href="/tool/sign/julaibao">聚来宝</a></li>';
+				echo '<li style="background-color:red"><a href="/tool/send_message/index">短信发送</a></li>';
 			}
 		?>
 

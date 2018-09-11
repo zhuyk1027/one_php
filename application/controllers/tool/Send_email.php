@@ -27,7 +27,7 @@ class send_email extends CI_Controller {
         if(!preg_match($pattern, $to)){
             echo "请输入正确的邮箱地址";die;
         }
-        $title .= " - 朱耀昆博客 ".WEB_URL;
+        $title .= " - ".WEB_NAME." ".WEB_URL;
 
         $this->load->library('email');
         $this->email->from('zhuyaokun1027@126.com', '朱耀昆');

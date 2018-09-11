@@ -35,7 +35,9 @@ class Gallery extends CI_Controller {
         $this->load->view('blog/user_gallery_list',$data);
     }
 
+    /* 删除相册 及 相册内图片 */
     function del_album(){
+
         $id = $this->input->post('id');
         if(!$id)echo json_encode(-2);
 
@@ -45,6 +47,7 @@ class Gallery extends CI_Controller {
         }
         $this->db->query('delete from '.$this->db->dbprefix.'user_image where aid='.$id);
         $this->db->query('delete from '.$this->db->dbprefix.'user_album where id='.$id);
+
         if($this->db->affected_rows()>0){
             echo json_encode(1);
         }else{
@@ -52,10 +55,13 @@ class Gallery extends CI_Controller {
         }
     }
 
+    /* 添加相册 */
     function add_album(){
         $title = $this->input->post('title');
         if(!$title)echo json_encode(-2);
+
         $this->db->query('insert into '.$this->db->dbprefix.'user_album(title,user_id) values(\''.$title.'\','.$this->user_id.')');
+
         if($this->db->affected_rows()>0){
             echo json_encode($this->db->insert_id());
         }else{
@@ -63,11 +69,16 @@ class Gallery extends CI_Controller {
         }
     }
 
+    /* 更改相册信息 */
     function up_album(){
+
         $title = $this->input->post('title');
         $id = $this->input->post('gallery_id');
+
         if(!$title)echo json_encode(-2);
+
         $this->db->query('update '.$this->db->dbprefix.'user_album set title=\''.$title.'\' where id='.$id.' and user_id='.$this->user_id);
+
         if($this->db->affected_rows()>0){
             echo json_encode(1);
         }else{
@@ -110,7 +121,10 @@ class Gallery extends CI_Controller {
         $data = array_merge($data,$this->site_info);
         $this->load->view('blog/user_images',$data);
     }
+
+    /* 删除图片 */
     function del_img(){
+
         $id = $this->input->post('id');
         if(!$id)echo json_encode(-2);
 
@@ -119,6 +133,7 @@ class Gallery extends CI_Controller {
 
         $this->alido(2,$image->pic_path);
         $this->db->query('delete from '.$this->db->dbprefix.'user_image where id='.$id);
+
         if($this->db->affected_rows()>0){
             echo json_encode(1);
         }else{
@@ -126,7 +141,7 @@ class Gallery extends CI_Controller {
         }
     }
 
-    #上传图片
+    #上传图片页面
     public function upload()
     {
         $gallery = $this->common_model->get_records('select * from user_album where user_id='.$this->user_id);
@@ -137,28 +152,36 @@ class Gallery extends CI_Controller {
         $this->load->view('blog/user_image_upload',$data);
     }
 
+    /* 逐个上传图片 */
     public function upload_form()
     {
+
         $aid = $this->input->post('aid');
         $imgs = $this->input->post('imgs');
         $alt = $this->input->post('alt');
+
+        /* 验证相册是否存在 */
         $album = $this->common_model->get_record('SELECT * FROM '.$this->db->dbprefix.'user_album WHERE id = '.$aid);
         if( ! $album) return ;
 
-
+        /* 检测是否是64数据流 */
         if ( ! preg_match('/^(data:\s*image\/(\w+);base64,)/', $imgs, $result)) return ;
+
+        /* 定义图片路径，并写入文件 */
         $pic_url = UP_TEMP_PATH.md5(uniqid(mt_rand())).'.'.$result[2];
         if( ! file_put_contents($pic_url, base64_decode(str_replace($result[1], '', $imgs)))) return ;
+
         $img_size = getimagesize($pic_url);
-        $pic_path = array();
+
         $id = 0;
-        $alt = date('Y_m_d_H_').$alt;
+        //$alt = date('Ymd').$alt;
+
         if($pic_path = alido(1,$pic_url,$alt,'/images/'.date('Ymd'),rand(0000,99999)))
         {
             $pic_path = $pic_path['url'];
             $save_data['aid'] = $aid;
             $save_data['user_id'] = $this->user_id;
-            $save_data['title'] = $alt?$alt:'一切美好，源自森果';
+            $save_data['title'] = $alt?$alt:'灰猪领地';
             $save_data['pic_path'] = $pic_path;
             $save_data['width'] = $img_size[0];
             $save_data['height'] = $img_size[1];
@@ -167,9 +190,11 @@ class Gallery extends CI_Controller {
             $id =  $this->db->insert_id();
         }
         unlink($pic_url);
+        ob_clean();
         return $id;
     }
 
+    /* 批量上传图片 */
     public function upload_form_bak()
     {
         if(!@$_FILES){
@@ -228,6 +253,7 @@ class Gallery extends CI_Controller {
         $this->load->view('smg/home',$data);
     }
 
+    /* 阿里百川 顽兔 图片操作  */
     function alido($case,$up_img,$name=NULL,$files = NULL){
 
         require_once('alimedia/alimage.class.php');
@@ -259,7 +285,8 @@ class Gallery extends CI_Controller {
         else if($case==2)
         {
             if($up_img==''){
-                $re_data['success'] = 101;return $re_data;die;
+                $re_data['success'] = 101;
+                return $re_data;die;
             }
 
             $arr = explode('/',$up_img);

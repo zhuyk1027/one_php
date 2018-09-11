@@ -11,7 +11,7 @@
         <?php  $this->load->view(BLOG.'user_home_head'); ?>
 
         <div class="widget widget_text">
-            <h3 class="widget_tit">修改博文</h3>
+            <h3 class="widget_tit">上传图片</h3>
             <div class="textwidget" style="min-height: 700px;">
                 <div style="padding:1em;">
                     <form class="form-horizontal" action="/user/blog_add" method="post" enctype="multipart/form-data" onsubmit="return check_form()">
@@ -55,33 +55,46 @@
 <script>
 
     var cur_index = 0;
+    var IMG_NUM = 1;
+
     $('body').on('change','#imgs',function(){
+
+        var alt_arr = [];
+
         for (var i = 0; i < $(this).get(0).files.length; ++i) {
+
             var alt = 'alt="'+$(this).get(0).files[i].name+'"';
+            alt_arr[parseInt(i)+parseInt(1)] = alt;
+
             var html = $('#pick_img').html();
             if(html.indexOf(alt) != -1) continue;
+
             var reader = new FileReader();
             reader.onload = function (evt) {
-                $('<li><img src="'+evt.target.result+'" '+alt+'  /><br /><span class="cancel" title="删除图片">删除</span>'
+                $('<li><img src="'+evt.target.result+'" '+alt_arr[IMG_NUM]+'  /><br /><span class="cancel" title="删除图片">删除</span>'
                     +'<div class="mark"><span>准备上传中...</span></div></li>').appendTo('#pick_img');
+                IMG_NUM = IMG_NUM + 1;
             }
             reader.readAsDataURL($(this).get(0).files[i]);
         }
+
     })
+
     $('body').on('click','span.cancel',function(){
         $(this).parent().remove();
     });
 
     function pick_image()
     {
-        console.log(cur_index);
+
         if(cur_index >= $('#pick_img li').length)
         {
             alert('全部上传完毕');
-            //$('#pick_img').html('');
+            $('#pick_img').html('');
             document.getElementById("sub_img").disabled = false;
             return false;
         }
+
         $('#pick_img li').eq(cur_index).find('.mark').show();
         var aid = $('input[name=aid]:checked').val();
         var img = $('#pick_img li').eq(cur_index).find('img').attr('src');
@@ -100,7 +113,7 @@
                     "background-repeat":"no-repeat"
                 });
                 cur_index = cur_index + 1;
-                setTimeout(function(){pick_image();},1000);
+                pick_image();
             },
             error:function(msg)
             {
@@ -111,7 +124,7 @@
                     "background-repeat":"no-repeat"
                 });
                 cur_index = cur_index + 1;
-                setTimeout(function(){pick_image();},1000);
+                pick_image();
             }
         })
     }

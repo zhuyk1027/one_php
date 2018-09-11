@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class sign extends CI_Controller {
+class baiy extends CI_Controller {
 
     public function __construct()
     {
@@ -23,47 +23,38 @@ class sign extends CI_Controller {
     //登录
     function baiy_login($account='',$pass='')
     {
-        $url = 'http://mallapp.baiyjk.com/login/login';
-        if($account){
-            $post_data['account'] = $account;
-            $post_data['password'] = $pass;
-            $post_data['udid']='123456789012345678901234567890123456';
-        }else{
-            $filed = array('account','password','udid');
-            $post_data = elements($filed,$_POST);
-            $post_data['udid']='123456789012345678901234567890123456';
-        }
+        $url = 'https://www.baiyangwang.com/mobile/index.php?act=login';
 
+        $post_data = array(
+            'username'=>$account,
+            'password'=>$pass,
+            'client'=>'wap',
+            'sec_val'=>'',
+            'sec_key'=>'e68967bb30e0728d8b1f568a74847b1c',
+            'login_yzm'=>'0',
+        );
+
+        //{"code":200,"datas":{"username":"zhuyk","userid":"617409","key":"57973da9dfbd1343c902d0b9c293d3a0"}}
         $output = $this->curl_baiy($url,$post_data);
 
-        if($account){
-            if(isset($output->data->token)){
-                return $output->data->token;
-            }else{
-                echo $output->message;die;
-            }
+        if($output->code==200){
+            echo $output->datas->key;
         }else{
-
-            if(isset($output->data->token)){
-                echo json_encode($output->data->token);
-            }else{
-                echo $output->message;die;
-            }
+            echo $account.'登陆信息错误';die;
         }
+
     }
     //签到
     function baiy_sign($token='')
     {
         $url = 'http://mservice.baiyjk.com/wap/integral/sign';
 
-        if($token){
-            $post_data['token'] = $token;
-        }else{
-            $filed = array('token');
-            $post_data = elements($filed,$_POST);
-        }
+        $post_data = array(
+            'token'=>$token,
+        );
 
         $output = $this->curl_baiy($url,$post_data);
+        print_r($output);die;
 
         if($token){
             return array($output->message,$output->data->integral);
@@ -183,7 +174,8 @@ class sign extends CI_Controller {
 
         #批量操作
         foreach($data as $key=>$val){
-            $token = $this->baiy_login($val->account,$val->password);
+//            $token = $this->baiy_login($val->account,$val->password);
+            $token = '3066c34b27549031a0ef5e557850ddef';
             if(!$token){
                 echo $val->account.' 密码错误<br />';
             }else{
@@ -285,30 +277,32 @@ class sign extends CI_Controller {
      * @desc curl 白羊
      */
     public function curl_baiy($url,$param) {
-        if(!$url || !$param){
-            return false;
-        }
+
+        if(!$url || !$param){   return false;   }
 
         $xip = $cip = '125.68.54.'.mt_rand(0,254);
-        $header = array(
-            'CLIENT-IP:'.$cip,
-            'X-FORWARDED-FOR:'.$xip,
-        );
+        $header = array('CLIENT-IP:'.$cip, 'X-FORWARDED-FOR:'.$xip,);
 
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt ($ch,CURLOPT_HTTPHEADER, $header);          //伪造IP，避免短信ip锁定
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_USERAGENT, 'BaiYangStore/3.3.0 (iPhone; iOS 9.3; Scale/2.00)');
-        // post数据
-        curl_setopt($ch, CURLOPT_POST, 1);
-        // post的变量
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $param);
-        $output = curl_exec($ch);
-        curl_close($ch);
+        $curl = curl_init(); // 启动一个CURL会话
+        curl_setopt($curl, CURLOPT_URL, $url); // 要访问的地址
+        curl_setopt($curl,CURLOPT_HTTPHEADER, $header);          //伪造IP，避免短信ip锁定
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0); // 对认证证书来源的检查
+        curl_setopt($curl, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']); // 模拟用户使用的浏览器
+        curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1); // 使用自动跳转
+        curl_setopt($curl, CURLOPT_AUTOREFERER, 1); // 自动设置Referer
+        curl_setopt($curl, CURLOPT_POST, 1); // 发送一个常规的Post请求
+        curl_setopt($curl, CURLOPT_POSTFIELDS, $param); // Post提交的数据包
+        curl_setopt($curl, CURLOPT_TIMEOUT, 30); // 设置超时限制防止死循环
+        curl_setopt($curl, CURLOPT_HEADER, 0); // 显示返回的Header区域内容
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1); // 获取的信息以文件流的形式返回
+        $tmpInfo = curl_exec($curl); // 执行操作
+        if (curl_errno($curl)) {
+            echo 'Errno'.curl_error($curl);die;//捕抓异常
+        }
+        curl_close($curl); // 关闭CURL会话
 
-        $output = json_decode($output);
-        return $output;
+        $tmpInfo = json_decode($tmpInfo);
+        return $tmpInfo;
     }
 
     /*------------------------------百洋 end ---------------------易码 start---------------------------------------*/
@@ -566,326 +560,7 @@ class sign extends CI_Controller {
         unset($_SESSION['YIMA_TOKEN']);
     }
 
-    /*------------------------------易码 end ---------------------神话 start---------------------------------------*/
-
-    //批量注册功能
-    function register_do1($is_auto = 1,$invite = 1,$register_num = 1,$j = 0,$error = 0){
-
-        //错误多次之后,停止运行脚本 or 达到数量之后，输出
-        if($error>=$register_num || $register_num==$j){
-
-            if($error>=$register_num){echo "多次获取错误<br />";}
-
-            //读取txt文档信息
-            $info = $this->raed_info('tpl/register_log/'.date('Ymd')."register.txt");
-            $info = explode("\r\n",$info);
-            foreach($info as $key=>$value){
-                echo $value.'<br />';
-            }
-            exit();
-        }
-
-        //开始空格
-        if($j == 0 && $error==0){
-            $this->write_err_info(" \r\n ");
-        }
-
-        //①邀请码
-        $invite_code = $this->get_invite_code($is_auto,$invite);
-        if(!$invite_code){
-            $invite_code = $this->get_invite_code($is_auto,1);
-        }
-        //$cps_id = $invite_code['id'];
-        $invite_code = $invite_code['invite'];
-
-        //②获取session存储的神话token
-        $token = $this->get_caoma_token();
-
-        //③获取手机号
-        $phone = $this->get_caoma_moile($token);
-        echo $phone.'<br />';
-        if(strlen($phone)!=11){
-            echo '手机号码错误'.$phone;
-            unset($_SESSION['SHENHUA_TOKEN']);
-            $this->jump_register_url($is_auto,$invite,$register_num,$j,$error);exit();
-        }
-
-        //假如获取成功
-        if($phone){
-            //④判断是否已注册
-            $param = array(
-                'type'=>1,
-                'token'=>'c4389008bfefee32e43f41d10998fd0f93c36ccc',
-                'mobile'=>$phone,
-            );
-            $url = 'http://mallapp.baiyjk.com/login/check_user_exist';
-            $is_cunzai = $this->curl_baiy($url,$param);
-
-            if($is_cunzai->code != 200){
-                echo $phone."已经注册";
-                //$this->write_err_info($phone.'已经注册');
-                $error++;
-                $this->add_black_mobile($token,$phone);
-                $this->jump_register_url($is_auto,$invite,$register_num,$j,$error);die;
-            }
-
-            //⑤检验邀请码
-            /*
-            $param = array(
-                'invite_code'=>$invite_code,
-                'token'=>'c4389008bfefee32e43f41d10998fd0f93c36ccc',
-            );
-            $url = 'http://mallapp.baiyjk.com/cps_user/check_invite_code';
-            $is_cunzai = $this->curl_baiy($url,$param);
-            if($is_cunzai->code != 200){
-                echo $invite_code."邀请码错误";      //邀请码发生问题直接停止
-                $this->write_err_info($phone.'注册失败'.$invite_code.'邀请码错误');
-                $this->db->query("update baiyang_account set is_on=0 where invite_code='".$invite_code."'");
-                $error++;
-                $this->add_black_mobile($token,$phone);
-                $this->jump_register_url($is_auto,$invite,$register_num,$j,$error);die;
-            }
-            */
-
-            //⑥根据手机号发送验证码
-            $param = array(
-                'code_type'=>1,
-                'token'=>'c4389008bfefee32e43f41d10998fd0f93c36ccc',
-                'nonce_str'=>'z5anobk7wnygeddpz17t79yapim8vh80',
-                'mobile'=>$phone,
-            );
-            $sign = $this->get_sign($param);
-            $param['sign'] = $sign;
-            $url = 'http://mallapp.baiyjk.com/mobile_code/send_mobile_code';
-            $is_send = $this->curl_baiy($url,$param);
-            if($is_send->code != 200){
-                echo $phone."发送验证码失败";      //邀请码发生问题直接停止
-                //$this->write_err_info($phone.'注册失败,发送验证码失败');
-                $error++;
-                $this->add_black_mobile($token,$phone);
-                $this->jump_register_url($is_auto,$invite,$register_num,$j,$error);die;
-            }
-
-            sleep(5);
-
-            //⑦获取手机验证码
-            $code = $this->get_mobile_code($token,$phone);
-            $num = 1;
-            while($code<3 && $num<10){
-                echo "第".$num."次获取失败<br />";
-                $num = $num+1;
-                sleep(5);
-                $code = $this->get_mobile_code($token,$phone);
-                if(strpos($code,'MSG&32756') !== false){
-                    $num = 10;
-                }
-            };
-            $code_str = $code;
-            if(strpos($code,'MSG&32756') === false){
-                echo $phone."获取验证码失败";      //邀请码发生问题直接停止
-                //$this->write_err_info($phone.'注册失败,获取验证码失败');
-                $error++;
-                $this->add_black_mobile($token,$phone);
-                $this->jump_register_url($is_auto,$invite,$register_num,$j,$error);die;
-            }else{
-                $code = explode('&',$code);
-                $code = substr(trim($code[3],'【百洋商城】您的验证码是'),0,4);
-            }
-
-            //⑧检验验证码
-            /*
-            $param = array(
-                'mobile_code'=>$code,
-                'token'=>'c4389008bfefee32e43f41d10998fd0f93c36ccc',
-                'mobile'=>$phone,
-            );
-            $url = 'http://mallapp.baiyjk.com/login/check_mobile_code';
-
-            $is_right = $this->curl_baiy($url,$param);
-            if($is_right->code != 200){
-                echo $phone."验证码错误";      //邀请码发生问题直接停止
-                $this->write_err_info($phone.'注册失败,验证码错误，获取到的验证码为'.$code_str);
-                $error++;
-                $this->add_black_mobile($token,$phone);
-                $this->jump_register_url($is_auto,$invite,$register_num,$j,$error);die;
-            }*/
-
-            $udid = $this->get_udid();
-
-            //⑨注册
-            $param = array(
-                'password'=>substr($phone,5),
-                'invite_code'=>$invite_code,
-                'mobile_code'=>$code,
-                'token'=>'c4389008bfefee32e43f41d10998fd0f93c36ccc',
-                'mobile'=>$phone,
-                'udid'=>$udid,
-            );
-            $url = 'http://mallapp.baiyjk.com/login/register';
-
-            $is_right = $this->curl_baiy($url,$param);
-            if($is_right->code != 200){
-                echo $phone."注册失败";      //邀请码发生问题直接停止
-                //$this->write_err_info($phone.'注册失败,获取验证码失败');
-                $error++;
-                $this->add_black_mobile($token,$phone);
-                $this->jump_register_url($is_auto,$invite,$register_num,$j,$error);die;
-            }
-
-            //注册成功后跳转至当前页，避免超时
-            $j = $j+1;
-            $txt = $phone." ".$invite_code." ".$j."\r\n";
-            $this->write_err_info($txt);
-
-            /*
-            $data = array(
-                'account'=>$phone,
-                'password'=>substr($phone,5),
-                'from_user'=>$cps_id,
-                'is_use_coupon'=>1,
-                'coupon_end_time'=>date('Ymd',time()+2592000),
-            );
-            $this->db->insert('baiyang_account',$data);
-            */
-
-            $this->jump_register_url($is_auto,$invite,$register_num,$j,$error);
-
-        } else{
-            //获取手机号失败跳转至当前页重新获取
-            $error += 1;
-            $this->jump_register_url($is_auto,$invite,$register_num,$j,$error);
-        }
-    }
-
-    /** 单次成功后跳转 */
-    function jump_register_url($is_auto,$invite,$register_num,$j,$error){
-        $url = '/tool/sign/register_do1/'.$is_auto.'/'.$invite.'/'.$register_num.'/'.$j.'/'.$error;
-        echo "<script>window.location.href='".$url."'</script>";exit();
-    }
-
-    /**
-     * 获取神话token
-     * @return string
-     */
-    function get_caoma_token(){
-        $token = isset($_SESSION['SHENHUA_TOKEN'])?$_SESSION['SHENHUA_TOKEN']:'';
-        if(!$token){
-            $param = array(
-                'uName'=>'zhuyk',
-                'pWord'=>'qqqqqq',
-                'Developer'=>'B0LlCpIV0So3jveXXotoHg%3d%3d',
-            );
-            $url = '/pubApi/uLogin';
-            $token = $this->curl_caoma($url,$param);
-            //登录token                                 &   账户余额 & 最大登录客户端个数 & 最多获取号码数 & 单个客户端最多获取号码数 & 折扣
-            //JoHv0JL1oAsFQqbum69eQokdYpEUhpF11F2072539 &   9.900    &   100              &  30            &   30                     &   1   &   0.000
-            $token = explode('&',$token);
-            $token = $token[0];
-            $_SESSION['SHENHUA_TOKEN'] = $token;
-        }
-
-        return $token;
-    }
-
-    /**
-     * 获取神话手机号
-     * @return string
-     */
-    function get_caoma_moile($token){
-        $param = array(
-            'token'=>$token,
-            'ItemId'=>'32756',
-            'Count'=>'1',
-            'PhoneType'=>5,
-            //'onlyKey'=>1,
-        );
-        $url = '/pubApi/GetPhone';
-        $mobile_info = $this->curl_caoma($url,$param);
-        $mobile_info = trim($mobile_info,';');
-        return $mobile_info;
-    }
-
-    /**
-     * 释放神话手机号
-     * @return string
-     */
-    function sf_phone($token,$mobile){
-        $param = array(
-            'token'=>$token,
-            'phoneList'=>$mobile.'-32756;',
-        );
-        $url = '/pubApi/ReleasePhone';
-        $mobile_info = $this->curl_caoma($url,$param);
-
-        return $mobile_info;
-    }
-
-    /**
-     * 加黑神话无用手机号
-     * @return string
-     */
-    function add_black_mobile($token,$phone){
-        $param = array(
-            'token'=>$token,
-            'phoneList'=>'32756-'.$phone.';',
-        );
-        $url = '/pubApi/AddBlack';
-        $info = $this->curl_caoma($url,$param);
-
-        $this->sf_phone($token,$phone);
-        return $info;
-    }
-
-    /**
-     * 获取手机验证码内容
-     * @return string
-     */
-    function get_mobile_code($token,$phone){
-        $param = array(
-            'token'=>$token,
-            'ItemId'=>'32756',
-            'Phone'=>$phone,
-        );
-        $url = '/pubApi/GMessage';
-        $info = $this->curl_caoma($url,$param);
-
-        return $info;
-    }
-
-    /**
-     * @desc curl 神话
-     */
-    public function curl_caoma($url_str,$param) {
-        if(!$url_str || !$param){
-            return false;
-        }
-
-        $url = 'http://api.shjmpt.com:9002'.$url_str.'?';
-        $paramstr = '';
-        foreach($param as $key=>$val){
-            $paramstr .= $key.'='.$val.'&';
-        }
-        $url .= trim($paramstr,'&');
-
-        $ch = curl_init();
-        //设置选项，包括URL
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_HEADER, 0);
-        //执行并获取HTML文档内容
-        $output = curl_exec($ch);
-        //释放curl句柄
-        curl_close($ch);
-        //打印获得的数据
-        return $output;
-    }
-
-    /** 清除session，更新token */
-    function unset_session(){
-        unset($_SESSION['SHENHUA_TOKEN']);
-    }
-
-    //------------------------------------神话 end---------------复用 start---------------------------------------------------------------
+    /*------------------------------易码 end -----------------------------------------------------------*/
 
     /*获取udid*/
     function get_udid(){
@@ -932,61 +607,4 @@ class sign extends CI_Controller {
         return $info;
     }
 
-    //------------------------------------复用 end---------------聚来宝 start---------------------------------------------------------------
-    /** 聚来宝注册页面 */
-    public function julaibao()
-    {
-        $data = [
-            'title'=>'聚来宝注册'
-        ];
-        $this->load->view('tool/julaibao',$data);
-    }
-    /** 聚来宝注册会员 */
-    function julaibao_sign()
-    {
-        $recommender = @$_POST['recommender'];
-        $num = $_POST['num'];
-        $num = $num?$num:'10';
-        $pass = $_POST['pass'];
-        $pass = $pass?$pass:'10';
-
-        if(!$recommender){
-            return false;
-        }
-
-        $url = 'http://app.julaibao.com/app/RegUser.aspx?refman='.$recommender;
-
-        $user_str = array();
-
-        for($i=1;$i<=$num;$i++){
-            $user = '';
-            for($i=1;$i<=rand(9,10);$i++){
-                $user .= rand(0,9);
-            }
-            $user_str[]= $user;
-            $post_data = array(
-                'user'=>$user,
-                'loginpwd'=>$pass,
-                'repwd'=>$pass,
-                'refman'=>$recommender,
-                'email'=>$user.'@qq.com',
-                'checkCode'=>'',
-                'cbRead'=>'on',
-
-            );
-            $ch = curl_init();
-            curl_setopt($ch, CURLOPT_URL, $url);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-            curl_setopt($ch, CURLOPT_USERAGENT, 'BaiYangStore/2.0 (iPhone; iOS 9.3; Scale/2.00)');
-            // post数据
-            curl_setopt($ch, CURLOPT_POST, 1);
-            // post的变量
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data);
-            $output = curl_exec($ch);
-            curl_close($ch);
-        }
-        echo json_encode(implode($user_str,','));
-    }
-
-    //-----------------------------------------------------------聚来宝 end---------------------------------------------------------------
 }
