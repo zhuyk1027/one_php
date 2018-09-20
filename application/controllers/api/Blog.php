@@ -7,7 +7,7 @@ class Blog extends CI_Controller {
         $this->user_id = 1;
     }
 
-    #首页显示
+//    首页显示
     public function index()
     {
 
@@ -46,12 +46,10 @@ class Blog extends CI_Controller {
         $data = array(
             'blog'=>$blog,
             'blog_top'=>$blog_top,
+            'ad'=>$this->site_info['ad'],
+            'groups'=>$blog_group,
+            'tags'=>$tags,
         );
-
-        $data['ad'] = $this->site_info['ad'];
-        $data['friendship'] = $this->site_info['friendship'];
-        $data['groups'] = $this->site_info['groups'];
-        $data['tags'] = $this->site_info['tags'];
 
         echo json_encode($data);
     }
@@ -122,37 +120,6 @@ class Blog extends CI_Controller {
         $this->load->view(BLOG.'blog_list',$data);
 	}
 
-    /*
-     * 分页字符串
-     *  t 总条数 c 当前页码  p 页码大小 博文分类 访问操作
-     * */
-    function _get_page($t,$c,$p,$group_id,$type)
-    {
-        // $type index search tag
-        $str = '';
-        if( ! $c) $c = 1;
-        if($t > 0 && $p > 0)
-        {
-            $page_total = ceil($t / $p) ;
-            if($c > $page_total) $c = $page_total;
-            if($page_total > 1)
-            {
-                if(isset($_SERVER['QUERY_STRING']) && $_SERVER['QUERY_STRING']) $q_str = '?'.$_SERVER['QUERY_STRING'];
-                else $q_str = '';
-                if(($s = $c - 4) <= 0) $s = 1;
-                if(($e = $c + 4) > $page_total) $e = $page_total;
-
-                if($c > 1) $str .= '<a href="/blog/'.$type.'/'.$group_id.'/'.($c-1).$q_str.'">上一页</a>&nbsp;&nbsp;&nbsp;&nbsp;';
-                for($i = $s; $i <= $e ; $i++)
-                {
-                    $str .= '<a href="/blog/'.$type.'/'.$group_id.'/'.$i.$q_str.'">'.$i.'</a>&nbsp;&nbsp;&nbsp;&nbsp;';
-                }
-                if($c < $page_total) $str .= '<a href="/blog/'.$type.'/'.$group_id.'/'.($c+1).$q_str.'">下一页</a>';
-                $str .= ' 共计 '.$page_total.'页';
-            }
-        }
-        return $str;
-    }
 
     /*
      * 博文详情
