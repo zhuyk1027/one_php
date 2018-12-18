@@ -142,6 +142,12 @@ class common_model extends CI_Model
         return $rs;
     }
 
+    /**
+     * 查询指定sql的一条数据
+     * 参数：string $sql sql语句
+     * 参数：array $p  对应条件参数
+     * 返回：一维对象
+     * **/
     function get_record($sql,$p=array())
     {
         if(empty($p))

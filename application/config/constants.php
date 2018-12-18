@@ -35,6 +35,8 @@ defined('TOOL_CSS') OR define('TOOL_CSS', '/tpl/tool/css/');
 
 defined('UP_TEMP_PATH') OR define('UP_TEMP_PATH', 'uptemp/');
 
+defined('ACCOUNT') OR define('ACCOUNT', 'account/');
+
 /*
 |--------------------------------------------------------------------------
 | File and Directory Modes
