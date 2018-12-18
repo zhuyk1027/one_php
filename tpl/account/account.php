@@ -213,20 +213,22 @@
             });
         });
         $(document).on("click",".del_account",function(){
-            var sn = $(this).attr('sn');
-            $.ajax({
-                url: "/account/account/del_account",
-                data: { "sn": sn},
-                type: "POST",
-                dataType : "json",
-                success: function (data) {
-                    if(data.error==1){
-                        show_message(data.message);
-                    }else{
-                        $("#"+sn).remove();
+            if(confirm('确认移除吗？')){
+                var sn = $(this).attr('sn');
+                $.ajax({
+                    url: "/account/account/del_account",
+                    data: { "sn": sn},
+                    type: "POST",
+                    dataType : "json",
+                    success: function (data) {
+                        if(data.error==1){
+                            show_message(data.message);
+                        }else{
+                            $("#"+sn).remove();
+                        }
                     }
-                }
-            });
+                });
+            }
         });
     })
     function show_message(str) {
