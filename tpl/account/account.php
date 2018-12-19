@@ -5,41 +5,42 @@
     <script type="text/javascript" src="<?=PUB_PATH?>js/jquery-1.8.3.min.js"></script>
 </head>
 <style>
-    body{margin: 0px;padding: 0px;color:#5C5C5C;}
-    .head{width: 96%;height: 100px;line-height: 90px;font-size:46px;padding:2%;background-color: #E8E8E8;}
+    body{margin: 0px;padding: 0px;background-color: #F1F2F4;}
+    .head{width: 92%;height: 100px;font-size:46px;padding:2% 4%;line-height:100px;background-color: #617FDE;color:#EBEFFB;}
 
     /*列表*/
-    .list{width: 96%;height: 115px;padding: 2%;margin-top: 0.5%;background-color: #F7F7F7;}
+    .list{width: 96%;height: 115px;padding: 2%;margin-top: 0.5%;background-color: #F1F2F4;color:#4B4B4B;}
     .title{font-size:42px;padding: 0.5%;}
-    .flag{float: right;font-size:28px;}
-    .desc{clear: both;font-size:34px;}
+    .flag{float: right;font-size:28px;color:#B2B2B2}
+    .desc{clear: both;font-size:34px;color:#B2B2B2;}
+    hr{background-color: #DFE0E1;}
 
     /*详情*/
     .overBox {position: fixed;width: 100%;height: 100%;top: 0;bottom: 0;left: 0;right: 0;background: rgba(0,0,0,0.65);z-index: 6;overflow: hidden;}
-    .detail{position: absolute;top: 50%;left: 50%;width: 80%;padding: 2%;transform: translate(-50%, -50%);border-radius: 25px;background-color: #FFF0F5;z-index: 8;}
+    .detail{position: absolute;top: 50%;left: 50%;width: 80%;padding: 2%;transform: translate(-50%, -50%);border-radius: 25px;background-color: #FFFFFF;z-index: 8;color:#4B4B4B;}
     li{padding: 7px;font-size:38px;list-style-type:none;}
     .tit{display: inline-block;text-align: right;width: 130px;}
 
     /*搜索*/
     .sear{height: 120px;width: 98%;line-height: 120px;margin: 1%;}
-    .input{font-size: 42px;width: 78%;height: 110px;border: 1px solid #555555;}
-    .button{border-radius: 15px;width: 20%;height: 115px;font-size: 42px;}
+    .input{font-size: 42px;width: 79%;height: 110px;border: 1px solid #555555;}
+    .button{border-radius: 15px;width: 20%;height: 115px;font-size: 42px;background-color: #849BE3;color:#EBEFFB;}
 
     .show_message{position: absolute;top: 85%;left: 50%;padding: 2%;transform: translate(-50%, -50%);border-radius: 25px;color:#FCFCFC;background-color: #969696;font-size: 36px;z-index: 8;}
 
     /*添加*/
-    .show_jia{position: fixed;top: 85%;left: 90%;padding: 5px 23px;transform: translate(-50%, -50%);border-radius: 100%;color:#FCFCFC;background-color: #969696;font-size: 60px;z-index: 5;}
-    .add{position: absolute;top: 50%;left: 50%;width: 80%;padding: 2%;transform: translate(-50%, -50%);border-radius: 25px;background-color: #FFF0F5;z-index: 8;}
-    .add select{font-size: 42px;height: 70px;padding: 5px;}
-    .add_input{margin-top: 2%;font-size: 38px;height: 60px;width: 78%;}
-    .sub_button{margin-left:5%;border-radius: 15px;width: 20%;height: 75px;font-size: 42px;}
+    .show_jia{position: fixed;top: 85%;left: 90%;padding: 5px 23px;transform: translate(-50%, -50%);border-radius: 100%;color:#FCFCFC;background-color: #617FDE;font-size: 60px;z-index: 5;}
+    .add{position: absolute;top: 50%;left: 50%;width: 80%;padding: 2%;transform: translate(-50%, -50%);border-radius: 25px;background-color: #F1F2F4;z-index: 8;color:#616263;}
+    .add select{font-size: 42px;height: 70px;padding: 5px;border-radius: 13px;}
+    .add_input{margin-top: 2%;font-size: 38px;height: 60px;width: 78%;border-radius: 13px;}
+    .sub_button{margin-left:5%;border-radius: 13px;width: 23%;height: 75px;font-size: 40px;background-color: #849BE3;color:#EBEFFB;}
 </style>
 <body>
 <div class="head">
     <span><?php echo $title; ?></span>
 </div>
 <div class="sear">
-    <input class="input" type="text" name="keystr" placeholder="Please enter keywords">
+    <input class="input" type="text" name="keystr" autofocus="autofocus" placeholder="Please enter keywords">
     <button class="button search_submit">Search</button>
 </div>
 <div id="listdiv">

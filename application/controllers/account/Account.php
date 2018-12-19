@@ -77,7 +77,8 @@ class Account extends CI_Controller {
         <span class="title">'.$value->platform.'</span>
         <span class="flag">'.$platform_type[$value->platform_type].'</span><br />
         <span class="desc">'.$value->account.'</span>
-    </div>';
+    </div>
+    <hr />';
             }
 
             $arr['liststr'] = $liststr;
