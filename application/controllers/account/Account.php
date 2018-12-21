@@ -6,7 +6,7 @@ class Account extends CI_Controller {
 
         parent::__construct();
 
-        $this->user_id = 1;
+        $this->user_id = $this->session->userdata('id');
         $this->site_info['is_login'] = $this->session->userdata('id')?1:0;
     }
 
@@ -21,36 +21,8 @@ class Account extends CI_Controller {
 		$this->load->view(ACCOUNT.'account',$data);
 	}
 
-	public function get_account_info()
-	{
-        $platform_type = array(1=>'社交', 2=>'网购投资', 3=>'工具', 4=>'IT', 5=>'key', 6=>'应用',);
-
-        $sn = trim($this->input->post('sn'),'sn');
-
-        $arr = array(
-            'error'=>1,
-            'message'=>'参数错误'
-        );
-
-        if(!$sn){   die(json_encode($arr)); }
-
-        $user = $this->common_model->get_record("SELECT * FROM My_account WHERE id=$sn",1);
-
-        if(!$user){
-            $arr['message'] = "该账户已移除";
-        }else{
-
-            $arr['error'] = 0;
-
-            $user->platform_type = $platform_type[$user->platform_type];
-
-            $arr['account'] = $user;
-        }
-        die(json_encode($arr));
-	}
-
-	public function get_account_list()
-	{
+    public function get_account_list()
+    {
         $platform_type = array(1=>'社交', 2=>'网购投资', 3=>'工具', 4=>'IT', 5=>'key', 6=>'应用',);
 
         $sn = trim($this->input->post('keyword'),'keyword');
@@ -62,7 +34,7 @@ class Account extends CI_Controller {
 
         if(!$sn){   die(json_encode($arr)); }
 
-        $user = $this->common_model->get_records("SELECT * FROM My_account WHERE platform like '%$sn%' or account like '%$sn%' or remarks like '%$sn%'");
+        $user = $this->common_model->get_records("SELECT * FROM My_account WHERE (platform like '%$sn%' or account like '%$sn%' or remarks like '%$sn%') and user_id=".$this->user_id);
 
         if(!$user){
             $arr['message'] = "未找到该数据";
@@ -84,7 +56,37 @@ class Account extends CI_Controller {
             $arr['liststr'] = $liststr;
         }
         die(json_encode($arr));
+    }
+
+	public function get_account_info()
+	{
+        $platform_type = array(1=>'社交', 2=>'网购投资', 3=>'工具', 4=>'IT', 5=>'key', 6=>'应用',);
+
+        $sn = trim($this->input->post('sn'),'sn');
+
+        $arr = array(
+            'error'=>1,
+            'message'=>'参数错误'
+        );
+
+        if(!$sn){   die(json_encode($arr)); }
+
+        $user = $this->common_model->get_record("SELECT * FROM My_account WHERE id=$sn and user_id=".$this->user_id);
+
+        if(!$user){
+            $arr['message'] = "该账户已移除";
+        }else{
+
+            $arr['error'] = 0;
+
+            $user->platform_type = $platform_type[$user->platform_type];
+
+            $arr['account'] = $user;
+        }
+        die(json_encode($arr));
 	}
+
+
 
 	/**
 	 * 存储账号信息
@@ -117,6 +119,7 @@ class Account extends CI_Controller {
         if(!$platform || !$account){   die(json_encode($arr)); }
 
         $data = array(
+            'user_id'=>$this->user_id,
             'platform'=>$platform,
             'platform_type'=>$platform_type,
             'platform_link'=>$platform_link,
@@ -150,7 +153,7 @@ class Account extends CI_Controller {
         $id = trim($this->input->post('sn'),'sn');
         $id = $id?$id:0;
 
-        $stu = $this->db->query("delete from My_account where id=$id");
+        $stu = $this->db->query("delete from My_account where id=$id and user_id=".$this->user_id);
 
         if($stu){
             die(json_encode(array('error'=>0,'message'=>'已移除')));

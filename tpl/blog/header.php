@@ -79,6 +79,17 @@
             <button data-type="screen-nav" class="btn btn-inverse screen-nav"><i class="icon-tasks icon-white"></i></button>
         </div>
         <div class="menu pull-right">
+            <?php if($is_mobile && !$is_login){ ?>
+            <div style="float:right;line-height: 28px;margin-left: 8px;">
+                <a href="#" onclick='qqLogin()'>
+                    <img src='/tpl/public/img/qq/Connect_logo_1.png' >
+                </a>
+            </div>
+            <?php }elseif($is_master_user==1){ ?>
+                <div style="float:right;line-height: 28px;margin-left: 8px;">
+                    <a href="/account/account" style="color:#ffffff;">User</a>
+                </div>
+            <?php } ?>
             <form method="get" class="dropdown search-form" action="/blog/blog_list">
                 <input class="search-input" name="key" type="text" placeholder="输入关键字搜索" autofocus="" x-webkit-speech="" value="<?=@$_GET['key']?>">
                 <input class="btn btn-success search-submit" type="submit" value="搜索">
