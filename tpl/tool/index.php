@@ -2,75 +2,52 @@
 <head>
 	<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
-	<title>工具列表</title>
+	<title><?=$title?></title>
 	<style type="text/css">
-		ul {
-			margin-left:10px;
-			margin-right:10px;
-			margin-top:10px;
-			padding: 0;
-		}
-		li {
-			float: left;
-			margin: 0px;
-			margin-left:1%;
-			padding: 20px;
-			display: inline;
-			color: #fff;
-			font-size: x-large;
-			word-break:break-all;
-			word-wrap : break-word;
-			margin-bottom: 5px;
-		}
-		a {
-			-webkit-tap-highlight-color: rgba(0,0,0,0);
-			text-decoration:none;
-			color:#fff;
-		}
-		a:link{
-			-webkit-tap-highlight-color: rgba(0,0,0,0);
-			text-decoration:none;
-			color:#fff;
-		}
-		a:visited{
-			-webkit-tap-highlight-color: rgba(0,0,0,0);
-			text-decoration:none;
-			color:#fff;
-		}
-		a:hover{
-			-webkit-tap-highlight-color: rgba(0,0,0,0);
-			text-decoration:none;
-			color:#fff;
-		}
-		a:active{
-			-webkit-tap-highlight-color: rgba(0,0,0,0);
-			text-decoration:none;
-			color:#fff;
-		}
+        .d_tags{padding: 5%}
+        .d_tags a:nth-child(9n){background-color: #4A4A4A;}
+        .d_tags a:nth-child(9n+1){background-color: #428BCA;}
+        .d_tags a:nth-child(9n+2){background-color: #5CB85C;}
+        .d_tags a:nth-child(9n+3){background-color: #D9534F;}
+        .d_tags a:nth-child(9n+4){background-color: #567E95;}
+        .d_tags a:nth-child(9n+5){background-color: #B433FF;}
+        .d_tags a:nth-child(9n+6){background-color: #00ABA9;}
+        .d_tags a:nth-child(9n+7){background-color: #B37333;}
+        .d_tags a:nth-child(9n+8){background-color: #FF6600;}
+
+        .d_tags a{
+            opacity: 0.80;
+            filter:alpha(opacity=80);
+            color: #fff;
+            background-color: #428BCA;
+            display: inline-block;
+            margin: 5px 5px;
+            padding: 3px 20px;
+            line-height: 48px}
+        .d_tags a:hover{
+            opacity: 1;
+            filter:alpha(opacity=100);
+        }
+
 	</style>
 </head>
 <body>
-<div align="center">
-	<ul>
-		<li style="background-color:#c09853"><a href="/">返回博客首页</a></li>
-		<li style="background-color:coral"><a href="/tool/qrcode">生成二维码</a></li>
-		<li style="background-color:#8B7D6B"><a href="/tool/send_email">发送邮件</a></li>
-		<li style="background-color:#CD8162"><a href="/tool/tool/md5_encode">md5加密</a></li>
-		<li style="background-color:#CD919E"><a href="/tool/tool/json_decode">json解析</a></li>
-		<li style="background-color:#BC8F8F"><a href="/tool/tool/time_change">时间戳转化为日期</a></li>
-		<li style="background-color:#545164"><a href="/tool/test">功能测试</a></li>
+    <div class="d_tags">
+        <a href="/">返回博客</a>
+        <a href="/tool/tool/qrcode">生成二维码</a>
+        <a href="/tool/tool/email">发送邮件</a>
+        <a href="/tool/tool/md5_encode">md5加密</a>
+        <a href="/tool/tool/time_change">时间戳转化为日期</a>
+        <a href="/tool/tool/json_decode">json解析</a>
+        <a href="/tool/tool/test">功能测试</a>
+        <a href="/tool/tool/base64_change">Base64转化</a>
 
-		<?php
-			if($user==1){
-				echo '<li style="background-color:green"><a href="/tool/sign/index">白羊</a></li>';
-				echo '<li style="background-color:#994514"><a href="/tool/sign/julaibao">聚来宝</a></li>';
-				echo '<li style="background-color:red"><a href="/tool/send_message/index">短信发送</a></li>';
-			}
-		?>
+        <?php   if($user==1){   ?>
+            <a href="/tool/tool/send_message_page">短信发送</a>
+            <a href="/tool/sign/index">白羊</a>
+            <a href="/tool/sign/julaibao">聚来宝</a>
+        <?php   }   ?>
 
-
-
-	</ul>
-</div>
+    </div>
 </body>
 </html>

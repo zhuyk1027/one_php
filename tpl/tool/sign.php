@@ -1,22 +1,6 @@
-<html>
-<head>
-    <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title><?=$title?></title>
-    <link href="<?=TOOL_CSS?>main.css" rel="stylesheet" type="text/css">
-    <style>
-        .backcolor {
-            background-color:green;
-            width: 315px;
-        }
+<?php include_once('header.php');?>
 
-    </style>
-</head>
-<body>
-<div align="center">
-    <ul>
-        <li style="background-color:green"><a href="/tool">返回</a></li>
-    </ul>
+    <!--批量签到-->
     <ul class="clear">
         <li class="backcolor">
             <p>All Sign</p>
@@ -42,6 +26,8 @@
             </table>
         </li>
     </ul>
+
+    <!--批量抽奖-->
     <ul class="clear">
         <li class="backcolor">
             <p>All Lottery</p>
@@ -70,6 +56,8 @@
             </table>
         </li>
     </ul>
+
+    <!--批量注册-->
     <ul class="clear">
         <li class="backcolor">
             <p>Register</p>
@@ -97,23 +85,8 @@
             </table>
         </li>
     </ul>
-    <ul class="clear">
-        <li class="backcolor">
-            <p>查看返利金额</p>
 
-            <table>
-                <tr>
-                    <td class="right">时间：</td>
-                    <td><input type="radio" name="datetime" value="1" checked>本月
-                        <input type="radio" name="datetime" value="2">上月</td>
-                </tr><tr>
-                    <td colspan="2" class="text_center">
-                        <input type="button" class="button" value="查看" onclick="show_backmoney()">
-                    </td>
-                </tr>
-            </table>
-        </li>
-    </ul>
+    <!--单个注册-->
     <ul class="clear">
         <li class="backcolor">
             <p>Register</p>
@@ -136,53 +109,24 @@
             </table>
         </li>
     </ul>
-</div>
-<script src="<?=PUB_PATH?>js/jquery-1.8.3.min.js"></script>
-<script>
-    function jump(){
-        var page = $('#lottery_sign_page option:selected') .val();
-        var pagesize = $("input[name='lottery_page_size']").val();
-        var act_id = $("input[name='act_id']").val();
-        var pay_pass = $("input[name='pay_pass']:checked").val();
-        if(act_id==''){
-            return false;
-        }
-        window.location.href='/tool/sign/lottery/'+act_id+'/'+pay_pass+'/'+page+'/'+pagesize;
-    }
-    function jump_sign(){
-        var page = $('#sign_page option:selected') .val();
-        var pagesize = $("input[name='sign_page_size']").val();
-        var pay_pass = $("input[name='pay_pass_sign']:checked").val();
-        window.location.href='/tool/sign/baiy_all_sign/'+pay_pass+'/'+page+'/'+pagesize;
-    }
-    function jump_register(){
-        var register_num = $('#register_num option:selected') .val();
-        var is_auto = $("input[name='is_auto']:checked").val();
-        var invite_code = $("input[name='invite_code']").val();
-        window.location.href='/tool/sign/register_do/'+is_auto+'/'+invite_code+'/'+register_num;
-    }
-    function register(){
-        var phone = $("input[name='phone1']").val();
-        var code = $("input[name='code1']").val();
-        var invite_code = $("input[name='invite_code1']").val();
-        window.location.href='/tool/sign/register/'+phone+'/'+invite_code+'/'+code;
-    }
-    function clear_session(){
-        $.ajax({
-            url: "/tool/sign/unset_session",
-            data: { "is_clean": 1},
-            type: "POST",
-            dataType : "json",
-            success: function (data) {
-                alert('清除成功');
-            }
-        });
 
-    }
-    function show_backmoney(){
-        var datetime = $("input[name='datetime']:checked").val();
-        window.location.href='/tool/sign/show_backmoney/'+datetime;
-    }
-</script>
-</body>
-</html>
+    <!--查看返利-->
+    <ul class="clear">
+        <li class="backcolor">
+            <p>查看返利金额</p>
+
+            <table>
+                <tr>
+                    <td class="right">时间：</td>
+                    <td><input type="radio" name="datetime" value="1" checked>本月
+                        <input type="radio" name="datetime" value="2">上月</td>
+                </tr><tr>
+                    <td colspan="2" class="text_center">
+                        <input type="button" class="button" value="查看" onclick="show_backmoney()">
+                    </td>
+                </tr>
+            </table>
+        </li>
+    </ul>
+
+<?php include_once('master_footer.php');?>

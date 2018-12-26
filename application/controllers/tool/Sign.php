@@ -6,7 +6,6 @@ class sign extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('com_model');
         $this->load->helper('array');
     }
 
@@ -51,6 +50,7 @@ class sign extends CI_Controller {
             }
         }
     }
+
     //签到
     function baiy_sign($token='')
     {
@@ -71,6 +71,7 @@ class sign extends CI_Controller {
             echo json_encode(array($output->message,$output->data->integral));
         }
     }
+
     //抽奖
     function lottery_do($token,$active_id,$url='')
     {
@@ -89,10 +90,10 @@ class sign extends CI_Controller {
 
         return array($output->message,isset($output->data->postion_id)?$output->data->postion_id:99);
     }
+
     //查看返利信息
     function show_back($token,$start,$end)
     {
-
         $url = 'http://mallapp.baiyjk.com/v3_3/cps_user/cps_user_promoter_income';
 
         $post_data['token'] = $token;
@@ -115,7 +116,8 @@ class sign extends CI_Controller {
         }
         return $arr;
     }
-    //补充注册功能
+
+    //邀请注册
     function register($phone = 1,$invite_code = 1,$code = 1){
         $param = array(
             'password'=>substr($phone,5),
@@ -130,6 +132,7 @@ class sign extends CI_Controller {
         $is_right = $this->curl_baiy($url,$param);
         print_r($is_right);
     }
+
 
     //获取批量用户
     function get_user($type=1,$page=1,$pagesize=100){
@@ -146,6 +149,7 @@ class sign extends CI_Controller {
         if(empty($data)){ echo "暂无用户";die; }
         return $data;
     }
+
     //批量抽奖
     function lottery($id=0,$type = 1,$page=1,$pagesize=100)
     {
@@ -175,6 +179,7 @@ class sign extends CI_Controller {
             }
         }
     }
+
     //批量签到
     function baiy_all_sign($type=1,$page=1,$pagesize=100)
     {
@@ -192,10 +197,11 @@ class sign extends CI_Controller {
             }
         }
     }
-    //批量查看
+
+    //批量查看指定类型用户月份返利记录
     function show_backmoney($type=1)
     {
-        //php获取本月起始时间戳和结束时间戳
+        //php获取本月起始时间戳和结束时间戳，或上月开始结束时间
         if($type==1){
             $strat=mktime(0,0,0,date('m'),1,date('Y'));
             $end=mktime(23,59,59,date('m'),date('t'),date('Y'));
@@ -242,6 +248,7 @@ class sign extends CI_Controller {
         $sign = md5($this->post_to_string($this->order_array($param)));
         return $sign;
     }
+
     function order_array($array)
     {
         if (!is_array($array) || empty($array) || !isset($array['nonce_str'])) {
@@ -255,6 +262,7 @@ class sign extends CI_Controller {
         }
         return $array;
     }
+
     function post_to_string($post_data, $sign_key = 'CAqlz8C')
     {
         $string = '';
@@ -285,9 +293,8 @@ class sign extends CI_Controller {
      * @desc curl 白羊
      */
     public function curl_baiy($url,$param) {
-        if(!$url || !$param){
-            return false;
-        }
+
+        if(!$url || !$param){   return false;   }
 
         $xip = $cip = '125.68.54.'.mt_rand(0,254);
         $header = array(
@@ -300,9 +307,7 @@ class sign extends CI_Controller {
         curl_setopt ($ch,CURLOPT_HTTPHEADER, $header);          //伪造IP，避免短信ip锁定
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_USERAGENT, 'BaiYangStore/3.3.0 (iPhone; iOS 9.3; Scale/2.00)');
-        // post数据
         curl_setopt($ch, CURLOPT_POST, 1);
-        // post的变量
         curl_setopt($ch, CURLOPT_POSTFIELDS, $param);
         $output = curl_exec($ch);
         curl_close($ch);
@@ -537,11 +542,11 @@ class sign extends CI_Controller {
      * @desc curl 易码
      */
     public function curl_yima($param) {
-        if(!$param){
-            return false;
-        }
+
+        if(!$param){    return false;   }
 
         $url = 'http://api.fxhyd.cn/UserInterface.aspx?';
+
         $paramstr = '';
         foreach($param as $key=>$val){
             $paramstr .= $key.'='.$val.'&';
@@ -549,15 +554,11 @@ class sign extends CI_Controller {
         $url .= trim($paramstr,'&');
 
         $ch = curl_init();
-        //设置选项，包括URL
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_HEADER, 0);
-        //执行并获取HTML文档内容
         $output = curl_exec($ch);
-        //释放curl句柄
         curl_close($ch);
-        //打印获得的数据
         return $output;
     }
 
@@ -856,11 +857,11 @@ class sign extends CI_Controller {
      * @desc curl 神话
      */
     public function curl_caoma($url_str,$param) {
-        if(!$url_str || !$param){
-            return false;
-        }
+
+        if(!$url_str || !$param){   return false;   }
 
         $url = 'http://api.shjmpt.com:9002'.$url_str.'?';
+
         $paramstr = '';
         foreach($param as $key=>$val){
             $paramstr .= $key.'='.$val.'&';
@@ -868,15 +869,11 @@ class sign extends CI_Controller {
         $url .= trim($paramstr,'&');
 
         $ch = curl_init();
-        //设置选项，包括URL
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_HEADER, 0);
-        //执行并获取HTML文档内容
         $output = curl_exec($ch);
-        //释放curl句柄
         curl_close($ch);
-        //打印获得的数据
         return $output;
     }
 
@@ -914,17 +911,18 @@ class sign extends CI_Controller {
             'D9E0EE9F-96E1-4B68-9F12-8AFE48CB0F25',
             'BFFDF023-2247-4770-B92C-E319768FC4A2',
         );
-
         return $udid[rand(0,count($udid)-1)];
     }
 
-    /** 读取/写入text文件  */
+    /** 写入text文件  */
     function write_err_info($txt){
         $date = 'tpl/register_log/'.date('Ymd');
         $myfile = fopen($date."register.txt", "a+") or die("Unable to open file!");
         fwrite($myfile, date("Y-m-d H:i").' '.$txt);
         fclose($myfile);
     }
+
+    /** 读取text文件  */
     function raed_info($txt_name){
         $myfile = fopen($txt_name, "r") or die("Unable to open file!");
         $info = fread($myfile,filesize($txt_name));
@@ -941,29 +939,28 @@ class sign extends CI_Controller {
         ];
         $this->load->view('tool/julaibao',$data);
     }
+
     /** 聚来宝注册会员 */
     function julaibao_sign()
     {
         $recommender = @$_POST['recommender'];
-        $num = $_POST['num'];
-        $num = $num?$num:'10';
-        $pass = $_POST['pass'];
-        $pass = $pass?$pass:'10';
+        $num = isset($_POST['num'])?trim($_POST['num']):'1';
+        $pass = isset($_POST['pass'])?trim($_POST['pass']):'q12345';
 
-        if(!$recommender){
-            return false;
-        }
+        if(!$recommender){  return false;   }
 
         $url = 'http://app.julaibao.com/app/RegUser.aspx?refman='.$recommender;
 
         $user_str = array();
 
         for($i=1;$i<=$num;$i++){
+
             $user = '';
-            for($i=1;$i<=rand(9,10);$i++){
+            for($j=1;$j<=rand(9,10);$j++){
                 $user .= rand(0,9);
             }
             $user_str[]= $user;
+
             $post_data = array(
                 'user'=>$user,
                 'loginpwd'=>$pass,
@@ -972,8 +969,9 @@ class sign extends CI_Controller {
                 'email'=>$user.'@qq.com',
                 'checkCode'=>'',
                 'cbRead'=>'on',
-
             );
+
+
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, $url);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -984,6 +982,8 @@ class sign extends CI_Controller {
             curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data);
             $output = curl_exec($ch);
             curl_close($ch);
+
+            var_dump($output);die;
         }
         echo json_encode(implode($user_str,','));
     }

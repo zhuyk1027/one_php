@@ -15,27 +15,25 @@ defined('SHOW_DEBUG_BACKTRACE') OR define('SHOW_DEBUG_BACKTRACE', TRUE);
 
 
 /*常用常量*/
-defined('WEB_URL') OR define('WEB_URL', 'http://www.zhuyk.cn/');
+defined('WEB_URL') OR define('WEB_URL', 'www.zhuyk.cn');
 defined('WEB_NAME') OR define('WEB_NAME', '灰猪领地');
 defined('WEB_MASTER') OR define('WEB_MASTER', '灰猪君');
-
 defined('WEIBO') OR define('WEIBO', 'http://weibo.com/5674847826/profile?rightmod=1&wvr=6&mod=personinfo&is_hot=1');
 defined('DESIGN') OR define('DESIGN', '欢迎来到灰猪领地，请记住唯一域名 http://www.zhuyk.cn');
 defined('SIGN') OR define('SIGN', '一台笔记本，一杯咖啡，像写代码一样简单的生活，挺好。');
-
 defined('BEIAN') OR define('BEIAN', '粤ICP备17095701号');
 
 defined('BLOG') OR define('BLOG', 'blog/');
 defined('BLOG_JS') OR define('BLOG_JS', '/tpl/blog/js/');
 defined('BLOG_CSS') OR define('BLOG_CSS', '/tpl/blog/css/');
 defined('BLOG_IMG') OR define('BLOG_IMG', '/tpl/blog/img/');
-
-defined('PUB_PATH') OR define('PUB_PATH', '/tpl/public/');
-defined('TOOL_CSS') OR define('TOOL_CSS', '/tpl/tool/css/');
-
 defined('UP_TEMP_PATH') OR define('UP_TEMP_PATH', 'uptemp/');
 
+defined('PUB_PATH') OR define('PUB_PATH', '/tpl/public/');
+defined('TOOL') OR define('TOOL', '/tpl/tool/');
 defined('ACCOUNT') OR define('ACCOUNT', 'account/');
+
+defined('EMAIL') OR define('EMAIL', 'graypig@zhuyk.cn');
 
 /*
 |--------------------------------------------------------------------------

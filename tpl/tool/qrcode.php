@@ -1,22 +1,8 @@
-<html>
-<head>
-	<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title><?php echo $title ?></title>
-    <link href="<?=TOOL_CSS?>main.css" rel="stylesheet" type="text/css">
-    <style type="text/css">
-        .backcolor {
-            background-color:coral;
-            width: 315px;
-        }1
-    </style>
-    <script src="<?=PUB_PATH?>js/jquery-1.8.3.min.js"></script>
-    <script src="<?=PUB_PATH?>js/jquery_qrcode_master/jquery.qrcode.min.js"></script>
-</head>
-<body>
-<ul>
-    <li style="background-color:coral"><a href="JavaScript:void(history.go(-1))">返回</a></li>
-</ul>
+
+<?php include_once('header.php');?>
+
+<script src="<?=PUB_PATH?>js/jquery_qrcode_master/jquery.qrcode.min.js"></script>
+
 <form >
 <ul class="clear">
     <li class="backcolor">
@@ -40,20 +26,5 @@
     </li>
 </ul>
 </form>
-</body>
-<script>
-    //js生成二维码
-    $(".create_qrcode").click(function(){
-        var url = $("input[name='url']").val();
-        if(url==''){
-            alert('请输入要生成的网址!');return false;
-        }
-        if( url.indexOf('http://')<0 ){
-            url = 'http://'+url;
-        }
-        $('#qrcode').html('');
-        //jQuery('#qrcode').qrcode("http://blog.wpjam.com");    //不控制大小
-        jQuery('#qrcode').qrcode({width: 128,height: 128,text: url});   //控制大小
-    })
-</script>
-</html>
+
+<?php include_once('footer.php');?>

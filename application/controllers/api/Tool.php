@@ -3,10 +3,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Tool extends CI_Controller {
 
     public function __construct(){
+
         parent::__construct();
+
+        //统计访问次数
+        $this->common_model->pv_count($_SERVER['REQUEST_URI']);
     }
 
-//    小公举列表
+    //小公举列表
     public function tool(){
         $param = array(
             array('title'=>'发送邮件','url'=>'/pages/send_email/email'),
@@ -14,15 +18,15 @@ class Tool extends CI_Controller {
         echo json_encode($param);
     }
 
-//    生成二维码
+    //生成二维码
     public function qrcode(){
-        $param = isset($_REQUEST['urls'])?trim($_REQUEST['urls']):'http://www.zhuyk.cn/';
+        $param = isset($_REQUEST['urls'])?trim($_REQUEST['urls']):WEB_URL;
         $param = urlencode($param);
         $url = "http://qr.liantu.com/api.php?text=$param";
         echo json_encode($url);
     }
 
-//    发送邮件
+    //发送邮件
     function send_email(){
         $to = $this->input->get('text_to');
         $title = $this->input->get('text_title');
@@ -32,16 +36,16 @@ class Tool extends CI_Controller {
         if(!preg_match($pattern, $to)){
             echo json_encode("请输入正确的邮箱地址");die;
         }
-        $title .= " - ".WEB_NAME." ".WEB_URL;
+        $title .= " - ".WEB_NAME.'('.WEB_URL.')';
 
         $this->load->library('email');
-        $this->email->from('zhuyaokun1027@126.com', 'GrayPig');
+        $this->email->from('graypig@zhuyk.cn', WEB_MASTER);    //配置发送邮箱，发送人（自定义）
         $this->email->to($to);
         $this->email->subject($title);
         $this->email->message($conts);
         $res = $this->email->send();
-
         echo json_encode('success');
+
     }
 
 }

@@ -48,3 +48,14 @@ iframe{
     height: auto;
     min-height: 70px;
 }
+
+.libackcolor {
+     background-color:#BC8F8F;
+ }
+.backcolor {
+     background-color:#BC8F8F;
+     width: 96%;
+ }
+.htmlspan{
+    height: 40px;line-height: 40px;display: inline-block;
+}

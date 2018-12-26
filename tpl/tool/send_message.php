@@ -1,22 +1,5 @@
-<html>
-<head>
-    <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title><?=$title?></title>
-    <link href="<?=TOOL_CSS?>main.css" rel="stylesheet" type="text/css">
-    <style>
-        .backcolor {
-            background-color:green;
-            width: 315px;
-        }
+<?php include_once('header.php');?>
 
-    </style>
-</head>
-<body>
-<div align="center">
-    <ul>
-        <li style="background-color:green"><a href="/tool">返回</a></li>
-    </ul>
     <ul class="clear">
         <li class="backcolor">
             <p>Mobile message send</p>
@@ -35,14 +18,4 @@
     </ul>
 
 </div>
-<script src="<?=PUB_PATH?>js/jquery-1.8.3.min.js"></script>
-<script>
-    function jump_send_mobile_message(){
-        var mobile_code = $("input[name='mobile_code']").val();
-        var Number = $("input[name='mobile_message_number']").val();
-        window.location.href='/tool/send_message/send_mobile_code/'+mobile_code+'/'+Number;
-    }
-
-</script>
-</body>
-</html>
+<?php include_once('master_footer.php');?>

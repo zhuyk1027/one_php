@@ -1,21 +1,6 @@
-<html>
-<head>
-	<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title><?php echo $title ?></title>
-    <link href="<?=TOOL_CSS?>main.css" rel="stylesheet" type="text/css">
-    <style type="text/css">
-        .backcolor {
-            background-color:#994514;
-            width: 315px;
-        }
-    </style>
-    <script src="<?=PUB_PATH?>js/jquery-1.8.3.min.js"></script>
-</head>
-<body>
-<ul>
-    <li style=" background-color:#994514;"><a href="JavaScript:void(history.go(-1))">返回</a></li>
-</ul>
+
+<?php include_once('header.php');?>
+
 <ul class="clear">
     <li class="backcolor">
         <p class="text_center"><?php echo $title ?></p>
@@ -35,29 +20,11 @@
                 </td>
             </tr><tr>
                 <td colspan="2" class="text_center">
-                    <input type="button" value="sign" onclick="sign()" class="button">
+                    <input type="button" value="sign" onclick="julaibao_signup()" class="button">
                 </td>
             </tr>
         </table>
     </li>
 </ul>
-</body>
-<script>
-    //登录
-    function sign(){
-        var recommender = $("input[name='recommender']").val();
-        var num = $("input[name='num']").val();
-        var pass = $("input[name='pass']").val();
-        $.ajax({
-            url: "/tool/sign/julaibao_sign",
-            data: { "recommender": recommender,"num":num,"pass":pass},
-            type: "POST",
-            dataType : "json",
-            success: function (data) {
-                alert('处理完毕，账户分别为'+data+'操作结束。');
-            }
-        });
-    }
 
-</script>
-</html>
+<?php include_once('master_footer.php');?>

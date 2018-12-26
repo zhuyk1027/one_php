@@ -7,7 +7,7 @@ class Blog extends CI_Controller {
         $this->user_id = 1;
     }
 
-//    首页显示
+    //首页显示
     public function index()
     {
 
@@ -61,7 +61,7 @@ class Blog extends CI_Controller {
             '$1',$str);
     }
 
-    /*
+    /**
      * 博文分类列表
      * */
 	public function blog_list()
@@ -120,8 +120,7 @@ class Blog extends CI_Controller {
         $this->load->view(BLOG.'blog_list',$data);
 	}
 
-
-    /*
+    /**
      * 博文详情
      * */
     function detail($blog_id = 0){
