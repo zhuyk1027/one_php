@@ -182,13 +182,14 @@ class tool extends CI_Controller {
         $title .= " - ".WEB_NAME.'('.WEB_URL.')';
 
         $this->load->library('email');
-        $this->email->from('graypig@zhuyk.cn', WEB_MASTER);    //配置发送邮箱，发送人（自定义）
+        $this->email->from('zhuyaokun1027@126.com', WEB_MASTER);    //配置发送邮箱，发送人（自定义）
         $this->email->to($to);
         //$this->email->cc('another@another-example.com');              //抄送
         //$this->email->bcc('them@their-example.com');                  //再抄送吧
         $this->email->subject($title);
         $this->email->message($conts);
         $res = $this->email->send();
+        echo $this->email->print_debugger(array('headers'));
         echo $res?'发送成功!':'发送失败!';
     }
 
